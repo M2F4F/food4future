@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "F4F.sln"
+    "dotnet.defaultSolution": "food4future.sln"
 }
