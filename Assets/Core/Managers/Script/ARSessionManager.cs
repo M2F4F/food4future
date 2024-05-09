@@ -11,7 +11,6 @@ public class ARSessionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Here");
         StartCoroutine(CheckARSession());
     }
 
@@ -19,7 +18,6 @@ public class ARSessionManager : MonoBehaviour
         if ((ARSession.state == ARSessionState.None) ||
             (ARSession.state == ARSessionState.CheckingAvailability))
         {
-            Debug.Log("Here");
             yield return ARSession.CheckAvailability();
         }
 
