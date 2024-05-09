@@ -7,6 +7,9 @@ public class ARSessionManager : MonoBehaviour
 {
     [SerializeField]
     private ARSession m_arSession;
+
+    public delegate void OnARUnsupported();
+    public event OnARUnsupported onARUnsupported;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,7 @@ public class ARSessionManager : MonoBehaviour
         switch (ARSession.state)
         {
             case ARSessionState.Ready : m_arSession.enabled = true; break;
-            case ARSessionState.Unsupported : /* TODO: Show on UI */break;
+            case ARSessionState.Unsupported : onARUnsupported?.Invoke(); break;
             default: break;
         }
         

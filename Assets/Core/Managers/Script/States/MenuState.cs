@@ -4,6 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuState : State
 {
+    public delegate void OnMenuState();
+    public static event OnMenuState onMenuState;
+
+    public delegate void OnMenuStateExited();
+    public static event OnMenuStateExited onMenuStateExited;
     public readonly String stateName = "Menu State";
     public override void OnEnter()
     {
@@ -12,6 +17,7 @@ public class MenuState : State
     }
 
     public override void OnExit() {
+        onMenuStateExited?.Invoke();
         SceneManager.LoadScene("TestScene", LoadSceneMode.Additive);
         this.Unsubscribe();
     }

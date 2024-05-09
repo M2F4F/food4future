@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ARFailedState : State
 {
+
+    public ARFailedState() {
+ 
+    }
+
     public override void OnEnter()
     {
         throw new System.NotImplementedException();

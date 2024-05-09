@@ -1,14 +1,19 @@
 using UnityEngine;
+using UnityEngine.XR.ARFoundation.VisualScripting;
 
 public class StartState : State
 {
+    public delegate void OnStartState();
+    public static event OnStartState onStartState;
+    public StartState() {
+    }
+    
     public override void OnEnter() {
-        Debug.Log("Start Class");
+        onStartState?.Invoke();
     }
 
     public override void OnExit()
     {
-        GameObject.Find("UI_MainMenu").SetActive(false);
         throw new System.NotImplementedException();
     }
 
