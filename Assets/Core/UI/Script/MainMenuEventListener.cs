@@ -1,4 +1,7 @@
-
+/**
+    Author: Diro Baloska
+    Collaborator: 
+*/
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour

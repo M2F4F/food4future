@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+/**
+    Author: Diro Baloska
+    Collaborator: 
+*/
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {

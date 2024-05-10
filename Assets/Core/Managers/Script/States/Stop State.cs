@@ -1,3 +1,7 @@
+/**
+    Author: Diro Baloska
+    Collaborator: 
+*/
 using UnityEngine;
 
 public class StopState : State
