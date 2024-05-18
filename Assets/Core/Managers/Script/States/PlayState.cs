@@ -28,7 +28,7 @@ public class PlayState : State {
 
     public override void Subscribe()
     {
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
     }
 
     public override void Unsubscribe()
