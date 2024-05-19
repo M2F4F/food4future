@@ -452,11 +452,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameStateManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4633277722708618663, guid: 9624fa2fad56ca84dbd684a4e408d241,
-        type: 3}
-      propertyPath: ARSessionManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4942865450886927220, guid: 9624fa2fad56ca84dbd684a4e408d241,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -667,22 +662,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 678831882825230871, guid: e5a13c89e4dbe2142a8af61035b6c801,
-        type: 3}
-      propertyPath: m_CameraYOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678831882825230871, guid: e5a13c89e4dbe2142a8af61035b6c801,
-        type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2827614245377101796, guid: e5a13c89e4dbe2142a8af61035b6c801,
-        type: 3}
-      propertyPath: m_serializedLibrary
-      value: 
-      objectReference: {fileID: 11400000, guid: 29c7b1da5a3217b48b6867559d0bdb07,
-        type: 2}
     - target: {fileID: 3889626620901281511, guid: e5a13c89e4dbe2142a8af61035b6c801,
         type: 3}
       propertyPath: m_LocalPosition.x
