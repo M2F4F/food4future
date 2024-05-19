@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,14 @@ public class ARCameraManager : MonoBehaviour
 
     void OnEnable() {
         PlayState.onPlayState += EnableImageTracking;
+        m_imageTrackingManager.trackedImagesChanged += TrackedImageHandler;
     }
+
+    
 
     void OnDisable() {
         PlayState.onPlayState -= EnableImageTracking;
+        m_imageTrackingManager.trackedImagesChanged -= TrackedImageHandler;
     }
     // Start is called before the first frame update
     void Start()
@@ -38,5 +43,20 @@ public class ARCameraManager : MonoBehaviour
 
     private void DisableImageTracking() {
         this.m_imageTrackingManager.enabled = false;
+    }
+
+    private void TrackedImageHandler(ARTrackedImagesChangedEventArgs args)
+    {
+        foreach(var image in args.added) {
+            Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
+            Debug.Log(image.transform.position);
+        }
+        foreach(var image in args.updated) {
+            Debug.Log("ARCameraManager: TrackedImageHandler() updated: " + image.name);
+            Debug.Log(image.transform.position);
+        }
+        foreach(var image in args.removed) {
+            Debug.Log("ARCameraManager: TrackedImageHandler() removed: " + image.name);
+        }
     }
 }
