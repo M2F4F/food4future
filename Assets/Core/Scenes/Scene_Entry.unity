@@ -659,7 +659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269b9e95b49eaa942bf14e75ee8ecf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_text: {fileID: 0}
 --- !u!1001 &1866719432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,6 +677,12 @@ PrefabInstance:
       propertyPath: m_RequestedTrackingOriginMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2827614245377101796, guid: e5a13c89e4dbe2142a8af61035b6c801,
+        type: 3}
+      propertyPath: m_serializedLibrary
+      value: 
+      objectReference: {fileID: 11400000, guid: 29c7b1da5a3217b48b6867559d0bdb07,
+        type: 2}
     - target: {fileID: 3889626620901281511, guid: e5a13c89e4dbe2142a8af61035b6c801,
         type: 3}
       propertyPath: m_LocalPosition.x
