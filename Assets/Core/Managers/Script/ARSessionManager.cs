@@ -58,6 +58,7 @@ public class ARSessionManager : MonoBehaviour
     }
 
     private void ToggleARSession() {
-        m_arSession.enabled = !m_arSession.enabled;
+        if(m_arSession.enabled) m_arSession.enabled = !m_arSession.enabled;
+        StartCoroutine(CheckARSession());
     }
 }
