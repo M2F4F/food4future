@@ -8,16 +8,30 @@ using UnityEngine.XR.ARFoundation;
 
 public class ARSessionManager : MonoBehaviour
 {
-    [SerializeField]
     private ARSession m_arSession;
 
     public delegate void OnARUnsupported();
     public event OnARUnsupported onARUnsupported;
+
+    void Awake() {
+        m_arSession = this.GetComponent<ARSession>();
+        m_arSession.enabled = false;
+    }
+
+    void OnEnable() {
+        PlayState.onPlayState += ToggleARSession;
+        PlayState.onPlayStateExit += ToggleARSession;
+    }
+
+    void OnDisable() {
+        PlayState.onPlayState -= ToggleARSession; 
+        PlayState.onPlayStateExit -= ToggleARSession; 
+    }
     
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(CheckARSession());
+        // StartCoroutine(CheckARSession());
     }
 
     IEnumerator CheckARSession() {
@@ -41,5 +55,9 @@ public class ARSessionManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void ToggleARSession() {
+        m_arSession.enabled = !m_arSession.enabled;
     }
 }
