@@ -3,21 +3,19 @@
     Collaborator: 
 */
 using UnityEngine;
-
+[DefaultExecutionOrder(-1)]
 public class GameStateManager : MonoBehaviour
 {
     public static State state;
+    
+    void OnEnable() {
+        state = new InitState();
+        state.OnEnter();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        state = new MenuState();
-        state.OnEnter();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        StateChange(new MenuState());
     }
 
     public static void StateChange(State newState) {
