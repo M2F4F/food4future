@@ -27,7 +27,6 @@ public class MenuState : State
 
     public override void OnExit() {
         onMenuStateExited?.Invoke();
-        // SceneManager.LoadScene("TestScene", LoadSceneMode.Additive);
         this.Unsubscribe();
     }
 
