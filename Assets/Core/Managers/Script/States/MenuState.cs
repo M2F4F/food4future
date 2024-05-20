@@ -19,8 +19,8 @@ public class MenuState : State
 
     public override void OnEnter()
     {
-        onMenuState?.Invoke();
         Debug.Log("Entering: " + this.stateName);
+        onMenuState?.Invoke();
         this.Subscribe();
     }
 
