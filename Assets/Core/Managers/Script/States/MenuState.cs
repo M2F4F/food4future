@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuState : State
 {
-    public readonly String stateName = "Menu State";
+    public new readonly string stateName = "MenuState";
     
     public delegate void OnMenuState();
     public static event OnMenuState onMenuState;
