@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuState : State
 {
-    public readonly String stateName = "Menu State";
+    public new readonly string stateName = "MenuState";
     
     public delegate void OnMenuState();
     public static event OnMenuState onMenuState;
@@ -19,15 +19,14 @@ public class MenuState : State
 
     public override void OnEnter()
     {
-        onMenuState?.Invoke();
         Debug.Log("Entering: " + this.stateName);
+        onMenuState?.Invoke();
         this.Subscribe();
     }
 
 
     public override void OnExit() {
         onMenuStateExited?.Invoke();
-        // SceneManager.LoadScene("TestScene", LoadSceneMode.Additive);
         this.Unsubscribe();
     }
 

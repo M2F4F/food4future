@@ -6,6 +6,8 @@ using UnityEngine;
 
 public abstract class State
 {
+    public readonly string stateName;
+
     public abstract void OnEnter();
 
     public abstract void OnExit();

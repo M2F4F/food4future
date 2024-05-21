@@ -18,6 +18,10 @@ public class GameStateManager : MonoBehaviour
         StateChange(new MenuState());
     }
 
+    void Update() {
+        
+    }
+
     public static void StateChange(State newState) {
         state.OnExit();
         state = newState;

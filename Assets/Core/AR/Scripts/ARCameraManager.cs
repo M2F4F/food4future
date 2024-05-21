@@ -9,6 +9,10 @@ public class ARCameraManager : MonoBehaviour
 {
     [SerializeField] [Tooltip("Image Library to be detected by Unity")] private XRReferenceImageLibrary m_serializedLibrary;
     private ARTrackedImageManager m_imageTrackingManager;
+
+    public delegate void OnImageTrackAdded(Transform transform);
+    public static event OnImageTrackAdded onAlgaeImageTrackAdded;
+
     void Awake() {
         this.m_imageTrackingManager = gameObject.GetComponent<ARTrackedImageManager>();
     }
@@ -49,11 +53,10 @@ public class ARCameraManager : MonoBehaviour
     {
         foreach(var image in args.added) {
             Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
-            Debug.Log(image.transform.position);
+            if(image.referenceImage.name == "AlgaeSimulation") onAlgaeImageTrackAdded?.Invoke(image.transform);
         }
         foreach(var image in args.updated) {
-            Debug.Log("ARCameraManager: TrackedImageHandler() updated: " + image.name);
-            Debug.Log(image.transform.position);
+            
         }
         foreach(var image in args.removed) {
             Debug.Log("ARCameraManager: TrackedImageHandler() removed: " + image.name);

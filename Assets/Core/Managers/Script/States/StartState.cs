@@ -2,11 +2,9 @@
     Author: Diro Baloska
     Collaborator: 
 */
-using UnityEngine;
-using UnityEngine.XR.ARFoundation.VisualScripting;
-
 public class StartState : State
 {
+    public new readonly string stateName = "StartState";
     public delegate void OnStartState();
     public static event OnStartState onStartState;
     public StartState() {
