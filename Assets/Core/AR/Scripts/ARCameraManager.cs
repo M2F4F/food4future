@@ -12,6 +12,8 @@ public class ARCameraManager : MonoBehaviour
 
     public delegate void OnImageTrackAdded(Transform transform);
     public static event OnImageTrackAdded onAlgaeImageTrackAdded;
+    public static event OnImageTrackAdded onStressTestImageTrackAdded;
+    public static event OnImageTrackAdded onProductionTestImageTrackAdded;
 
     void Awake() {
         this.m_imageTrackingManager = gameObject.GetComponent<ARTrackedImageManager>();
@@ -53,7 +55,18 @@ public class ARCameraManager : MonoBehaviour
     {
         foreach(var image in args.added) {
             Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
-            if(image.referenceImage.name == "AlgaeSimulation") onAlgaeImageTrackAdded?.Invoke(image.transform);
+            switch(image.referenceImage.name) {
+                case "Kindergarten" :
+                    onAlgaeImageTrackAdded?.Invoke(image.transform);
+                    break;
+                case "StressTest":
+                    onAlgaeImageTrackAdded?.Invoke(image.transform);
+                    break;
+                case "ProductionTest":
+                    onProductionTestImageTrackAdded?.Invoke(image.transform);
+                    break;
+                default: break;
+            }
         }
         foreach(var image in args.updated) {
             

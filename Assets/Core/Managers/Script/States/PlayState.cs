@@ -36,17 +36,28 @@ public class PlayState : State {
     public override void Subscribe()
     {
         ARCameraManager.onAlgaeImageTrackAdded += AlgaeSimulationTrackedHandler;
-
-        // throw new NotImplementedException();
+        ARCameraManager.onStressTestImageTrackAdded += StressTestTrackedHandler;
+        ARCameraManager.onProductionTestImageTrackAdded += ProductionTestTrackedHandler;
     }
 
     public override void Unsubscribe()
     {
         ARCameraManager.onAlgaeImageTrackAdded -= AlgaeSimulationTrackedHandler;
-        // throw new NotImplementedException();
+        ARCameraManager.onStressTestImageTrackAdded -= StressTestTrackedHandler;
+        ARCameraManager.onProductionTestImageTrackAdded -= ProductionTestTrackedHandler;
     }
 
     private void AlgaeSimulationTrackedHandler(Transform transform)
+    {
+        GameStateManager.StateChange(new AlgaeSimulationState(transform));
+    }
+
+    private void StressTestTrackedHandler(Transform transform)
+    {
+        GameStateManager.StateChange(new AlgaeSimulationState(transform));
+    }
+
+    private void ProductionTestTrackedHandler(Transform transform)
     {
         GameStateManager.StateChange(new AlgaeSimulationState(transform));
     }
