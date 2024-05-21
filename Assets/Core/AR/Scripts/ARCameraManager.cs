@@ -53,8 +53,7 @@ public class ARCameraManager : MonoBehaviour
     {
         foreach(var image in args.added) {
             Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
-            Debug.Log(image.transform.position);
-            if(image.name == "AlgaeSimulation") onAlgaeImageTrackAdded?.Invoke(image.transform);
+            if(image.referenceImage.name == "AlgaeSimulation") onAlgaeImageTrackAdded?.Invoke(image.transform);
         }
         foreach(var image in args.updated) {
             
