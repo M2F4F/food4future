@@ -11,7 +11,7 @@ public class ARCameraManager : MonoBehaviour
     private ARTrackedImageManager m_imageTrackingManager;
 
     public delegate void OnImageTrackAdded(Transform transform);
-    public static event OnImageTrackAdded onAlgaeImageTrackAdded;
+    public static event OnImageTrackAdded onKindergartenImageTrackAdded;
     public static event OnImageTrackAdded onStressTestImageTrackAdded;
     public static event OnImageTrackAdded onProductionTestImageTrackAdded;
 
@@ -57,10 +57,10 @@ public class ARCameraManager : MonoBehaviour
             Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
             switch(image.referenceImage.name) {
                 case "Kindergarten" :
-                    onAlgaeImageTrackAdded?.Invoke(image.transform);
+                    onKindergartenImageTrackAdded?.Invoke(image.transform);
                     break;
                 case "StressTest":
-                    onAlgaeImageTrackAdded?.Invoke(image.transform);
+                    onStressTestImageTrackAdded?.Invoke(image.transform);
                     break;
                 case "ProductionTest":
                     onProductionTestImageTrackAdded?.Invoke(image.transform);

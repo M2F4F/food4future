@@ -17,8 +17,18 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 0ae002f9b97ebfc4bbd0cdb786322396
   m_SerializeEntries:
-  - m_GUID: 78424dc3eeed73c4fb35434e1c6c2159
-    m_Address: Assets/Core/AlgaeSimulation/VirtualMonitor/FloatingMonitor.prefab
+  - m_GUID: dda999a36e8b39940987efe8f4541f59
+    m_Address: Kindergarten.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9319ce7155b870049a4a4205a2e1a162
+    m_Address: Production.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db428dff2cda763459860b72c78e8c45
+    m_Address: StressTest.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
