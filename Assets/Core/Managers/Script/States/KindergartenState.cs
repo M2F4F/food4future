@@ -22,8 +22,7 @@ public class KindergartenState : State
     public override void OnEnter()
     {
         Debug.Log("Entering: " + this.stateName);
-        // this.m_instantiateHandler = Addressables.InstantiateAsync("Kindergarten.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
-        this.m_instantiateHandler = Addressables.InstantiateAsync("Kindergarten.prefab", this.m_transform.position, Quaternion.identity);
+        this.m_instantiateHandler = Addressables.InstantiateAsync("Kindergarten.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
         this.Subscribe();
     }
 
