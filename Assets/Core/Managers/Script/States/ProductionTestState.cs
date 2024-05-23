@@ -7,27 +7,30 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 
-public class AlgaeSimulationState : State
+public class ProductionTestState : State
 {
-    public new readonly string stateName = "AlgaeSimulationState";
+    public new readonly string stateName = "ProductionTestState";
     private Transform m_transform;
-    private GameObject m_algaeSimulationObjects;
+    private GameObject m_production;
     private AsyncOperationHandle<GameObject> m_instantiateHandler;
 
-    public AlgaeSimulationState(Transform transform) {
+    public ProductionTestState(Transform transform) {
         this.m_transform = transform;
     }
 
     public override void OnEnter()
     {
-        Debug.Log("Entering Algae Simulation State");
-        this.m_instantiateHandler = Addressables.InstantiateAsync("Assets/Core/AlgaeSimulation/VirtualMonitor/FloatingMonitor.prefab", this.m_transform.position, Quaternion.identity);
+        Debug.Log("Entering: " + this.stateName);
+        // TODO: Change Addressables address
+        this.m_instantiateHandler = Addressables.InstantiateAsync("Production.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
         this.Subscribe();
     }
 
     public override void OnExit()
     {
         this.Unsubscribe();
+        GameObject.Destroy(this.m_production);
+        Addressables.Release(this.m_instantiateHandler);
     }
 
     public override void Subscribe()
@@ -43,6 +46,6 @@ public class AlgaeSimulationState : State
     private void AddressableSpawnCompleteHandler(AsyncOperationHandle<GameObject> handle)
     {
         Debug.Log("Virtual Monitor Instantiated");
-        this.m_algaeSimulationObjects = handle.Result;
+        this.m_production = handle.Result;
     }
 }
