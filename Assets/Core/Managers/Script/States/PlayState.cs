@@ -20,7 +20,7 @@ public class PlayState : State {
         onPlayState?.Invoke();
 
         #if UNITY_EDITOR
-        GameObject gameobject = new GameObject("anchor");
+        GameObject gameobject = new GameObject("Anchor");
         gameobject.transform.position = new Vector3(0,2,0);
         gameobject.transform.rotation = Quaternion.identity;
         AlgaeSimulationTrackedHandler(gameobject.transform);
