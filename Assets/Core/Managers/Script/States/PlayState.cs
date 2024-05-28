@@ -23,7 +23,7 @@ public class PlayState : State {
         GameObject gameobject = new GameObject("Anchor");
         gameobject.transform.position = new Vector3(0,2,0);
         gameobject.transform.rotation = Quaternion.identity;
-        AlgaeSimulationTrackedHandler(gameobject.transform);
+        AlgaeSimulationTrackedHandler(gameobject.transform, "Anchor");
         #endif
     }
 
@@ -47,18 +47,18 @@ public class PlayState : State {
         ARCameraManager.onProductionTestImageTrackAdded -= ProductionTestTrackedHandler;
     }
 
-    private void AlgaeSimulationTrackedHandler(Transform transform)
+    private void AlgaeSimulationTrackedHandler(Transform transform, string anchor)
     {
-        GameStateManager.StateChange(new KindergartenState(transform));
+        GameStateManager.StateChange(new KindergartenState(transform, anchor));
     }
 
-    private void StressTestTrackedHandler(Transform transform)
+    private void StressTestTrackedHandler(Transform transform, string anchor)
     {
-        GameStateManager.StateChange(new StressTestState(transform));
+        GameStateManager.StateChange(new StressTestState(transform, anchor));
     }
 
-    private void ProductionTestTrackedHandler(Transform transform)
+    private void ProductionTestTrackedHandler(Transform transform, string anchor)
     {
-        GameStateManager.StateChange(new ProductionTestState(transform));
+        GameStateManager.StateChange(new ProductionTestState(transform, anchor));
     }
 }

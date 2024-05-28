@@ -8,12 +8,29 @@ public class FollowAnchor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_anchor = GameObject.Find("Anchor");
+        StartCoroutine(AccessAnchor());
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = m_anchor.transform.position;
+        if(this.m_anchor != null) transform.position = m_anchor.transform.position;
+    }
+
+    IEnumerator AccessAnchor() {
+        Debug.Log(this.m_anchor);
+        if(this.m_anchor == null) {
+            m_anchor = GameObject.Find("Anchor");
+            yield return new WaitForEndOfFrame();
+
+            yield return AccessAnchor();
+        } 
+
+        yield return null;
+    }
+
+    public void SetAnchor(string anchorName) {
+        Debug.Log(this + " Setting Anchor");
+        m_anchor = GameObject.Find(anchorName);
     }
 }

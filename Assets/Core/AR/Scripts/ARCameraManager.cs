@@ -8,9 +8,10 @@ using UnityEngine.XR.ARSubsystems;
 public class ARCameraManager : MonoBehaviour
 {
     [SerializeField] [Tooltip("Image Library to be detected by Unity")] private XRReferenceImageLibrary m_serializedLibrary;
+    [SerializeField] [Tooltip("Prefab to be spawned when image is detected")] private GameObject m_anchor;
     private ARTrackedImageManager m_imageTrackingManager;
 
-    public delegate void OnImageTrackAdded(Transform transform);
+    public delegate void OnImageTrackAdded(Transform transform, string anchor);
     public static event OnImageTrackAdded onKindergartenImageTrackAdded;
     public static event OnImageTrackAdded onStressTestImageTrackAdded;
     public static event OnImageTrackAdded onProductionTestImageTrackAdded;
@@ -45,6 +46,7 @@ public class ARCameraManager : MonoBehaviour
     private void EnableImageTracking() {
         this.m_imageTrackingManager.enabled = true;
         this.m_imageTrackingManager.referenceLibrary = this.m_serializedLibrary;
+        this.m_imageTrackingManager.trackedImagePrefab = this.m_anchor;
     }
 
     private void DisableImageTracking() {
@@ -57,13 +59,13 @@ public class ARCameraManager : MonoBehaviour
             Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
             switch(image.referenceImage.name) {
                 case "Kindergarten" :
-                    onKindergartenImageTrackAdded?.Invoke(image.transform);
+                    onKindergartenImageTrackAdded?.Invoke(image.transform, image.name);
                     break;
                 case "StressTest":
-                    onStressTestImageTrackAdded?.Invoke(image.transform);
+                    onStressTestImageTrackAdded?.Invoke(image.transform, image.name);
                     break;
                 case "ProductionTest":
-                    onProductionTestImageTrackAdded?.Invoke(image.transform);
+                    onProductionTestImageTrackAdded?.Invoke(image.transform, image.name);
                     break;
                 default: break;
             }
