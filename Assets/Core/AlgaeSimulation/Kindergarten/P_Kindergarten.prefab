@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 8024098816522881044}
   - component: {fileID: -1558579164803027283}
   m_Layer: 0
-  m_Name: Kindergarten
+  m_Name: P_Kindergarten
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
