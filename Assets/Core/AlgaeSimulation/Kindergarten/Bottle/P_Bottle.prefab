@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3123145030901099014}
   - component: {fileID: 780646306945722978}
   m_Layer: 0
-  m_Name: Bottle
+  m_Name: P_Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: bedd1dda0494d0b45bb3aeae67cb632f, type: 2}
-  - {fileID: -1827007756260414426, guid: 1b0a10f51e931d544ac7dad4dab7b676, type: 3}
+  - {fileID: 2100000, guid: 2a535397fc3b2494cb35e44a5a26fd57, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -8,6 +8,8 @@ public class FollowAnchor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.transform.LookAt(GameObject.Find("Main Camera").transform);
+        this.transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
         StartCoroutine(AccessAnchor());
     }
 
