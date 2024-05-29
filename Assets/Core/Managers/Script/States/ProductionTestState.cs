@@ -12,10 +12,12 @@ public class ProductionTestState : State
     public new readonly string stateName = "ProductionTestState";
     private Transform m_transform;
     private GameObject m_production;
+    private string m_anchorName;
     private AsyncOperationHandle<GameObject> m_instantiateHandler;
 
-    public ProductionTestState(Transform transform) {
+    public ProductionTestState(Transform transform, string anchor) {
         this.m_transform = transform;
+        this.m_anchorName = anchor;
     }
 
     public override void OnEnter()
