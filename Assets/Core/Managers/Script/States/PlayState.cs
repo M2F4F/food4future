@@ -49,7 +49,7 @@ public class PlayState : State {
 
     private void AlgaeSimulationTrackedHandler(Transform transform)
     {
-        GameStateManager.StateChange(new KindergartenState(transform));
+        GameStateManager.StateChange(new StressTestState(transform));
     }
 
     private void StressTestTrackedHandler(Transform transform)
