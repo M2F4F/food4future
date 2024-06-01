@@ -15,9 +15,11 @@ public class ARCameraManager : MonoBehaviour
     public static event OnImageTrackAdded onKindergartenImageTrackAdded;
     public static event OnImageTrackAdded onStressTestImageTrackAdded;
     public static event OnImageTrackAdded onProductionTestImageTrackAdded;
+    private GameStateManager _gameStateManager;
 
     void Awake() {
         this.m_imageTrackingManager = gameObject.GetComponent<ARTrackedImageManager>();
+        this._gameStateManager = GameObject.Find("GameStateManager").GetComponent<GameStateManager>();
     }
 
     void OnEnable() {
@@ -25,12 +27,11 @@ public class ARCameraManager : MonoBehaviour
         m_imageTrackingManager.trackedImagesChanged += TrackedImageHandler;
     }
 
-    
-
     void OnDisable() {
         PlayState.onPlayState -= EnableImageTracking;
         m_imageTrackingManager.trackedImagesChanged -= TrackedImageHandler;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,9 +57,12 @@ public class ARCameraManager : MonoBehaviour
     private void TrackedImageHandler(ARTrackedImagesChangedEventArgs args)
     {
         foreach(var image in args.added) {
+            Debug.Log(_gameStateManager.state.stateName);
+            // if(GameStateManager.state.stateName != "PlayState") return;
+            
             Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
             switch(image.referenceImage.name) {
-                case "Kindergarten" :
+                case "Kindergarten":
                     onKindergartenImageTrackAdded?.Invoke(image.transform, image.name);
                     break;
                 case "StressTest":
@@ -70,9 +74,11 @@ public class ARCameraManager : MonoBehaviour
                 default: break;
             }
         }
+
         foreach(var image in args.updated) {
             
         }
+
         foreach(var image in args.removed) {
             Debug.Log("ARCameraManager: TrackedImageHandler() removed: " + image.name);
         }
