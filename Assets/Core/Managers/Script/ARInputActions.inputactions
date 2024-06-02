@@ -1,0 +1,54 @@
+{
+    "name": "ARInputActions",
+    "maps": [
+        {
+            "name": "ARMaps",
+            "id": "f1221a5f-1e80-4774-bcb8-b330d4f37fef",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "31a1d26e-d5da-4f40-ac64-2a68174c7db1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchPress",
+                    "type": "Button",
+                    "id": "ab4b8610-fa38-4842-84bd-e34dcd92cd39",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "111eda04-6b00-4596-b5d8-4af13507009d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50042689-0891-4e54-9944-8d37e83d907b",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
