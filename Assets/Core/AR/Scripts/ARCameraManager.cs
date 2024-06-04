@@ -58,7 +58,7 @@ public class ARCameraManager : MonoBehaviour
     {
         foreach(var image in args.added) {
             Debug.Log(_gameStateManager.state.stateName);
-            // if(GameStateManager.state.stateName != "PlayState") return;
+            if(_gameStateManager.state.stateName != "PlayState") return;
             
             Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
             switch(image.referenceImage.name) {
