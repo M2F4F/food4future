@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kindergarten : MonoBehaviour
+public class ARAnchor : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.transform.LookAt(GameObject.Find("Main Camera").transform);
-        // this.gameObject.transform.rotation = new Quaternion()
+        Debug.Log("Anchor spawned: " + this.gameObject.name);
     }
 
     // Update is called once per frame

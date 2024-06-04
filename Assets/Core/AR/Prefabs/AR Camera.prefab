@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7274923403293917027}
   - component: {fileID: 1032347630433390401}
   - component: {fileID: 3562745508207645209}
+  - component: {fileID: 4458014371396258364}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -281,6 +282,23 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &4458014371396258364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213585478559253463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 165e68a768b129e488bb7e94db48e842, type: 2}
 --- !u!1 &9210402600459563234
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,8 +413,7 @@ MonoBehaviour:
   m_SerializedLibrary: {fileID: 11400000, guid: 29c7b1da5a3217b48b6867559d0bdb07,
     type: 2}
   m_MaxNumberOfMovingImages: 2
-  m_TrackedImagePrefab: {fileID: 1644311494452561139, guid: dfde4283c3c824942b71350141511197,
-    type: 3}
+  m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &2827614245377101796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,3 +428,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_serializedLibrary: {fileID: 11400000, guid: 29c7b1da5a3217b48b6867559d0bdb07,
     type: 2}
+  m_anchor: {fileID: 3217002154277484724, guid: 1a41e7106e6946846b04172730b0d29c,
+    type: 3}
