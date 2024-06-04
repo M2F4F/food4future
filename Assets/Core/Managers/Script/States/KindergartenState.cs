@@ -13,17 +13,19 @@ public class KindergartenState : State
     public new readonly string stateName = "KindergartenState";
     private Transform m_transform;
     private GameObject m_kindergarten;
+    private string m_anchorName;
     private AsyncOperationHandle<GameObject> m_instantiateHandler;
 
-    public KindergartenState(Transform transform) {
+    public KindergartenState(Transform transform, string anchor) {
         this.m_transform = transform;
+        this.m_anchorName = anchor;
     }
 
     public override void OnEnter()
     {
         Debug.Log("Entering: " + this.stateName);
         this.m_instantiateHandler = Addressables.InstantiateAsync("Kindergarten.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
-        this.Subscribe();
+        this.Subscribe(); 
     }
 
     public override void OnExit()
@@ -46,6 +48,8 @@ public class KindergartenState : State
 
     private void AddressableSpawnCompleteHandler(AsyncOperationHandle<GameObject> handle)
     {
+        Debug.Log("Handle complete instantiate");
         this.m_kindergarten = handle.Result;
+        this.m_kindergarten.GetComponent<FollowAnchor>().SetAnchor(this.m_anchorName);
     }
 }

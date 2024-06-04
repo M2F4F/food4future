@@ -12,17 +12,18 @@ public class StressTestState : State
     public new readonly string stateName = "StressTestState";
     private Transform m_transform;
     private GameObject m_stressTest;
+    private string m_anchorName;
     private AsyncOperationHandle<GameObject> m_instantiateHandler;
 
-    public StressTestState(Transform transform) {
+    public StressTestState(Transform transform, string anchor) {
         this.m_transform = transform;
+        this.m_anchorName = anchor;
     }
 
     public override void OnEnter()
     {
         Debug.Log("Entering: " + this.stateName);
-        // TODO: Change Addressables address
-        this.m_instantiateHandler = Addressables.InstantiateAsync("StressTest.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
+        this.m_instantiateHandler = Addressables.InstantiateAsync("PolybiomStage.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 1f, this.m_transform.position.z), Quaternion.identity);
         this.Subscribe();
     }
 
