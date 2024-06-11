@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayState : State {
 
-    public new readonly string stateName = "PlayState";
+    public override string StateName { get; } = "PlayState";
 
     public delegate void OnPlayState();
     public static event OnPlayState onPlayState;
@@ -15,7 +15,7 @@ public class PlayState : State {
     public static event OnPlayStateExit onPlayStateExit;
 
     public override void OnEnter() {
-        Debug.Log("Entering: " + this.stateName);
+        Debug.Log("Entering: " + this.StateName);
         this.Subscribe();
         onPlayState?.Invoke();
 
@@ -28,7 +28,7 @@ public class PlayState : State {
     }
 
     public override void OnExit() {
-        Debug.Log("Exiting: " + this.stateName);
+        Debug.Log("Exiting: " + this.StateName);
         this.Unsubscribe();
         onPlayStateExit?.Invoke();
     }

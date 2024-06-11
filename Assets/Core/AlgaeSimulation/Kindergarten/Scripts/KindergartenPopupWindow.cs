@@ -15,7 +15,7 @@ public class KindergartenPopupWindow : MonoBehaviour
         // PopupCloseButton.onPopupWindowCloseButton += OnPopupWindowCloseButtonHandler;
         objectName = transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
         textPanel = transform.GetChild(0).gameObject;
-        Debug.Log(transform.GetChild(0).gameObject);
+        // Debug.Log(transform.GetChild(0).gameObject);
         StartCoroutine(SpawnPopupWindow());
     }
 
@@ -34,8 +34,8 @@ public class KindergartenPopupWindow : MonoBehaviour
     {
         objectName.text += message;
         textPanel.SetActive(true);
-        Debug.Log(textPanel.activeSelf);
-        Debug.Log(textPanel.activeInHierarchy);
+        // Debug.Log(textPanel.activeSelf);
+        // Debug.Log(textPanel.activeInHierarchy);
         
     }
 

@@ -19,7 +19,6 @@ public class ARCameraManager : MonoBehaviour
 
     void Awake() {
         this.m_imageTrackingManager = gameObject.GetComponent<ARTrackedImageManager>();
-        this._gameStateManager = GameObject.Find("GameStateManager").GetComponent<GameStateManager>();
     }
 
     void OnEnable() {
@@ -35,7 +34,8 @@ public class ARCameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject gameStateManager = GameObject.Find("GameStateManager");
+        this._gameStateManager = GameStateManager._gameStateManager;
     }
 
     // Update is called once per frame
@@ -57,10 +57,9 @@ public class ARCameraManager : MonoBehaviour
     private void TrackedImageHandler(ARTrackedImagesChangedEventArgs args)
     {
         foreach(var image in args.added) {
-            Debug.Log(_gameStateManager.state.stateName);
-            if(_gameStateManager.state.stateName != "PlayState") return;
+            if(_gameStateManager.state.StateName != "PlayState") return;
             
-            Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
+            // Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
             switch(image.referenceImage.name) {
                 case "Kindergarten":
                     onKindergartenImageTrackAdded?.Invoke(image.transform, image.name);

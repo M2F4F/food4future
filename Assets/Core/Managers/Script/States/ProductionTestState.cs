@@ -9,7 +9,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ProductionTestState : State
 {
-    public new readonly string stateName = "ProductionTestState";
+    public override string StateName { get; }= "ProductionTestState";
     private Transform m_transform;
     private GameObject m_production;
     private string m_anchorName;
@@ -22,7 +22,7 @@ public class ProductionTestState : State
 
     public override void OnEnter()
     {
-        Debug.Log("Entering: " + this.stateName);
+        Debug.Log("Entering: " + this.StateName);
         // TODO: Change Addressables address
         this.m_instantiateHandler = Addressables.InstantiateAsync("Production.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
         this.Subscribe();
