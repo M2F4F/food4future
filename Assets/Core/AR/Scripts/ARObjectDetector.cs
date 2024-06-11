@@ -3,6 +3,7 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class ARObjectDetector : MonoBehaviour
 {
@@ -14,10 +15,11 @@ public class ARObjectDetector : MonoBehaviour
     void Awake()
     {
         raycastManager = GetComponent<ARRaycastManager>();
-        arCamera = GetComponent<Camera>();
+        arCamera = Camera.main;
 
         inputActions = new ARInputActions();
         touchPressAction = inputActions.ARMaps.TouchPress; // Correctly referencing ARMaps action map
+
     }
 
     void OnEnable()
@@ -48,7 +50,7 @@ public class ARObjectDetector : MonoBehaviour
                     ARInteractable interactable = hit.collider.GetComponent<ARInteractable>();
 
                     if (interactable != null)
-                    {
+                    {   
                         Debug.Log("AR Object Clicked: " + interactable.gameObject.name);
                         interactable.OnClick();
                     }

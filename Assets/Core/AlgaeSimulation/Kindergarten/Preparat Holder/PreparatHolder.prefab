@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3335395694878991528}
   - component: {fileID: 9117228435806732692}
   - component: {fileID: 8819560760122002368}
+  - component: {fileID: 523075951981782209}
+  - component: {fileID: 8951113767430228226}
   m_Layer: 0
   m_Name: PreparatHolder
   m_TagString: Untagged
@@ -106,3 +108,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 83e7152b2d9948c4a8201a9a63588822, type: 3}
+--- !u!114 &523075951981782209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848918227618468650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2163dbc1bb9840742b936848b73f18b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &8951113767430228226
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848918227618468650}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0005022836
+  m_Height: 0.0010045675
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.0001506867}

@@ -1,7 +1,9 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="ARInteractable" preserve="all" />
     <type fullname="ExitButton" preserve="all" />
     <type fullname="FollowAnchor" preserve="all" />
+    <type fullname="PopupController" preserve="all" />
     <type fullname="StartButton" preserve="all" />
     <type fullname="VirtualMonitor" preserve="all" />
   </assembly>
@@ -50,6 +52,8 @@
     <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+    <type fullname="UnityEngine.CapsuleCollider" preserve="all" />
     <type fullname="UnityEngine.MeshCollider" preserve="all" />
     <type fullname="UnityEngine.SphereCollider" preserve="all" />
   </assembly>
