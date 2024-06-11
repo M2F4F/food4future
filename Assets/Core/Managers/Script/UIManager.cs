@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void SpawnMainMenu() {
-        Debug.Log("Setting Main Menu to active");
+        // Debug.Log("Setting Main Menu to active");
         m_mainMenu.SetActive(true);
     }
 

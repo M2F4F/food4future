@@ -681,7 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaba4a3661417604b8a535aaef77d95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupController: {fileID: 750254825}
 --- !u!1 &2046703996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9212173058254879798, guid: e5a13c89e4dbe2142a8af61035b6c801,
@@ -700,7 +699,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaba4a3661417604b8a535aaef77d95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupController: {fileID: 750254825}
 --- !u!114 &2046704003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,6 +789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PopupControllerObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957242741493641090, guid: 4e232378a03ac2447bc52b164e405882,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

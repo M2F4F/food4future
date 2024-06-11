@@ -56,7 +56,7 @@ public class ARCameraManager : MonoBehaviour
     private void TrackedImageHandler(ARTrackedImagesChangedEventArgs args)
     {
         foreach(var image in args.added) {
-            Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
+            // Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
             switch(image.referenceImage.name) {
                 case "Kindergarten" :
                     onKindergartenImageTrackAdded?.Invoke(image.transform, image.name);
@@ -74,7 +74,7 @@ public class ARCameraManager : MonoBehaviour
             
         }
         foreach(var image in args.removed) {
-            Debug.Log("ARCameraManager: TrackedImageHandler() removed: " + image.name);
+            // Debug.Log("ARCameraManager: TrackedImageHandler() removed: " + image.name);
         }
     }
 }

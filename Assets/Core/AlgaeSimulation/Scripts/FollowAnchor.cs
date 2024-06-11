@@ -20,7 +20,7 @@ public class FollowAnchor : MonoBehaviour
     }
 
     IEnumerator AccessAnchor() {
-        Debug.Log(this.m_anchor);
+        // Debug.Log(this.m_anchor);
         if(this.m_anchor == null) {
             m_anchor = GameObject.Find("Anchor");
             yield return new WaitForEndOfFrame();
@@ -32,7 +32,7 @@ public class FollowAnchor : MonoBehaviour
     }
 
     public void SetAnchor(string anchorName) {
-        Debug.Log(this + " Setting Anchor");
+        // Debug.Log(this + " Setting Anchor");
         m_anchor = GameObject.Find(anchorName);
     }
 }

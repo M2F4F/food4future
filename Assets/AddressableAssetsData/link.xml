@@ -3,6 +3,9 @@
     <type fullname="ARInteractable" preserve="all" />
     <type fullname="ExitButton" preserve="all" />
     <type fullname="FollowAnchor" preserve="all" />
+    <type fullname="Interactable_WoodLong" preserve="all" />
+    <type fullname="KindergartenPopupWindow" preserve="all" />
+    <type fullname="PopupCloseButton" preserve="all" />
     <type fullname="PopupController" preserve="all" />
     <type fullname="StartButton" preserve="all" />
     <type fullname="VirtualMonitor" preserve="all" />

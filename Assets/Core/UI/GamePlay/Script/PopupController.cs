@@ -15,11 +15,11 @@ public class PopupController : MonoBehaviour
             popupPanel = popupWindow.transform.Find("PopupPanel").gameObject;
            
             popupText = popupWindow.transform.Find("PopupPanel/ObjectName").GetComponent<TextMeshProUGUI>();
-            Debug.Log("START CLICKING OBJECT HERE");
-            Debug.Log("POPUPWINDOW  " + popupWindow.name);
+            // Debug.Log("START CLICKING OBJECT HERE");
+            // Debug.Log("POPUPWINDOW  " + popupWindow.name);
 
-            Debug.Log("PopupPanel from the start: " + (popupPanel != null ? popupPanel.name : "null"));
-            Debug.Log("PopupText from the start: " + (popupText != null ? popupText.text : "null"));
+            // Debug.Log("PopupPanel from the start: " + (popupPanel != null ? popupPanel.name : "null"));
+            // Debug.Log("PopupText from the start: " + (popupText != null ? popupText.text : "null"));
         }
 
         // Ensure the popup is hidden at the start
