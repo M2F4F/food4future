@@ -12,7 +12,7 @@ public class KindergartenPopupWindow : MonoBehaviour
     void Start()
     {
         Interactable_WoodLong.onWoodLongInteraction += OnWoodLongInteractionHandler;
-        PopupCloseButton.onPopupWindowCloseButton += OnPopupWindowCloseButtonHandler;
+        // PopupCloseButton.onPopupWindowCloseButton += OnPopupWindowCloseButtonHandler;
         objectName = transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
         textPanel = transform.GetChild(0).gameObject;
         Debug.Log(transform.GetChild(0).gameObject);

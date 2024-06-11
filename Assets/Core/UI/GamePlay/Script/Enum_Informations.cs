@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Enum_Informations 
+public enum InformationLabel 
 {
     PREPARAT_HOLDER,
     WOOD_LONG,
