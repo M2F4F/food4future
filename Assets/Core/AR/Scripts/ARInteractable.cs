@@ -1,3 +1,7 @@
+/**
+* Author:
+* - Yosua Sentosa 
+**/
 using UnityEngine;
 
 public class ARInteractable : MonoBehaviour

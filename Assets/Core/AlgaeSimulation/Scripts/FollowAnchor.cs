@@ -1,5 +1,8 @@
+/**
+* Collaborator:
+* - Diro Baloska
+**/
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowAnchor : MonoBehaviour

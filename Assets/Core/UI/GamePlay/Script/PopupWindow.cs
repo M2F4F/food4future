@@ -1,6 +1,11 @@
+/**
+* Collaborator:
+* - Diro Baloska 
+* - Yosua Sentosa 
+**/
+
 using UnityEngine;
 using TMPro;
-using System;
 
 public class PopupWindow : MonoBehaviour
 {

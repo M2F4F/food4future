@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+/**
+* Collaborator:
+* - Diro Baloska
+* - Yosua Sentosa
+*/
 public enum InformationLabel 
 {
     PREPARAT_HOLDER,
