@@ -1,6 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+/**
+* Collaborator:
+* - Diro Baloska
+**/
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;

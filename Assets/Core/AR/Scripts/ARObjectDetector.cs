@@ -1,10 +1,12 @@
+/**
+* Author:
+* - Yosua Sentosa 
+**/
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using TMPro;
-
 public class ARObjectDetector : MonoBehaviour
 {
     private ARRaycastManager raycastManager;

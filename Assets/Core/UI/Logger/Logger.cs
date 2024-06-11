@@ -1,6 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+/**
+* Author:
+* - Diro Baloska
+**/
 using UnityEngine;
 
 public class Logger : MonoBehaviour

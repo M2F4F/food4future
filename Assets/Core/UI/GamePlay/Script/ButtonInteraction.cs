@@ -1,6 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+/**
+* Collaborator:
+* - Diro Baloska 
+* - Yosua Sentosa 
+**/
 using UnityEngine;
+
 
 public class ButtonInteraction : MonoBehaviour
 {
