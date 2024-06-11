@@ -9,7 +9,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class StressTestState : State
 {
-    public new readonly string stateName = "StressTestState";
+    public override string StateName { get; } = "StressTestState";
     private Transform m_transform;
     private GameObject m_stressTest;
     private string m_anchorName;
@@ -22,7 +22,7 @@ public class StressTestState : State
 
     public override void OnEnter()
     {
-        Debug.Log("Entering: " + this.stateName);
+        Debug.Log("Entering: " + this.StateName);
         this.m_instantiateHandler = Addressables.InstantiateAsync("PolybiomStage.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 1f, this.m_transform.position.z), Quaternion.identity);
         this.Subscribe();
     }

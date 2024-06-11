@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class State
 {
-    public readonly string stateName;
+    public virtual string StateName { get; } = "State";
 
     public abstract void OnEnter();
 

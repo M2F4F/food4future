@@ -4,7 +4,7 @@
 */
 public class StartState : State
 {
-    public new readonly string stateName = "StartState";
+    public override string StateName { get; }= "StartState";
     public delegate void OnStartState();
     public static event OnStartState onStartState;
     public StartState() {

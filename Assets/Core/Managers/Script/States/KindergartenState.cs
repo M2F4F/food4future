@@ -10,7 +10,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class KindergartenState : State
 {
-    public new readonly string stateName = "KindergartenState";
+    public override string StateName { get; } = "KindergartenState";
     private Transform m_transform;
     private GameObject m_kindergarten;
     private string m_anchorName;
@@ -23,7 +23,7 @@ public class KindergartenState : State
 
     public override void OnEnter()
     {
-        Debug.Log("Entering: " + this.stateName);
+        Debug.Log("Entering: " + this.StateName);
         this.m_instantiateHandler = Addressables.InstantiateAsync("Kindergarten.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
         this.Subscribe(); 
     }
