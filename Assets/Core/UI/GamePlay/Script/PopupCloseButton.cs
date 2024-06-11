@@ -7,7 +7,7 @@ public class PopupCloseButton : MonoBehaviour
     public delegate void OnPopupWindowCloseButton();
     public static event OnPopupWindowCloseButton onPopupWindowCloseButton;
     // Start is called before the first frame update
-    void OnClick() {
+    public void OnClick() {
         onPopupWindowCloseButton?.Invoke();
     }
 }

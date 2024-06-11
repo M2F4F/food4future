@@ -1,0 +1,50 @@
+using UnityEngine;
+using TMPro;
+using System;
+
+public class PopupWindow : MonoBehaviour
+{
+    [SerializeField] private Enum_Informations m_label;
+
+    private GameObject m_textPanel;
+    private TMP_Text m_objectName;
+
+    void Awake()
+    {
+        
+        m_objectName = transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+        m_textPanel = transform.GetChild(0).gameObject;
+    }
+
+    void OnEnable()
+    {
+        ButtonInteraction.onARButtonInteraction += PopupWindowHandler;
+        PopupCloseButton.onPopupWindowCloseButton += ClosePopupWindowHandler;
+    }
+
+    void OnDisable()
+    {
+        ButtonInteraction.onARButtonInteraction -= PopupWindowHandler;
+        PopupCloseButton.onPopupWindowCloseButton -= ClosePopupWindowHandler;
+    }
+
+    /**
+     * <summary>Show pop up window when information button is triggered</summary>
+     * 
+     */
+    private void PopupWindowHandler(string objectName, string description)
+    {
+        m_objectName.text = objectName;
+        m_textPanel.SetActive(true);
+    }
+
+    /**
+     * <summary>Hide Pop up window when close button event is invoked</summary>
+     * 
+     */
+    private void ClosePopupWindowHandler()
+    {
+        m_textPanel.SetActive(false);
+        m_objectName.text = "";
+    }
+}

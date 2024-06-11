@@ -36,7 +36,7 @@ public class KindergartenPopupWindow : MonoBehaviour
         textPanel.SetActive(true);
         Debug.Log(textPanel.activeSelf);
         Debug.Log(textPanel.activeInHierarchy);
-        // throw new NotImplementedException();
+        
     }
 
 

@@ -881,6 +881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 3555702708298066929, guid: 60109d93fa378734193467e8a9abc4ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7878991923777657230, guid: 60109d93fa378734193467e8a9abc4ec,
         type: 3}
       propertyPath: m_LocalPosition.x
