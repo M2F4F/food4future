@@ -13,6 +13,9 @@ public class VariableManager : MonoBehaviour
 
     private void Start()
     {
+        // Read CSV-Data
+        // Fill data into suitable data-structure
+        // Use data to calculate Score
         UpdateTemperatureText();
         UpdateLightText();
     }
@@ -33,7 +36,7 @@ public class VariableManager : MonoBehaviour
     {
         if (temperatureText != null)
         {
-            temperatureText.text = "Temperature: " + temperatureLevel.ToString("F2");
+            temperatureText.text = temperatureLevel.ToString() + "°C";
         }
     }
 
@@ -41,7 +44,7 @@ public class VariableManager : MonoBehaviour
     {
         if (lightText != null)
         {
-            lightText.text = "Light Level: " + lightLevel.ToString("F2");
+            lightText.text = string.Format("{0:P1}", lightLevel);
         }
     }
 }
