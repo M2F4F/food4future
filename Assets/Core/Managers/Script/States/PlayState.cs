@@ -21,7 +21,7 @@ public class PlayState : State {
 
         #if UNITY_EDITOR
         GameObject gameobject = new GameObject("Anchor");
-        gameobject.transform.position = new Vector3(0,2,0);
+        gameobject.transform.position = new Vector3(0,2.5f,0);
         gameobject.transform.rotation = Quaternion.identity;
         AlgaeSimulationTrackedHandler(gameobject.transform, "Anchor");
         #endif

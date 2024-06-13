@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2204958872340788886
 Transform:
@@ -55,7 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -113,7 +113,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &4211036808814849133
 Transform:
@@ -140,10 +140,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4211036808814849133}
     m_Modifications:
+    - target: {fileID: 639949619553159635, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141480419518450149, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914987125957611964, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503358703627300330, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6036396367554587918, guid: 0aface71fae31eb4cad227afbe83f1e4,
         type: 3}
       propertyPath: m_Name
       value: P_UlvaGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036396367554587918, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7334928687993482084, guid: 0aface71fae31eb4cad227afbe83f1e4,
         type: 3}
@@ -333,10 +358,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4211036808814849133}
     m_Modifications:
+    - target: {fileID: 639949619553159635, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141480419518450149, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914987125957611964, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503358703627300330, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6036396367554587918, guid: 0aface71fae31eb4cad227afbe83f1e4,
         type: 3}
       propertyPath: m_Name
       value: P_UlvaGroup (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036396367554587918, guid: 0aface71fae31eb4cad227afbe83f1e4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7334928687993482084, guid: 0aface71fae31eb4cad227afbe83f1e4,
         type: 3}
