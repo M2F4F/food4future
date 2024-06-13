@@ -463,6 +463,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3562745508207645209, guid: e5a13c89e4dbe2142a8af61035b6c801,
+        type: 3}
+      propertyPath: m_Dithering
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562745508207645209, guid: e5a13c89e4dbe2142a8af61035b6c801,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562745508207645209, guid: e5a13c89e4dbe2142a8af61035b6c801,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3889626620901281511, guid: e5a13c89e4dbe2142a8af61035b6c801,
         type: 3}
       propertyPath: m_LocalPosition.x
