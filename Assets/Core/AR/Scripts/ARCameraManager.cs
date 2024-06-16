@@ -1,6 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+/**
+* Collaborator:
+* - Diro Baloska
+**/
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -15,6 +16,7 @@ public class ARCameraManager : MonoBehaviour
     public static event OnImageTrackAdded onKindergartenImageTrackAdded;
     public static event OnImageTrackAdded onStressTestImageTrackAdded;
     public static event OnImageTrackAdded onProductionTestImageTrackAdded;
+    private GameStateManager _gameStateManager;
 
     void Awake() {
         this.m_imageTrackingManager = gameObject.GetComponent<ARTrackedImageManager>();
@@ -25,16 +27,16 @@ public class ARCameraManager : MonoBehaviour
         m_imageTrackingManager.trackedImagesChanged += TrackedImageHandler;
     }
 
-    
-
     void OnDisable() {
         PlayState.onPlayState -= EnableImageTracking;
         m_imageTrackingManager.trackedImagesChanged -= TrackedImageHandler;
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject gameStateManager = GameObject.Find("GameStateManager");
+        this._gameStateManager = GameStateManager._gameStateManager;
     }
 
     // Update is called once per frame
@@ -56,9 +58,11 @@ public class ARCameraManager : MonoBehaviour
     private void TrackedImageHandler(ARTrackedImagesChangedEventArgs args)
     {
         foreach(var image in args.added) {
-            Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
+            if(_gameStateManager.state.StateName != "PlayState") return;
+            
+            // Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
             switch(image.referenceImage.name) {
-                case "Kindergarten" :
+                case "Kindergarten":
                     onKindergartenImageTrackAdded?.Invoke(image.transform, image.name);
                     break;
                 case "StressTest":
@@ -70,9 +74,11 @@ public class ARCameraManager : MonoBehaviour
                 default: break;
             }
         }
+
         foreach(var image in args.updated) {
             
         }
+
         foreach(var image in args.removed) {
             Debug.Log("ARCameraManager: TrackedImageHandler() removed: " + image.name);
         }

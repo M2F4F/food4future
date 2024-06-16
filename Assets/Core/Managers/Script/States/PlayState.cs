@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayState : State {
 
-    public new readonly string stateName = "PlayState";
+    public override string StateName { get; } = "PlayState";
 
     public delegate void OnPlayState();
     public static event OnPlayState onPlayState;
@@ -15,20 +15,20 @@ public class PlayState : State {
     public static event OnPlayStateExit onPlayStateExit;
 
     public override void OnEnter() {
-        Debug.Log("Entering: " + this.stateName);
+        Debug.Log("Entering: " + this.StateName);
         this.Subscribe();
         onPlayState?.Invoke();
 
         #if UNITY_EDITOR
         GameObject gameobject = new GameObject("Anchor");
-        gameobject.transform.position = new Vector3(0,2,0);
+        gameobject.transform.position = new Vector3(0,2.5f,0);
         gameobject.transform.rotation = Quaternion.identity;
         AlgaeSimulationTrackedHandler(gameobject.transform, "Anchor");
         #endif
     }
 
     public override void OnExit() {
-        Debug.Log("Exiting: " + this.stateName);
+        Debug.Log("Exiting: " + this.StateName);
         this.Unsubscribe();
         onPlayStateExit?.Invoke();
     }

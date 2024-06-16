@@ -293,7 +293,7 @@ public class ARTemplateMenuManager : MonoBehaviour
     {
         if (m_ObjectSpawner == null)
         {
-            Debug.LogWarning("Object Spawner not configured correctly: no ObjectSpawner set.");
+            // Debug.LogWarning("Object Spawner not configured correctly: no ObjectSpawner set.");
         }
         else
         {
@@ -303,7 +303,7 @@ public class ARTemplateMenuManager : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Object Spawner not configured correctly: object index larger than number of Object Prefabs.");
+                // Debug.LogWarning("Object Spawner not configured correctly: object index larger than number of Object Prefabs.");
             }
         }
 

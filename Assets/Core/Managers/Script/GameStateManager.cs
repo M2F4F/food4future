@@ -6,7 +6,8 @@ using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class GameStateManager : MonoBehaviour
 {
-    public static State state;
+    public static GameStateManager _gameStateManager {get; private set;}
+    public State state;
     
     void OnEnable() {
         state = new InitState();
@@ -15,16 +16,17 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _gameStateManager = this;
         StateChange(new MenuState());
     }
 
     void Update() {
         
     }
-
+ 
     public static void StateChange(State newState) {
-        state.OnExit();
-        state = newState;
-        state.OnEnter();
+        _gameStateManager.state.OnExit();
+        _gameStateManager.state = newState;
+        _gameStateManager.state.OnEnter();
     }
 }

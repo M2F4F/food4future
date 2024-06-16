@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuState : State
 {
-    public new readonly string stateName = "MenuState";
+    public override string StateName { get; } = "MenuState";
 
     private AsyncOperationHandle<GameObject> m_mainMenuInstantiateHandle;
     private GameObject m_mainMenu;
@@ -24,7 +24,7 @@ public class MenuState : State
 
     public override void OnEnter()
     {
-        Debug.Log("Entering: " + this.stateName);
+        Debug.Log("Entering: " + this.StateName);
         onMenuState?.Invoke();
         this.m_mainMenuInstantiateHandle = Addressables.InstantiateAsync("UI_MainMenu.prefab");
         this.Subscribe();

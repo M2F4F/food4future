@@ -1,3 +1,7 @@
+/**
+* Author:
+* - Yosua Sentosa 
+**/
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,7 +31,7 @@ public class TouchDetector : MonoBehaviour
         if (touchPressAction.triggered)
         {
             Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-            Debug.Log("User is touching the screen at position: " + touchPosition);
+            // Debug.Log("User is touching the screen at position: " + touchPosition);
         }
     }
 }

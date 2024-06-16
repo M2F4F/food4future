@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1032347630433390401}
   - component: {fileID: 3562745508207645209}
   - component: {fileID: 4458014371396258364}
+  - component: {fileID: 8832413468759288277}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -299,6 +300,18 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 165e68a768b129e488bb7e94db48e842, type: 2}
+--- !u!114 &8832413468759288277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213585478559253463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaba4a3661417604b8a535aaef77d95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9210402600459563234
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 29c7b1da5a3217b48b6867559d0bdb07,
     type: 2}
-  m_MaxNumberOfMovingImages: 2
+  m_MaxNumberOfMovingImages: 1
   m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &2827614245377101796
 MonoBehaviour:

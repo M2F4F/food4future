@@ -1,9 +1,12 @@
+/**
+* Author:
+* - Yosua Sentosa 
+**/
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
-
 public class ARObjectDetector : MonoBehaviour
 {
     private ARRaycastManager raycastManager;
@@ -14,10 +17,11 @@ public class ARObjectDetector : MonoBehaviour
     void Awake()
     {
         raycastManager = GetComponent<ARRaycastManager>();
-        arCamera = GetComponent<Camera>();
+        arCamera = Camera.main;
 
         inputActions = new ARInputActions();
         touchPressAction = inputActions.ARMaps.TouchPress; // Correctly referencing ARMaps action map
+
     }
 
     void OnEnable()
@@ -35,7 +39,7 @@ public class ARObjectDetector : MonoBehaviour
         if (touchPressAction.triggered)
         {
             Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-            Debug.Log("User touched the screen at position: " + touchPosition);
+            // Debug.Log("User touched the screen at position: " + touchPosition);
 
             if (!IsPointerOverUI(touchPosition))
             {
@@ -44,18 +48,18 @@ public class ARObjectDetector : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("Raycast hit: " + hit.collider.name);
+                    // Debug.Log("Raycast hit: " + hit.collider.name);
                     ARInteractable interactable = hit.collider.GetComponent<ARInteractable>();
 
                     if (interactable != null)
-                    {
-                        Debug.Log("AR Object Clicked: " + interactable.gameObject.name);
+                    {   
+                        // Debug.Log("AR Object Clicked: " + interactable.gameObject.name);
                         interactable.OnClick();
                     }
                 }
                 else
                 {
-                    Debug.Log("Raycast did not hit any object");
+                    // Debug.Log("Raycast did not hit any object");
                 }
             }
         }
