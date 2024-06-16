@@ -69,8 +69,8 @@ RectTransform:
   m_Children:
   - {fileID: 98186473078641612}
   - {fileID: 2351172439030728675}
-  - {fileID: 8457287263325452304}
   - {fileID: 3356150810535551700}
+  - {fileID: 8457287263325452304}
   - {fileID: 8515462279097606273}
   - {fileID: 3642465533556793416}
   - {fileID: 3514463672270513624}
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1167,7 +1167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temperatureLevel: 0
+  temperatureSlider: {fileID: 0}
   lightLevel: 0
+  lightLevelSlider: {fileID: 0}
   temperatureText: {fileID: 4540331206010915685}
   lightText: {fileID: 8537724555077042662}
 --- !u!1 &7560948389987179617
@@ -1424,6 +1426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2461391704452024144}
+  - component: {fileID: 7813191488066166726}
   m_Layer: 0
   m_Name: UIController
   m_TagString: Untagged
@@ -1447,6 +1450,24 @@ Transform:
   - {fileID: 3774432632541457862}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7813191488066166726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606982026370562790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebdef73d612f5b43af8ab328d6793b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperatureLevel: 0
+  temperatureSlider: {fileID: 8973529384256401610}
+  lightLevel: 0
+  lightLevelSlider: {fileID: 5077049987032115404}
+  temperatureText: {fileID: 0}
+  lightText: {fileID: 0}
 --- !u!1 &9164155470568565825
 GameObject:
   m_ObjectHideFlags: 0
