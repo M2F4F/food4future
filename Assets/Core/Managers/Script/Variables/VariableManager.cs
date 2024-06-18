@@ -14,8 +14,11 @@ public class VariableManager : MonoBehaviour
 
     // Values
     public int temperatureLevel;
-    public float lightLevel;
-    public float salinityLevel;
+    public int lightLevel;
+    public int salinityLevel;
+
+    // internal score
+    private int score = 0;
 
     // UI
     public Slider lightLevelSlider;
@@ -24,6 +27,9 @@ public class VariableManager : MonoBehaviour
     public TMP_Text temperatureText;
     public TMP_Text lightText;
     public TMP_Text salinityText;
+
+    public delegate void OnVariableChange(int score);
+    public static event OnVariableChange onVariableChange;
 
     private void Start()
     {
@@ -42,24 +48,24 @@ public class VariableManager : MonoBehaviour
                             {
                                 cells.RemoveAt(0);
                                 lightLevelRangeList = cells;
-                                lightLevelSlider.minValue = float.Parse(lightLevelRangeList[0].Split(',')[0]) / 100;
-                                lightLevelSlider.maxValue = float.Parse(lightLevelRangeList[lightLevelRangeList.Count - 1].Split(',')[0]) / 100;    
+                                //lightLevelSlider.minValue = float.Parse(lightLevelRangeList[0].Split(',')[0]) / 100;
+                                //lightLevelSlider.maxValue = float.Parse(lightLevelRangeList[lightLevelRangeList.Count - 1].Split(',')[0]) / 100;
                             }
                             break;
                         case "tempLevel":
                             {
                                 cells.RemoveAt(0);
                                 temperaturLevelRangeList = cells;
-                                temperatureSlider.minValue = int.Parse(temperaturLevelRangeList[0].Split(',')[0]);
-                                temperatureSlider.maxValue = int.Parse(temperaturLevelRangeList[temperaturLevelRangeList.Count - 1].Split(',')[0]);
+                                //temperatureSlider.minValue = int.Parse(temperaturLevelRangeList[0].Split(',')[0]);
+                                //temperatureSlider.maxValue = int.Parse(temperaturLevelRangeList[temperaturLevelRangeList.Count - 1].Split(',')[0]);
                             }
                             break;
                         case "salinity":
                             {
                                 cells.RemoveAt(0);
                                 salinityLevelRangeList = cells;
-                                silinitySlider.minValue = float.Parse(salinityLevelRangeList[0].Split(',')[0]) / 100;
-                                silinitySlider.maxValue = float.Parse(salinityLevelRangeList[salinityLevelRangeList.Count - 1].Split(',')[0]) / 100;
+                                //silinitySlider.minValue = float.Parse(salinityLevelRangeList[0].Split(',')[0]) / 100;
+                                //silinitySlider.maxValue = float.Parse(salinityLevelRangeList[salinityLevelRangeList.Count - 1].Split(',')[0]) / 100;
                             }
                             break;
                     }
@@ -80,26 +86,37 @@ public class VariableManager : MonoBehaviour
         return cells.Any(x => x.Length > 0);
     }
 
+    private void calcScore()
+    {
+        // calc score with chosen values
+        // set in relation to the maximum score (calculated onEnable())
+        onVariableChange?.Invoke(score);
+    }
+
     public void SetLightLevel(float value)
     {
-        lightLevel = value;
+        lightLevel = int.Parse(lightLevelRangeList[(int) value].Split(',')[0]);
         UpdateLightText();
+        calcScore();
     }
     public void SetTemperature(float value)
     {
-        temperatureLevel = (int) value;
+        temperatureLevel = int.Parse(temperaturLevelRangeList[(int) value].Split(',')[0]);
         UpdateTemperatureText();
+        calcScore();
     }
     public void SetSalinity(float value)
     {
-        salinityLevel = value;
+        salinityLevel = int.Parse(salinityLevelRangeList[(int) value].Split(',')[0]);
         UpdateSalinityText();
+        calcScore();
     }
     private void UpdateLightText()
     {
         if (lightText != null)
         {
-            lightText.text = string.Format("{0:P0}", lightLevel);
+            Debug.Log(lightLevel);
+            lightText.text = lightLevel + "%";
         }
     }
     private void UpdateTemperatureText()
@@ -111,9 +128,9 @@ public class VariableManager : MonoBehaviour
     }
     private void UpdateSalinityText()
     {
-        if(salinityText != null)
+        if (salinityText != null)
         {
-            salinityText.text = string.Format("{0:P0}", salinityLevel);
+            salinityText.text = salinityLevel + "%";
         }
     }
 }

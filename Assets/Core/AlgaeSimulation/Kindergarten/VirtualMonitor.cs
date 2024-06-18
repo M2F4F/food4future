@@ -1,9 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class VirtualMonitor : MonoBehaviour
 {
+    [SerializeField] private TMP_Text floatingMonitorText;
+    void OnEnable()
+    {
+        VariableManager.onVariableChange += setScore;
+    }
+
+    void OnDisable()
+    {
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +34,9 @@ public class VirtualMonitor : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void setScore(int score) {
+        floatingMonitorText.text = score.ToString();
     }
 }
