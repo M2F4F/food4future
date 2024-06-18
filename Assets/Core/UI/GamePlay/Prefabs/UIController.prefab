@@ -1423,7 +1423,7 @@ MonoBehaviour:
   salinityLevel: 0
   lightLevelSlider: {fileID: 5077049987032115404}
   temperatureSlider: {fileID: 8973529384256401610}
-  silinitySlider: {fileID: 775275627326305390}
+  salinitySlider: {fileID: 0}
   temperatureText: {fileID: 4540331206010915685}
   lightText: {fileID: 8537724555077042662}
   salinityText: {fileID: 2225969949014305888}
@@ -1983,7 +1983,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3774432632541457862}
@@ -2006,7 +2006,7 @@ MonoBehaviour:
   salinityLevel: 0
   lightLevelSlider: {fileID: 5077049987032115404}
   temperatureSlider: {fileID: 8973529384256401610}
-  silinitySlider: {fileID: 775275627326305390}
+  salinitySlider: {fileID: 0}
   temperatureText: {fileID: 0}
   lightText: {fileID: 0}
   salinityText: {fileID: 0}

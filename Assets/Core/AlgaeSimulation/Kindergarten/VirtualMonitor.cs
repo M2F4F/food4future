@@ -8,7 +8,7 @@ public class VirtualMonitor : MonoBehaviour
     [SerializeField] private TMP_Text floatingMonitorText;
     void OnEnable()
     {
-        VariableManager.onVariableChange += setScore;
+        VariableManager.onVariableChange += SetScore;
     }
 
     void OnDisable()
@@ -36,7 +36,7 @@ public class VirtualMonitor : MonoBehaviour
         
     }
 
-    private void setScore(int score) {
+    private void SetScore(int score) {
         floatingMonitorText.text = score.ToString();
     }
 }
