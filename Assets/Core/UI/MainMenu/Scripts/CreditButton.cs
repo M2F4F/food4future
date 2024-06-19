@@ -4,10 +4,10 @@
 */
 using UnityEngine;
 
-public class ExitButton : MonoBehaviour
+public class CreditButton : MonoBehaviour
 {
-    public delegate void OnExitButton();
-    public static event OnExitButton onExitButton;
+    public delegate void OnCreditButton();
+    public static event OnCreditButton onCreditButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,6 @@ public class ExitButton : MonoBehaviour
 
     public void ButtonPress() {
         Debug.Log("Clicked");
-        onExitButton?.Invoke();
+        onCreditButton?.Invoke();
     }
 }
