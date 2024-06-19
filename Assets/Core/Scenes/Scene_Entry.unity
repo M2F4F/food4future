@@ -400,6 +400,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logger
       objectReference: {fileID: 0}
+    - target: {fileID: 3601915425638261172, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10348
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601915425638261172, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -379.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814237373627896800, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.8623
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814237373627896800, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 172
+      objectReference: {fileID: 0}
     - target: {fileID: 7748288749504081209, guid: c514b8bbf8b8809429469d2083dcde80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -449,6 +469,44 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071019754786570023, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_text
+      value: "New Text asjdfkalj ifoepwqaj qiopjfadsiofpa jiofspaqj feioapjfidsoap
+        asdj fkao\xF6jsf diaopjfdiosapjfdiosapj fiopajs diopa\\n\nasdfjajaksldfa
+        isopdfajkisdopaj ifopajfidosap \\n\najs dkf\xF6aj skdjfa idopajifdops ajioas\\n\najsdfia
+        \xF6jifdops ajfi odpajfidopsaj fioapj fdiopa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071019754786570023, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071019754786570023, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_lineSpacing
+      value: -38.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071019754786570023, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071019754786570023, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_overflowMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071019754786570023, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: -2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071019754786570023, guid: c514b8bbf8b8809429469d2083dcde80,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
