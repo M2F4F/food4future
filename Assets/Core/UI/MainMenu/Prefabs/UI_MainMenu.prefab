@@ -113,7 +113,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21599294838910527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae41d0d6ca0dec347acb2b401179a80c, type: 3}
   m_Name: 
@@ -121,7 +121,7 @@ MonoBehaviour:
   _type: 3
   _activateTarget: {fileID: 3097992657423812921}
   _loop: 0
-  _delay: 1.2
+  _delay: 1.75
   _duration: 0
   _endPosition: {x: 0, y: 0, z: 0}
   _endScale: {x: 0, y: 0, z: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8535182834933414767
 RectTransform:
   m_ObjectHideFlags: 0
