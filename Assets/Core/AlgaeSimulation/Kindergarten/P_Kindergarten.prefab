@@ -1176,7 +1176,7 @@ PrefabInstance:
     - target: {fileID: 69457963216565649, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 775275627326305390, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
@@ -1271,12 +1271,12 @@ PrefabInstance:
     - target: {fileID: 2776488414317376042, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4603029804253387978, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5077049987032115404, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
@@ -1296,8 +1296,13 @@ PrefabInstance:
     - target: {fileID: 5110417275919442811, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5524436067818714261, guid: c591a970d2f56fc4e866182940805494,
+        type: 3}
+      propertyPath: textAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 4d0b80d590726f24185d31897e2911f1, type: 3}
     - target: {fileID: 5777858288061361374, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_ScaleFactor
@@ -1331,13 +1336,18 @@ PrefabInstance:
     - target: {fileID: 6721708251332406723, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7591383449893712101, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7813191488066166726, guid: c591a970d2f56fc4e866182940805494,
+        type: 3}
+      propertyPath: textAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 4d0b80d590726f24185d31897e2911f1, type: 3}
     - target: {fileID: 7813191488066166726, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: salinitySlider
@@ -1351,7 +1361,7 @@ PrefabInstance:
     - target: {fileID: 8606982026370562790, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8973529384256401610, guid: c591a970d2f56fc4e866182940805494,
         type: 3}

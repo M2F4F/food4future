@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public class VariableManager : MonoBehaviour
 {
     // Range data from CSV-File
+    public TextAsset textAsset;
     private List<string> lightLevelRangeList;
     private List<string> temperaturLevelRangeList;
     private List<string> salinityLevelRangeList;
@@ -38,41 +39,41 @@ public class VariableManager : MonoBehaviour
     private void OnEnable()
     {
         // Read CSV-Data
-        using (var reader = new StreamReader("Assets/Core/Data/ModelData.csv"))
+        TextAsset csv = (TextAsset)Resources.Load("ModelData", typeof(TextAsset));
+        string csvText = csv.text;
+
+        List<string> cellStrings = csvText.Split(" ").ToList();
+        foreach (var item in cellStrings)
         {
-            while (reader.EndOfStream == false)
+            var cells = item.Split(';').ToList();
+            if (RowHasData(cells) && cells != null)
             {
-                var content = reader.ReadLine();
-                var cells = content.Split(';').ToList();
-                if (RowHasData(cells) && cells != null)
+                switch (cells.First())
                 {
-                    switch (cells.First())
-                    {
-                        case "lightLevel":
-                            {
-                                cells.RemoveAt(0);
-                                lightLevelRangeList = cells;
-                                if (lightLevelSlider != null)
-                                    lightLevelSlider.maxValue = lightLevelRangeList.Count - 1;
-                            }
-                            break;
-                        case "tempLevel":
-                            {
-                                cells.RemoveAt(0);
-                                temperaturLevelRangeList = cells;
-                                if (temperatureSlider != null)
-                                    temperatureSlider.maxValue = temperaturLevelRangeList.Count - 1;
-                            }
-                            break;
-                        case "salinity":
-                            {
-                                cells.RemoveAt(0);
-                                salinityLevelRangeList = cells;
-                                if (salinitySlider != null)
-                                    salinitySlider.maxValue = salinityLevelRangeList.Count - 1;
-                            }
-                            break;
-                    }
+                    case "lightLevel":
+                        {
+                            cells.RemoveAt(0);
+                            lightLevelRangeList = cells;
+                            if (lightLevelSlider != null)
+                                lightLevelSlider.maxValue = lightLevelRangeList.Count - 1;
+                        }
+                        break;
+                    case "tempLevel":
+                        {
+                            cells.RemoveAt(0);
+                            temperaturLevelRangeList = cells;
+                            if (temperatureSlider != null)
+                                temperatureSlider.maxValue = temperaturLevelRangeList.Count - 1;
+                        }
+                        break;
+                    case "salinity":
+                        {
+                            cells.RemoveAt(0);
+                            salinityLevelRangeList = cells;
+                            if (salinitySlider != null)
+                                salinitySlider.maxValue = salinityLevelRangeList.Count - 1;
+                        }
+                        break;
                 }
             }
         }
@@ -82,13 +83,13 @@ public class VariableManager : MonoBehaviour
 
         // Set maxScore for the dataSet
         maxScore += CalcMaxValue(lightLevelRangeList) + CalcMaxValue(temperaturLevelRangeList) + CalcMaxValue(salinityLevelRangeList);
-      
+
         UpdateTemperatureText();
         UpdateLightText();
         UpdateSalinityText();
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
 
     }
