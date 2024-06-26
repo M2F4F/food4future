@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1724151359866023301, guid: b0a4742783e2ad24e883351fb4c6fe66,
         type: 3}
       propertyPath: m_Name
-      value: UI_PopupWindow
+      value: UI_PopupWindow_PreparatHolder
       objectReference: {fileID: 0}
     - target: {fileID: 3913395549973484132, guid: b0a4742783e2ad24e883351fb4c6fe66,
         type: 3}
@@ -112,6 +112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040569815542995202, guid: b0a4742783e2ad24e883351fb4c6fe66,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

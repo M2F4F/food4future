@@ -3,6 +3,8 @@
     Collaborator: 
 */
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class PlayState : State {
 
@@ -13,18 +15,19 @@ public class PlayState : State {
 
     public delegate void OnPlayStateExit();
     public static event OnPlayStateExit onPlayStateExit;
+    private AsyncOperationHandle<GameObject> _playUI;
 
     public override void OnEnter() {
         Debug.Log("Entering: " + this.StateName);
         this.Subscribe();
         onPlayState?.Invoke();
-
-        #if UNITY_EDITOR
-        GameObject gameobject = new GameObject("Anchor");
-        gameobject.transform.position = new Vector3(0,2.5f,0);
-        gameobject.transform.rotation = Quaternion.identity;
-        AlgaeSimulationTrackedHandler(gameobject.transform, "Anchor");
-        #endif
+        _playUI = Addressables.InstantiateAsync("UI_Play.prefab", new Vector3(0,0,0), Quaternion.identity);
+        // #if UNITY_EDITOR
+        // GameObject gameobject = new GameObject("Anchor");
+        // gameobject.transform.position = new Vector3(0,2.5f,0);
+        // gameobject.transform.rotation = Quaternion.identity;
+        // onImageTrackedHandler(gameobject.transform, "Anchor");
+        // #endif
     }
 
     public override void OnExit() {
@@ -35,30 +38,16 @@ public class PlayState : State {
 
     public override void Subscribe()
     {
-        ARCameraManager.onKindergartenImageTrackAdded += AlgaeSimulationTrackedHandler;
-        ARCameraManager.onStressTestImageTrackAdded += StressTestTrackedHandler;
-        ARCameraManager.onProductionTestImageTrackAdded += ProductionTestTrackedHandler;
+        ARCameraManager.onImageTracked += onImageTrackedHandler;
     }
 
     public override void Unsubscribe()
     {
-        ARCameraManager.onKindergartenImageTrackAdded -= AlgaeSimulationTrackedHandler;
-        ARCameraManager.onStressTestImageTrackAdded -= StressTestTrackedHandler;
-        ARCameraManager.onProductionTestImageTrackAdded -= ProductionTestTrackedHandler;
+        ARCameraManager.onImageTracked -= onImageTrackedHandler;
     }
 
-    private void AlgaeSimulationTrackedHandler(Transform transform, string anchor)
+    private void onImageTrackedHandler(Transform transform, string anchor)
     {
-        GameStateManager.StateChange(new KindergartenState(transform, anchor));
-    }
-
-    private void StressTestTrackedHandler(Transform transform, string anchor)
-    {
-        GameStateManager.StateChange(new StressTestState(transform, anchor));
-    }
-
-    private void ProductionTestTrackedHandler(Transform transform, string anchor)
-    {
-        GameStateManager.StateChange(new ProductionTestState(transform, anchor));
+        GameStateManager.StateChange(new NarativeState(transform, anchor));
     }
 }
