@@ -16,7 +16,9 @@ public class Logger : MonoBehaviour
     }
 
     void OnGUI() {
+        #if !UNITY_EDITOR
         _log = GUI.TextArea(new Rect(5, Screen.height - 205, Screen.width - 10, Screen.height - 20), _log);
+        #endif
     }
 
     // Start is called before the first frame update

@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 4755b35b590504809a7525fd2109c2e2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Core/Scenes/Scene_AR.unity
     guid: 393f50854cd924348a127eb21366c5c8
   m_configObjects:
