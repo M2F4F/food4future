@@ -400,11 +400,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logger
       objectReference: {fileID: 0}
-    - target: {fileID: 3094624375765825134, guid: c514b8bbf8b8809429469d2083dcde80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3601915425638261172, guid: c514b8bbf8b8809429469d2083dcde80,
         type: 3}
       propertyPath: m_LocalScale.y

@@ -13,7 +13,9 @@ public class ARCameraManager : MonoBehaviour
     private ARTrackedImageManager m_imageTrackingManager;
 
     public delegate void OnImageTrackAdded(Transform transform, string anchor);
-    public static event OnImageTrackAdded onImageTracked;
+    public static event OnImageTrackAdded onKindergartenImageTrackAdded;
+    public static event OnImageTrackAdded onStressTestImageTrackAdded;
+    public static event OnImageTrackAdded onProductionTestImageTrackAdded;
     private GameStateManager _gameStateManager;
 
     void Awake() {
@@ -57,21 +59,20 @@ public class ARCameraManager : MonoBehaviour
     {
         foreach(var image in args.added) {
             if(_gameStateManager.state.StateName != "PlayState") return;
-            onImageTracked?.Invoke(image.transform, image.name);
             
             // Debug.Log("ARCameraManager: TrackedImageHandler() added: " + image.name);
-            // switch(image.referenceImage.name) {
-            //     case "Kindergarten":
-            //         onKindergartenImageTrackAdded?.Invoke(image.transform, image.name);
-            //         break;
-            //     case "StressTest":
-            //         onStressTestImageTrackAdded?.Invoke(image.transform, image.name);
-            //         break;
-            //     case "ProductionTest":
-            //         onProductionTestImageTrackAdded?.Invoke(image.transform, image.name);
-            //         break;
-            //     default: break;
-            // }
+            switch(image.referenceImage.name) {
+                case "Kindergarten":
+                    onKindergartenImageTrackAdded?.Invoke(image.transform, image.name);
+                    break;
+                case "StressTest":
+                    onStressTestImageTrackAdded?.Invoke(image.transform, image.name);
+                    break;
+                case "ProductionTest":
+                    onProductionTestImageTrackAdded?.Invoke(image.transform, image.name);
+                    break;
+                default: break;
+            }
         }
 
         foreach(var image in args.updated) {
