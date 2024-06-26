@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55a236512d196c42aa53a3ab16fbbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 0.6
+  _duration: 0.8
   _startColor: {r: 0, g: 0, b: 0, a: 0}
   _endColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2954346042310730527
