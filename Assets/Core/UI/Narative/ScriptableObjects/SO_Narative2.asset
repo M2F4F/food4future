@@ -12,17 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative2
   m_EditorClassIdentifier: 
-  english: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-    et justo duo dolores et ea rebum.
+  english: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '
   deutsch: 'Deutsch: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
     diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum.'
+    diam voluptua. '
