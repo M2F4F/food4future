@@ -11,11 +11,13 @@ public class NextButton : MonoBehaviour
     private Button button;
 
     void OnEnable() {
-        NarativeSlideshow.onRenderDone += ActivateButton;
+        NarativeSlideshow.onRenderDone += () => button.enabled = true;
+        LanguageManager.onLanguageChange += (string lang) => button.enabled = false;
     }
 
     void OnDisable() {
-        NarativeSlideshow.onRenderDone -= ActivateButton;
+        NarativeSlideshow.onRenderDone -= () => button.enabled = true;
+        LanguageManager.onLanguageChange -= (string lang) => button.enabled = false;
     }
 
     void Awake() {
@@ -39,6 +41,6 @@ public class NextButton : MonoBehaviour
     }
 
     private void ActivateButton() {
-        button.enabled = true;
+        
     }
 }
