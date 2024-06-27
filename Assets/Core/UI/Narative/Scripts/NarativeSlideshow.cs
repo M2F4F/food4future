@@ -39,7 +39,7 @@ public class NarativeSlideshow : MonoBehaviour
         _textHolder.text = "";
         for(int position = 0; position < text.Length; position++) {
             _textHolder.text += text.Substring(position, 1);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
         }
         onRenderDone?.Invoke();
         _coroutine = null;
