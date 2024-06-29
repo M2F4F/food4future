@@ -2,13 +2,11 @@
     Author: Diro Baloska
     Collaborator: 
 */
-using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace StateMachine {
-
     public class PlayState : State {
 
         public override string StateName { get; } = "PlayState";

@@ -5,7 +5,6 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using StateMachine;
 
 namespace StateMachine {
     public class ProductionTestState : State
@@ -20,6 +19,7 @@ namespace StateMachine {
         public ProductionTestState(Transform transform, string anchor) {
             this.m_transform = transform;
             this.m_anchorName = anchor;
+            _shouldDestroySelectionUI = true;
         }
 
         public override void OnEnter()
@@ -44,11 +44,15 @@ namespace StateMachine {
         public override void Subscribe()
         {
             m_instantiateHandler.Completed += AddressableSpawnCompleteHandler;
+            NextPhaseButton.onNextPhase += NextState;
+            PrevPhaseButton.onPrevPhase += PrevState;
         }
 
         public override void Unsubscribe()
         {
             m_instantiateHandler.Completed -= AddressableSpawnCompleteHandler;
+            NextButton.onNextButton -= NextState;
+            PrevPhaseButton.onPrevPhase -= PrevState;
         }
 
         private void AddressableSpawnCompleteHandler(AsyncOperationHandle<GameObject> handle)
@@ -59,11 +63,11 @@ namespace StateMachine {
 
         private void NextState() {
             this._shouldDestroySelectionUI = false;
-            GameStateManager.StateChange(new StressTestState(m_transform, m_anchorName));
+            GameStateManager.StateChange(new KindergartenState(m_transform, m_anchorName));
         }
         private void PrevState() {
             this._shouldDestroySelectionUI = false;
-            GameStateManager.StateChange(new ProductionTestState(m_transform, m_anchorName));
+            GameStateManager.StateChange(new StressTestState(m_transform, m_anchorName));
         }
     }
 }

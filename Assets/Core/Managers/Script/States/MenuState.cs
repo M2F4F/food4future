@@ -6,7 +6,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.SceneManagement;
+
 namespace StateMachine{
 
     public class MenuState : State

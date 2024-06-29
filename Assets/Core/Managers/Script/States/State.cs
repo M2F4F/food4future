@@ -2,7 +2,6 @@
     Author: Diro Baloska
     Collaborator: 
 */
-using UnityEngine;
 
 namespace StateMachine {
     public abstract class State

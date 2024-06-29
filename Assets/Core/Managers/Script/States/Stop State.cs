@@ -2,6 +2,7 @@
     Author: Diro Baloska
     Collaborator: 
 */
+
 namespace StateMachine {
     public class StopState : State
     {
