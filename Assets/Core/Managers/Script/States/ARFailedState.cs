@@ -6,30 +6,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ARFailedState : State
-{
-
-    public ARFailedState() {
- 
-    }
-
-    public override void OnEnter()
+namespace StateMachine {
+    public class ARFailedState : State
     {
-        throw new System.NotImplementedException();
-    }
 
-    public override void OnExit()
-    {
-        throw new System.NotImplementedException();
-    }
+        public ARFailedState() {
+    
+        }
 
-    public override void Subscribe()
-    {
-        throw new System.NotImplementedException();
-    }
+        public override void OnEnter()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public override void Unsubscribe()
-    {
-        throw new System.NotImplementedException();
+        public override void OnExit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Subscribe()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Unsubscribe()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
