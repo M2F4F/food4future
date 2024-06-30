@@ -99,8 +99,7 @@ public class VariableManager : MonoBehaviour
                     CalcMaxValue(temperaturLevelRangeList) +
                     CalcMaxValue(salinityLevelRangeList) + 
                     CalcMaxValue(phValueRangeList);
-                    
-        Debug.Log(maxScore);
+
         UpdateTemperatureText();
         UpdateLightText();
         UpdateSalinityText();

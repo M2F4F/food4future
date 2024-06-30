@@ -53,18 +53,21 @@ public class VirtualMonitor : MonoBehaviour
         switch(percent)
         {
             case float p when p <= 0.33f: 
+                Debug.Log("BAD");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BAD;
                 break;
             case float p when p > 0.33f && p <= 0.66f:
+                Debug.Log("BETTER");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BETTER;
                 break;
             case float p when p > 0.66f && p <= 0.98f:
+                Debug.Log("GOOD");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_GOOD;
                 break;
             case float p when p == 1f:
+                Debug.Log("PERFECT");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_PERFECT;
                 break;
         }
-        
     }
 }
