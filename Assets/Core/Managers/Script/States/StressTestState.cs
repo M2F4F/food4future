@@ -63,13 +63,11 @@ namespace StateMachine {
             this.m_stressTest = handle.Result;
         }
         private void NextState() {
-            Debug.Log("Next");
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new ProductionTestState(m_transform, m_anchorName));
         }
         private void PrevState() {
-            Debug.Log("Prev");
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new KindergartenState(m_transform, m_anchorName));
         }
     }

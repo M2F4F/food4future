@@ -52,23 +52,23 @@ namespace StateMachine {
         public override void Unsubscribe()
         {
             m_instantiateHandler.Completed -= AddressableSpawnCompleteHandler;
-            NextButton.onNextButton -= NextState;
+            NextPhaseButton.onNextPhase -= NextState;
             PrevPhaseButton.onPrevPhase -= PrevState;
         }
 
         private void AddressableSpawnCompleteHandler(AsyncOperationHandle<GameObject> handle)
         {
-            Debug.Log("Virtual Monitor Instantiated");
+            // Debug.Log("Virtual Monitor Instantiated");
             this.m_production = handle.Result;
         }
 
         private void NextState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new KindergartenState(m_transform, m_anchorName));
         }
 
         private void PrevState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new StressTestState(m_transform, m_anchorName));
         }
     }

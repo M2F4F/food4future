@@ -22,7 +22,7 @@ namespace StateMachine {
         public KindergartenState(Transform transform, string anchor) {
             this.m_transform = transform;
             this.m_anchorName = anchor;
-            this._shouldDestroySelectionUI = true;
+            _shouldDestroySelectionUI = true;
         }
 
         public override void OnEnter()
@@ -74,11 +74,11 @@ namespace StateMachine {
         }
 
         private void NextState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new StressTestState(m_transform, m_anchorName));
         }
         private void PrevState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new ProductionTestState(m_transform, m_anchorName));
         }
     }
