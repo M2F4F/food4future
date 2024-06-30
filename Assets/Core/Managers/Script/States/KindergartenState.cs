@@ -35,10 +35,11 @@ namespace StateMachine {
 
         public override void OnExit()
         {
+            Debug.Log("Exiting: " + this.StateName);
             this.Unsubscribe();
             GameObject.Destroy(this.m_kindergarten);
             Debug.Log("Should destroy UI: " + this._shouldDestroySelectionUI);
-            Addressables.Release(this.m_instantiateHandler);
+            if(this.m_instantiateHandler.IsValid()) Addressables.Release(this.m_instantiateHandler);
             if(_shouldDestroySelectionUI) {
                 GameObject.Destroy(KindergartenState.m_selectionUI);
                 Addressables.Release(KindergartenState.m_selectionUIInstantiateHandler);

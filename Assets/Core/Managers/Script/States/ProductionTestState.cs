@@ -32,9 +32,10 @@ namespace StateMachine {
 
         public override void OnExit()
         {
+            Debug.Log("Exiting: " + this.StateName);
             this.Unsubscribe();
-            GameObject.Destroy(this.m_production);
-            Addressables.Release(this.m_instantiateHandler);
+            if(this.m_production != null) GameObject.Destroy(this.m_production);
+            if(this.m_instantiateHandler.IsValid()) Addressables.Release(this.m_instantiateHandler);
             if(_shouldDestroySelectionUI) {
                 GameObject.Destroy(KindergartenState.m_selectionUI);
                 Addressables.Release(KindergartenState.m_selectionUIInstantiateHandler);
@@ -65,6 +66,7 @@ namespace StateMachine {
             this._shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new KindergartenState(m_transform, m_anchorName));
         }
+
         private void PrevState() {
             this._shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new StressTestState(m_transform, m_anchorName));
