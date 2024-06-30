@@ -7,5 +7,6 @@ public enum InformationLabel
 {
     PREPARAT_HOLDER,
     WOOD_LONG,
-    BOTTLE
+    BOTTLE,
+    VAR_CONTROLLER
 }
