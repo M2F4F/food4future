@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1724151359866023301, guid: b0a4742783e2ad24e883351fb4c6fe66,
         type: 3}
       propertyPath: m_Name
-      value: UI_PopupWindow_PreparatHolder
+      value: UI_PopupWindowController
       objectReference: {fileID: 0}
     - target: {fileID: 3913395549973484132, guid: b0a4742783e2ad24e883351fb4c6fe66,
         type: 3}
@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 4040569815542995202, guid: b0a4742783e2ad24e883351fb4c6fe66,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4145115957766313392, guid: b0a4742783e2ad24e883351fb4c6fe66,
         type: 3}
@@ -129,7 +129,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1766859683160429518, guid: b0a4742783e2ad24e883351fb4c6fe66, type: 3}
+    - {fileID: 4894168614916894338, guid: b0a4742783e2ad24e883351fb4c6fe66, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0a4742783e2ad24e883351fb4c6fe66, type: 3}
