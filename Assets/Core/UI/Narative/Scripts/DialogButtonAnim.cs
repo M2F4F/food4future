@@ -10,7 +10,7 @@ public class DialogButtonAnim : MonoBehaviour
 
     void OnEnable() {
         NarativeSlideshow.onRenderDone += () =>  this.gameObject.SetActive(true);
-        NextButton.onNextButton += () => this.gameObject.SetActive(false);
+        DialogueButton.onDialogueButton += () => this.gameObject.SetActive(false);
         LanguageManager.onLanguageChange += (string lang) => this.gameObject.SetActive(false);
         StartCoroutine(MoveUp());
     }
@@ -23,7 +23,7 @@ public class DialogButtonAnim : MonoBehaviour
 
     void OnDisable() {
         NarativeSlideshow.onRenderDone -= () => this.gameObject.SetActive(true);
-        NextButton.onNextButton -= () => this.gameObject.SetActive(false);
+        DialogueButton.onDialogueButton -= () => this.gameObject.SetActive(false);
         LanguageManager.onLanguageChange -= (string lang) => this.gameObject.SetActive(false);
         StopCoroutine(MoveUp());
         StopCoroutine(MoveDown());

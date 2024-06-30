@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9607843, g: 0.9607843, b: 0.95686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1117726811027899507}
   - component: {fileID: 531713253382881925}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -117}
+  m_AnchoredPosition: {x: 0, y: -130}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1117726811027899507
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8174680339596314280}
   - component: {fileID: 2782980814181226673}
   m_Layer: 5
-  m_Name: NarativePanel
+  m_Name: Panel_Narative
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9607843, g: 0.9607843, b: 0.95686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -776,6 +776,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _counter
+      value: 
+      objectReference: {fileID: 531713253382881925}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _texts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _texts.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 58cb435ec8576e0419b19b4c293275ff,
+        type: 2}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _texts.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e6d71500c0a85742bda780a0a90ca5e,
+        type: 2}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _texts.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b2ac63aec21fdf94488e756b01ee0d0d,
+        type: 2}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _texts.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d75eda96d334bc498a563e5028c30db,
+        type: 2}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _panelPopupPosition.y
+      value: -345
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307764491334200063, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: _nextButtonPopupPosition.y
+      value: -707
+      objectReference: {fileID: 0}
     - target: {fileID: 5201214669749172957, guid: 854675521cba25e43a148bbb09cacfc2,
         type: 3}
       propertyPath: m_text
@@ -785,6 +829,28 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201214669749172957, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c3a4ec3a61aa8a4784cd7ce085de840,
+        type: 2}
+    - target: {fileID: 5201214669749172957, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7114383383291430770, guid: 6c3a4ec3a61aa8a4784cd7ce085de840,
+        type: 2}
+    - target: {fileID: 5201214669749172957, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201214669749172957, guid: 854675521cba25e43a148bbb09cacfc2,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

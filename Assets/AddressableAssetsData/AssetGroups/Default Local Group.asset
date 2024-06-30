@@ -37,11 +37,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e3268b50a4db4704f8e45b57dfa373e4
-    m_Address: UI_Play.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f58c56edca001cd4fb6e25a56cc37c42
     m_Address: UI_Narative.prefab
     m_ReadOnly: 0
@@ -49,6 +44,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 29420507f400ffe4a9510db025b9e31d
     m_Address: Narative.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f39d2f3babb09cd49b79c968394bf70a
+    m_Address: UI_Play.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b61baaa336d4da84489961ddb52b4a81
+    m_Address: UI_Selection.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72b1ed3647ed6fe4cac7a01d5f4c757e
+    m_Address: Production.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

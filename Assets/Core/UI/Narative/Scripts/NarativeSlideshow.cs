@@ -24,12 +24,12 @@ public class NarativeSlideshow : MonoBehaviour
     private Vector3 _nextButtonInitPos;
 
     void OnEnable() {
-        NextButton.onNextButton += NextButtonHandler;
+        DialogueButton.onDialogueButton += DialogueButtonHandler;
         LanguageManager.onLanguageChange += LanguageChangeHandler;
     }
 
     void OnDisable() {
-        NextButton.onNextButton -= NextButtonHandler;
+        DialogueButton.onDialogueButton -= DialogueButtonHandler;
         LanguageManager.onLanguageChange -= LanguageChangeHandler;
     }
 
@@ -40,7 +40,6 @@ public class NarativeSlideshow : MonoBehaviour
         _parent = transform.parent.gameObject;
         _parentInitPos = _parent.transform.localPosition;
         _nextButton = _parent.transform.parent.GetChild(2).gameObject;
-        Debug.Log(_nextButton);
         _nextButtonInitPos = _nextButton.transform.localPosition;
     }
 
@@ -57,17 +56,17 @@ public class NarativeSlideshow : MonoBehaviour
             _textHolder.text += text.Substring(position, 1);
             yield return new WaitForEndOfFrame();
         }
-        onRenderDone?.Invoke();
         _coroutine = null;
 
         if(_index == _texts.Length - 1) {
             yield return new WaitForSeconds(0.5f);
             _moveCoroutine = StartCoroutine(MovePanel());
         }
+        onRenderDone?.Invoke();
     }
 
 
-    private void NextButtonHandler()
+    private void DialogueButtonHandler()
     {
         if(_moveCoroutine != null) StopCoroutine(_moveCoroutine);
         _index++;
