@@ -32,9 +32,10 @@ namespace StateMachine {
 
         public override void OnExit()
         {
+            Debug.Log("Exiting: " + this.StateName);
             this.Unsubscribe();
-            GameObject.Destroy(this.m_production);
-            Addressables.Release(this.m_instantiateHandler);
+            if(this.m_production != null) GameObject.Destroy(this.m_production);
+            if(this.m_instantiateHandler.IsValid()) Addressables.Release(this.m_instantiateHandler);
             if(_shouldDestroySelectionUI) {
                 GameObject.Destroy(KindergartenState.m_selectionUI);
                 Addressables.Release(KindergartenState.m_selectionUIInstantiateHandler);
@@ -51,22 +52,23 @@ namespace StateMachine {
         public override void Unsubscribe()
         {
             m_instantiateHandler.Completed -= AddressableSpawnCompleteHandler;
-            NextButton.onNextButton -= NextState;
+            NextPhaseButton.onNextPhase -= NextState;
             PrevPhaseButton.onPrevPhase -= PrevState;
         }
 
         private void AddressableSpawnCompleteHandler(AsyncOperationHandle<GameObject> handle)
         {
-            Debug.Log("Virtual Monitor Instantiated");
+            // Debug.Log("Virtual Monitor Instantiated");
             this.m_production = handle.Result;
         }
 
         private void NextState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new KindergartenState(m_transform, m_anchorName));
         }
+
         private void PrevState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new StressTestState(m_transform, m_anchorName));
         }
     }

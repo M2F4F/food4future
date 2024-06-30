@@ -26,14 +26,18 @@ namespace StateMachine {
         public override void OnEnter()
         {
             Debug.Log("Entering: " + this.StateName);
-            this.m_instantiateHandler = Addressables.InstantiateAsync("PolybiomStage.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 1f, this.m_transform.position.z), Quaternion.identity);
+            // this.m_instantiateHandler = Addressables.InstantiateAsync("PolybiomStage.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 1f, this.m_transform.position.z), Quaternion.identity);
             this.Subscribe();
         }
 
         public override void OnExit()
         {
+            Debug.Log("Exiting: " + this.StateName);
             this.Unsubscribe();
+            // if(this.m_stressTest != null) GameObject.Destroy(this.m_stressTest);
+            // if(this.m_instantiateHandler.IsValid()) Addressables.Release(this.m_instantiateHandler);
             if(_shouldDestroySelectionUI) {
+                Debug.Log("Destroying");
                 GameObject.Destroy(KindergartenState.m_selectionUI);
                 Addressables.Release(KindergartenState.m_selectionUIInstantiateHandler);
             } 
@@ -41,14 +45,14 @@ namespace StateMachine {
 
         public override void Subscribe()
         {
-            m_instantiateHandler.Completed += AddressableSpawnCompleteHandler;
+            // m_instantiateHandler.Completed += AddressableSpawnCompleteHandler;
             NextPhaseButton.onNextPhase += NextState;
             PrevPhaseButton.onPrevPhase += PrevState;
         }
 
         public override void Unsubscribe()
         {
-            m_instantiateHandler.Completed -= AddressableSpawnCompleteHandler;
+            // m_instantiateHandler.Completed -= AddressableSpawnCompleteHandler;
             NextPhaseButton.onNextPhase -= NextState;
             PrevPhaseButton.onPrevPhase -= PrevState;
         }
@@ -59,11 +63,11 @@ namespace StateMachine {
             this.m_stressTest = handle.Result;
         }
         private void NextState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new ProductionTestState(m_transform, m_anchorName));
         }
         private void PrevState() {
-            this._shouldDestroySelectionUI = false;
+            _shouldDestroySelectionUI = false;
             GameStateManager.StateChange(new KindergartenState(m_transform, m_anchorName));
         }
     }
