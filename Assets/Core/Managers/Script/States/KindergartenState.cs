@@ -28,7 +28,7 @@ namespace StateMachine {
         public override void OnEnter()
         {
             Debug.Log("Entering: " + this.StateName);
-            KindergartenState.m_selectionUIInstantiateHandler = Addressables.InstantiateAsync("UI_Selection.prefab", new Vector3(0,0,0), Quaternion.identity);
+            if(KindergartenState.m_selectionUI == null) KindergartenState.m_selectionUIInstantiateHandler = Addressables.InstantiateAsync("UI_Selection.prefab", new Vector3(0,0,0), Quaternion.identity);
             this.m_instantiateHandler = Addressables.InstantiateAsync("Kindergarten.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
             this.Subscribe(); 
         }
@@ -48,7 +48,7 @@ namespace StateMachine {
 
         public override void Subscribe()
         {
-            m_instantiateHandler.Completed += AddressableSpawnCompleteHandler;
+            if(KindergartenState.m_selectionUI == null) m_instantiateHandler.Completed += AddressableSpawnCompleteHandler;
             m_selectionUIInstantiateHandler.Completed += SelectionSpawnCompleteHandler;
             NextPhaseButton.onNextPhase += NextState;
             PrevPhaseButton.onPrevPhase += PrevState;
@@ -56,7 +56,7 @@ namespace StateMachine {
 
         public override void Unsubscribe()
         {
-            m_selectionUIInstantiateHandler.Completed -= SelectionSpawnCompleteHandler;
+            if(KindergartenState.m_selectionUI == null) m_selectionUIInstantiateHandler.Completed -= SelectionSpawnCompleteHandler;
             m_instantiateHandler.Completed -= AddressableSpawnCompleteHandler;
             NextPhaseButton.onNextPhase -= NextState;
             PrevPhaseButton.onPrevPhase -= PrevState;
