@@ -12,11 +12,13 @@ public class VariableManager : MonoBehaviour
     private List<string> lightLevelRangeList;
     private List<string> temperaturLevelRangeList;
     private List<string> salinityLevelRangeList;
+    private List<string> phValueRangeList;
 
     // Values
     public int temperatureLevel;
     public int lightLevel;
     public int salinityLevel;
+    public int phLevel;
 
     // internal score
     private int score = 0;
@@ -24,14 +26,17 @@ public class VariableManager : MonoBehaviour
     private int lightScore = 0;
     private int temperatureScore = 0;
     private int salinityScore = 0;
+    private int phScore = 0;
 
     // UI
     public Slider lightLevelSlider;
     public Slider temperatureSlider;
     public Slider salinitySlider;
+    public Slider phValueSlider;
     public TMP_Text temperatureText;
     public TMP_Text lightText;
     public TMP_Text salinityText;
+    public TMP_Text phText;
 
     public delegate void OnVariableChange(int score, int maxScore);
     public static event OnVariableChange onVariableChange;
@@ -74,6 +79,14 @@ public class VariableManager : MonoBehaviour
                                 salinitySlider.maxValue = salinityLevelRangeList.Count - 1;
                         }
                         break;
+                    case "phValue":
+                        {
+                            cells.RemoveAt(0);
+                            phValueRangeList = cells;
+                            if (phValueSlider != null)
+                                phValueSlider.maxValue = phValueRangeList.Count - 1;
+                        }
+                        break;
                 }
             }
         }
@@ -82,8 +95,12 @@ public class VariableManager : MonoBehaviour
         // Use data to calculate Score
 
         // Set maxScore for the dataSet
-        maxScore += CalcMaxValue(lightLevelRangeList) + CalcMaxValue(temperaturLevelRangeList) + CalcMaxValue(salinityLevelRangeList);
-
+        maxScore =  CalcMaxValue(lightLevelRangeList) +
+                    CalcMaxValue(temperaturLevelRangeList) +
+                    CalcMaxValue(salinityLevelRangeList) + 
+                    CalcMaxValue(phValueRangeList);
+                    
+        Debug.Log(maxScore);
         UpdateTemperatureText();
         UpdateLightText();
         UpdateSalinityText();
@@ -91,7 +108,7 @@ public class VariableManager : MonoBehaviour
 
     private void OnDisable()
     {
-
+        
     }
 
     static bool RowHasData(List<string> cells)
@@ -153,6 +170,16 @@ public class VariableManager : MonoBehaviour
         // Invoke new score
         onVariableChange?.Invoke(score, maxScore);
     }
+    public void SetPhValue(float value)
+    {
+        score -= phScore;
+        string[] phTuple = phValueRangeList[(int)value].Split(',');
+        phLevel = int.Parse(phTuple[0]);
+        phScore = int.Parse(phTuple[1]);
+        UpdatePhValueText();
+        score += phScore;
+        onVariableChange?.Invoke(score, maxScore);
+    }
     private void UpdateLightText()
     {
         if (lightText != null)
@@ -172,6 +199,13 @@ public class VariableManager : MonoBehaviour
         if (salinityText != null)
         {
             salinityText.text = salinityLevel + "%";
+        }
+    }
+    private void UpdatePhValueText()
+    {
+        if (phText != null)
+        {
+            phText.text = phLevel + "";
         }
     }
 }
