@@ -31,8 +31,9 @@ public class DialogButtonAnim : MonoBehaviour
 
     IEnumerator MoveUp() {
         float elapsedTime = 0.0f;
+        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         while (elapsedTime < _duration) {
-            transform.localPosition = Vector3.Lerp(_position1, _position2, elapsedTime /_duration);
+            rectTransform.anchoredPosition = Vector3.Lerp(_position1, _position2, elapsedTime /_duration);
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
@@ -42,8 +43,9 @@ public class DialogButtonAnim : MonoBehaviour
 
     IEnumerator MoveDown() {
         float elapsedTime = 0.0f;
+        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         while (elapsedTime < _duration) {
-            transform.localPosition = Vector3.Lerp(_position2, _position1, elapsedTime /_duration);
+            rectTransform.anchoredPosition = Vector3.Lerp(_position2, _position1, elapsedTime /_duration);
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }

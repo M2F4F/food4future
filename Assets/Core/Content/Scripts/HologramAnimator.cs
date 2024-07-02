@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class HologramAnimator : MonoBehaviour
 {
-    [SerializeField] private Vector3 _humanSize;
+    [SerializeField] private Vector3 _hologramSize;
     [SerializeField] private float _duration;
     private GameObject pyramid;
-    private Vector3 _hologramScale;
+    private Vector3 _humanSize;
         
     void Awake() {
         pyramid = gameObject.transform.GetChild(0).gameObject;
-        _hologramScale = gameObject.transform.localScale;
+        _humanSize = gameObject.transform.localScale;
     }
 
     void OnEnable() {
@@ -26,7 +26,7 @@ public class HologramAnimator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnLevel());
     }
 
     // Update is called once per frame
@@ -65,9 +65,14 @@ public class HologramAnimator : MonoBehaviour
         while (currentTime < _duration)
         {
             currentTime += Time.deltaTime;
-            gameObject.transform.localScale = Vector3.Lerp(currentScale, _hologramScale, currentTime / _duration);
+            gameObject.transform.localScale = Vector3.Lerp(currentScale, _hologramSize, currentTime / _duration);
             yield return null;
         }
         pyramid.SetActive(true);
+    }
+
+    private IEnumerator SpawnLevel() {
+        // TODO: Spawn Level pop up
+        yield return null;
     }
 }

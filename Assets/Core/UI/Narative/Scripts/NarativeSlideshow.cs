@@ -94,12 +94,15 @@ public class NarativeSlideshow : MonoBehaviour
     private IEnumerator MovePanel() {
         float elapsedTime = 0.0f;
         const float duration = 0.75f;
-        Vector3 from = _parent.transform.localPosition;
-        Vector3 buttonFrom = _nextButton.transform.localPosition;
+        RectTransform parentRectransform = _parent.GetComponent<RectTransform>();
+        RectTransform nextButtonRectTransform = _nextButton.GetComponent<RectTransform>();
+        Vector3 from = parentRectransform.anchoredPosition;
+        Vector3 buttonFrom = nextButtonRectTransform.anchoredPosition;
         while (elapsedTime < duration) {
             float progress = elapsedTime / duration;
-            _parent.transform.localPosition = Vector3.Lerp(from, _panelPopupPosition, progress);
-            _nextButton.transform.localPosition = Vector3.Lerp(buttonFrom, _nextButtonPopupPosition, progress);
+            parentRectransform.anchoredPosition =  Vector3.Lerp(from, _panelPopupPosition, progress);
+            // _parent.transform.localPosition = Vector3.Lerp(from, _panelPopupPosition, progress);
+            nextButtonRectTransform.anchoredPosition = Vector3.Lerp(buttonFrom, _nextButtonPopupPosition, progress);
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
