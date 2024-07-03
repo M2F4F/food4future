@@ -9,8 +9,8 @@ public class DialogButtonAnim : MonoBehaviour
     [SerializeField] private float _duration;
 
     void OnEnable() {
-        NarativeSlideshow.onRenderDone += () =>  this.gameObject.SetActive(true);
-        DialogueButton.onDialogueButton += () => this.gameObject.SetActive(false);
+        DialogueButton.onDialogueButton += Disable;
+        NarativeSlideshow.onRenderDone += Enable;
         LanguageManager.onLanguageChange += (string lang) => this.gameObject.SetActive(false);
         StartCoroutine(MoveUp());
     }
@@ -21,12 +21,20 @@ public class DialogButtonAnim : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    void OnDisable() {
-        NarativeSlideshow.onRenderDone -= () => this.gameObject.SetActive(true);
-        DialogueButton.onDialogueButton -= () => this.gameObject.SetActive(false);
+    void OnDestroy() {
+        NarativeSlideshow.onRenderDone -= Enable;
+        DialogueButton.onDialogueButton -= Disable;
         LanguageManager.onLanguageChange -= (string lang) => this.gameObject.SetActive(false);
         StopCoroutine(MoveUp());
         StopCoroutine(MoveDown());
+    }
+
+    private void Disable() {
+        this.gameObject.SetActive(false);
+    }
+
+    private void Enable() {
+        this.gameObject.SetActive(true);
     }
 
     IEnumerator MoveUp() {
