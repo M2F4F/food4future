@@ -92,11 +92,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_fontSizeMin: 14
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -272,3 +272,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e0021dcfdd71614bba90e5503f64a71, type: 2}
   - {fileID: 11400000, guid: 4ce8043c90296664c986c099c36cf1ee, type: 2}
   - {fileID: 11400000, guid: 56ff31f4cfa2bbe45a9fb0c8144b78c5, type: 2}
+  pKindergartenPrefab: {fileID: 0}
+  pyramid: {fileID: 0}
+  panel: {fileID: 0}

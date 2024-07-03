@@ -10,12 +10,12 @@ public class DialogueButton : MonoBehaviour
 
     void OnEnable() {
         NarativeSlideshow.onRenderDone += () => button.enabled = true;
-        LanguageManager.onLanguageChange += (string lang) => button.enabled = false;
+        // LanguageManager.onLanguageChange += (string lang) => button.enabled = false;
     }
 
     void OnDisable() {
         NarativeSlideshow.onRenderDone -= () => button.enabled = true;
-        LanguageManager.onLanguageChange -= (string lang) => button.enabled = false;
+        // LanguageManager.onLanguageChange -= (string lang) => button.enabled = false;
     }
 
     void Awake() {
@@ -24,7 +24,7 @@ public class DialogueButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button.enabled = false;
+        // button.enabled = false;
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class DialogueButton : MonoBehaviour
 
     public void OnClick() {
         onDialogueButton?.Invoke();
-        button.enabled = false;
+        // button.enabled = false;
     }
 
     private void ActivateButton() {
