@@ -50,24 +50,18 @@ public class NarativeSlideshow : MonoBehaviour
     }
 
 
-    IEnumerator RenderText(string text) {
-        _textHolder.text = "";
-        for(int position = 0; position < text.Length; position++) {
-            _textHolder.text += text.Substring(position, 1);
-            yield return new WaitForEndOfFrame();
-        }
-        _coroutine = null;
-
-        if(_index == _texts.Length - 1) {
-            yield return new WaitForSeconds(0.5f);
-            _moveCoroutine = StartCoroutine(MovePanel());
-        }
-        onRenderDone?.Invoke();
-    }
-
-
     private void DialogueButtonHandler()
     {
+        // Skip
+        if(_coroutine != null) {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+            _textHolder.text = GetText(PlayerPrefs.GetString("lang"));
+            StartCoroutine(WaitToMovePanel());
+            StartCoroutine(TriggerEventWithDelay());
+            return;
+        }
+
         if(_moveCoroutine != null) StopCoroutine(_moveCoroutine);
         _index++;
 
@@ -86,29 +80,58 @@ public class NarativeSlideshow : MonoBehaviour
         _coroutine = StartCoroutine(RenderText(GetText(lang)));
     }
 
+
     private string GetText(string lang) {
         if(lang == "en") return _texts[_index].english;
         return _texts[_index].deutsch;
     }
 
+    IEnumerator TriggerEventWithDelay() {
+        yield return new WaitForEndOfFrame();
+        onRenderDone?.Invoke();
+        yield return null;
+    }
+
+    IEnumerator RenderText(string text) {
+        _textHolder.text = "";
+        for(int position = 0; position < text.Length; position++) {
+            _textHolder.text += text.Substring(position, 1);
+            yield return new WaitForEndOfFrame();
+        }
+        _coroutine = null;
+
+        onRenderDone?.Invoke();
+        StartCoroutine(WaitToMovePanel());
+    }
+
+
     private IEnumerator MovePanel() {
         float elapsedTime = 0.0f;
         const float duration = 0.75f;
-        Vector3 from = _parent.transform.localPosition;
-        Vector3 buttonFrom = _nextButton.transform.localPosition;
+        RectTransform parentRectransform = _parent.GetComponent<RectTransform>();
+        RectTransform nextButtonRectTransform = _nextButton.GetComponent<RectTransform>();
+        Vector3 from = parentRectransform.anchoredPosition;
+        Vector3 buttonFrom = nextButtonRectTransform.anchoredPosition;
         while (elapsedTime < duration) {
             float progress = elapsedTime / duration;
-            _parent.transform.localPosition = Vector3.Lerp(from, _panelPopupPosition, progress);
-            _nextButton.transform.localPosition = Vector3.Lerp(buttonFrom, _nextButtonPopupPosition, progress);
+            parentRectransform.anchoredPosition =  Vector3.Lerp(from, _panelPopupPosition, progress);
+            nextButtonRectTransform.anchoredPosition = Vector3.Lerp(buttonFrom, _nextButtonPopupPosition, progress);
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         yield return null;
     }
 
+    private IEnumerator WaitToMovePanel() {
+        if(_index == _texts.Length - 1) {
+            yield return new WaitForSeconds(0.1f);
+            _moveCoroutine = StartCoroutine(MovePanel());
+        }
+    }
+
     private IEnumerator MoveBackPanel() {
         float elapsedTime = 0.0f;
-        const float duration = 1.0f;
+        const float duration = 0.75f;
         Vector3 from = _parent.transform.localPosition;
         Vector3 buttonFrom = _nextButton.transform.localPosition;
         while (elapsedTime < duration) {
