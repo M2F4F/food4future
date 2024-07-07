@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class HologramAnimator : MonoBehaviour
 {
-    [SerializeField] private Vector3 _hologramSize;
+    [SerializeField] private Vector3 _humanSize;
     [SerializeField] private float _duration;
     private GameObject pyramid;
-    private Vector3 _humanSize;
+    private Vector3 _hologramSize;
         
     void Awake() {
         pyramid = gameObject.transform.GetChild(0).gameObject;
-        _humanSize = gameObject.transform.localScale;
+        _hologramSize = gameObject.transform.localScale;
     }
 
     void OnEnable() {
