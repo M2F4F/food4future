@@ -288,7 +288,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0
   m_Range: 6.22
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1079,6 +1079,14 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8606982026370562790, guid: c591a970d2f56fc4e866182940805494,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 461038657472933144}
+    - targetCorrespondingSourceObject: {fileID: 8606982026370562790, guid: c591a970d2f56fc4e866182940805494,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7147061752085662012}
     - targetCorrespondingSourceObject: {fileID: 6505713482303623461, guid: c591a970d2f56fc4e866182940805494,
         type: 3}
       insertIndex: -1
@@ -1096,6 +1104,39 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3729142968963622870}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4950220462988057904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8606982026370562790, guid: c591a970d2f56fc4e866182940805494,
+    type: 3}
+  m_PrefabInstance: {fileID: 3729142968963622870}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &461038657472933144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950220462988057904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e71d92755fe2b4eb2e4f4ee87ba375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightSlider: {fileID: 8481929384050790170}
+--- !u!114 &7147061752085662012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950220462988057904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f9e3032f95ccb4e97292b9a63d1729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointLight: {fileID: 3669850825521347729}
+  lightSlider: {fileID: 8481929384050790170}
 --- !u!1 &7604464534645225203 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6505713482303623461, guid: c591a970d2f56fc4e866182940805494,
@@ -1115,6 +1156,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 2494637728513564892}
+--- !u!114 &8481929384050790170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5077049987032115404, guid: c591a970d2f56fc4e866182940805494,
+    type: 3}
+  m_PrefabInstance: {fileID: 3729142968963622870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3905053807275891369
 PrefabInstance:
   m_ObjectHideFlags: 0
