@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 0ae002f9b97ebfc4bbd0cdb786322396
   m_SerializeEntries:
   - m_GUID: dda999a36e8b39940987efe8f4541f59
-    m_Address: Kindergarten.prefab
+    m_Address: Assets/Core/Content/P_Level.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -59,6 +59,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 72b1ed3647ed6fe4cac7a01d5f4c757e
     m_Address: Production.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11b0364504177d94bae377333c1e8622
+    m_Address: Kindergarten.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
