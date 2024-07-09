@@ -26,7 +26,7 @@ namespace StateMachine {
         public override void OnEnter()
         {
             Debug.Log("Entering: " + this.StateName);
-            // this.m_instantiateHandler = Addressables.InstantiateAsync("PolybiomStage.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 1f, this.m_transform.position.z), Quaternion.identity);
+            this.m_instantiateHandler = Addressables.InstantiateAsync("StressTest.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 1f, this.m_transform.position.z), Quaternion.identity);
             this.Subscribe();
         }
 
@@ -34,8 +34,8 @@ namespace StateMachine {
         {
             Debug.Log("Exiting: " + this.StateName);
             this.Unsubscribe();
-            // if(this.m_stressTest != null) GameObject.Destroy(this.m_stressTest);
-            // if(this.m_instantiateHandler.IsValid()) Addressables.Release(this.m_instantiateHandler);
+            if(this.m_stressTest != null) GameObject.Destroy(this.m_stressTest);
+            if(this.m_instantiateHandler.IsValid()) Addressables.Release(this.m_instantiateHandler);
             if(_shouldDestroySelectionUI) {
                 Debug.Log("Destroying");
                 GameObject.Destroy(KindergartenState.m_selectionUI);
