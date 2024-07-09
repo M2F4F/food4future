@@ -47,7 +47,7 @@ namespace StateMachine {
 
         private void onImageTrackedHandler(Transform transform, string anchor)
         {
-            GameStateManager.StateChange(new KindergartenState(transform, anchor));
+            GameStateManager.StateChange(new NarativeState(transform, anchor));
         }
 
         private void SuccessfulInstantiateHandler(AsyncOperationHandle<GameObject> handle)
