@@ -3,24 +3,33 @@ using UnityEngine.UI;
 
 public class LightController : MonoBehaviour
 {
-    public Light pointLight;
+    public Light[] pointLights;  // Array to hold references to multiple lights
     public Slider lightSlider;
 
     void OnEnable()
     {
-        ChangeLightSlider.onChangeLight += ChangeIntensity;
+        if (lightSlider != null)
+        {
+            lightSlider.onValueChanged.AddListener(ChangeIntensity);
+        }
     }
 
     void OnDisable()
     {
-        ChangeLightSlider.onChangeLight -= ChangeIntensity;
+        if (lightSlider != null)
+        {
+            lightSlider.onValueChanged.RemoveListener(ChangeIntensity);
+        }
     }
 
-    void ChangeIntensity()
+    void ChangeIntensity(float value)
     {
-        if (pointLight != null && lightSlider != null)
+        if (pointLights != null)
         {
-            pointLight.intensity = lightSlider.value;
+            foreach (var light in pointLights)
+            {
+                light.intensity = value;
+            }
         }
     }
 }
