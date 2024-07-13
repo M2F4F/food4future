@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class VirtualMonitor : MonoBehaviour
 {
@@ -42,9 +43,16 @@ public class VirtualMonitor : MonoBehaviour
         
     }
 
-    private void SetScore(int score, int maxScore) {
+    private void SetScore(int score, int maxScore, int[] calcScoreArray) {
         floatingMonitorText.text = score.ToString() + " " + POINTS_FOR_COUNTER;
-        UpdateStatus(score, maxScore);
+        var calcScore = calcScoreArray.Contains(1);
+        if(!calcScore) 
+        {
+            Debug.Log(calcScoreArray);
+            UpdateStatus(score, maxScore);
+        } else {
+            statusCube.GetComponent<Renderer>().material.color = STATUS_BAD;
+        }
     }
 
     private void UpdateStatus(int score, int maxScore)
@@ -53,19 +61,15 @@ public class VirtualMonitor : MonoBehaviour
         switch(percent)
         {
             case float p when p <= 0.33f: 
-                Debug.Log("BAD");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BAD;
                 break;
             case float p when p > 0.33f && p <= 0.66f:
-                Debug.Log("BETTER");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BETTER;
                 break;
             case float p when p > 0.66f && p <= 0.98f:
-                Debug.Log("GOOD");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_GOOD;
                 break;
             case float p when p == 1f:
-                Debug.Log("PERFECT");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_PERFECT;
                 break;
         }

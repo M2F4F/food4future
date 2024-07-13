@@ -14,6 +14,8 @@ public class VariableManager : MonoBehaviour
     private List<string> salinityLevelRangeList;
     private List<string> phValueRangeList;
 
+    private int[] totalValueArray = Enumerable.Repeat(0, 4).ToArray();
+
     // Values
     public int temperatureLevel;
     public int lightLevel;
@@ -38,7 +40,7 @@ public class VariableManager : MonoBehaviour
     public TMP_Text salinityText;
     public TMP_Text phText;
 
-    public delegate void OnVariableChange(int score, int maxScore);
+    public delegate void OnVariableChange(int score, int maxScore, int[] calcScoreArray);
     public static event OnVariableChange onVariableChange;
 
     private void OnEnable()
@@ -137,7 +139,14 @@ public class VariableManager : MonoBehaviour
         // Adjust score by new value
         score += lightScore;
         // Invoke new score
-        onVariableChange?.Invoke(score, maxScore);
+        if(value == 0) 
+        {
+            totalValueArray[0] = 1;
+        }
+        else {
+            totalValueArray[0] = 0;
+        }
+        onVariableChange?.Invoke(score, maxScore, totalValueArray);        
     }
     public void SetTemperature(float value)
     {
@@ -152,7 +161,13 @@ public class VariableManager : MonoBehaviour
         // Adjust score by new values
         score += temperatureScore;
         // Invoke new score
-        onVariableChange?.Invoke(score, maxScore);
+        if(value == 0) 
+        {
+            totalValueArray[1] = 1;
+        } else {
+            totalValueArray[1] = 0;
+        }
+        onVariableChange?.Invoke(score, maxScore, totalValueArray);
     }
     public void SetSalinity(float value)
     {
@@ -167,7 +182,13 @@ public class VariableManager : MonoBehaviour
         // Adjust score by new values
         score += salinityScore;
         // Invoke new score
-        onVariableChange?.Invoke(score, maxScore);
+        if(value == 0) 
+        {
+            totalValueArray[2] = 1;
+        } else {
+            totalValueArray[2] = 0;
+        }
+        onVariableChange?.Invoke(score, maxScore, totalValueArray);
     }
     public void SetPhValue(float value)
     {
@@ -177,7 +198,13 @@ public class VariableManager : MonoBehaviour
         phScore = int.Parse(phTuple[1]);
         UpdatePhValueText();
         score += phScore;
-        onVariableChange?.Invoke(score, maxScore);
+        if(value == 0) 
+        {
+            totalValueArray[3] = 1;
+        } else {
+            totalValueArray[3] = 0;
+        }
+        onVariableChange?.Invoke(score, maxScore, totalValueArray);
     }
     private void UpdateLightText()
     {
