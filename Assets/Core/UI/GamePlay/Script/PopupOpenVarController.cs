@@ -5,6 +5,7 @@ using UnityEngine;
 public class PopupOpenVarController : MonoBehaviour
 {
     public GameObject canvas;
+    public GameObject panel;
 
     // Method to set the Canvas active
     public void ShowCanvas()
@@ -12,6 +13,7 @@ public class PopupOpenVarController : MonoBehaviour
         if (canvas != null)
         {
             canvas.SetActive(true);
+            panel.SetActive(true);
         }
         else
         {
