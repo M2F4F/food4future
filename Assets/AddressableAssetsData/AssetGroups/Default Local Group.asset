@@ -27,7 +27,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: db428dff2cda763459860b72c78e8c45
+  - m_GUID: 38153fe199d01be47b58ca2eb1c0d8a2
     m_Address: StressTest.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -57,13 +57,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 72b1ed3647ed6fe4cac7a01d5f4c757e
+  - m_GUID: ccb482ed626b7494aaaf871bc765bfc5
     m_Address: Production.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 11b0364504177d94bae377333c1e8622
     m_Address: Kindergarten.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26d486cc88b458743a24675119a529c0
+    m_Address: Assets/Core/Content/Prefabs/P_Production.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df904f4ff046b4044aabff6ea6722737
+    m_Address: Narative1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -19,8 +20,12 @@ public class HologramAnimator : MonoBehaviour
         _humanSize = gameObject.transform.localScale;
         _originalRotation = gameObject.transform.eulerAngles;
         _shouldStopRotating = false;
-        _level = transform.GetChild(1).gameObject;
-        _levelHologramPosition = _level.transform.localPosition;
+        try {
+            _level = transform.GetChild(1).gameObject;
+            _levelHologramPosition = _level.transform.localPosition;
+        } catch (UnityException) {
+            Debug.Log("No level is found");
+        }
     }
 
     void OnEnable() {
