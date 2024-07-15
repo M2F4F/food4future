@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class VirtualMonitor : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class VirtualMonitor : MonoBehaviour
         // this.gameObject.transform.rotation = new Quaternion()
     }
 
-    IEnumerator LookAtCamera() {
+    IEnumerator LookAtCamera()
+    {
         this.gameObject.transform.LookAt(GameObject.Find("Main Camera").transform);
         this.gameObject.transform.rotation = Quaternion.Euler(0, this.gameObject.transform.eulerAngles.y, 0);
         yield return new WaitForEndOfFrame();
@@ -39,33 +41,39 @@ public class VirtualMonitor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void SetScore(int score, int maxScore) {
+    private void SetScore(int score, int maxScore, int[] calcScoreArray)
+    {
         floatingMonitorText.text = score.ToString() + " " + POINTS_FOR_COUNTER;
-        UpdateStatus(score, maxScore);
+        var stopCalculation = calcScoreArray.Contains(1);
+        // Analyse calcScoreArray
+        if (stopCalculation)
+        {
+            statusCube.GetComponent<Renderer>().material.color = STATUS_BAD;
+        }
+        else
+        {
+            UpdateStatus(score, maxScore);
+        }
     }
 
     private void UpdateStatus(int score, int maxScore)
     {
-        var percent = score / (float) maxScore;
-        switch(percent)
+        var percent = score / (float)maxScore;
+        switch (percent)
         {
-            case float p when p <= 0.33f: 
-                Debug.Log("BAD");
+            case float p when p <= 0.33f:
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BAD;
                 break;
             case float p when p > 0.33f && p <= 0.66f:
-                Debug.Log("BETTER");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BETTER;
                 break;
             case float p when p > 0.66f && p <= 0.98f:
-                Debug.Log("GOOD");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_GOOD;
                 break;
             case float p when p == 1f:
-                Debug.Log("PERFECT");
                 statusCube.GetComponent<Renderer>().material.color = STATUS_PERFECT;
                 break;
         }
