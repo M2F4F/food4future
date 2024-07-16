@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative1
   m_EditorClassIdentifier: 
-  english: 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '
-  deutsch: 'Deutsch: Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-    sed diam voluptua.'
+  english: "Imagine a future where space for traditional food production is steadily
+    shrinking.\r\nThe causes can be traced to the impacts of climate change\u2014freshwater
+    scarcity and soil salinization\u2014while at the same time,\r\n more and more
+    people need to be fed, and there is also increased competition for the use of
+    available land.\r\nAdditionally, it is conceivable that the remaining natural
+    areas will be increasingly used as protected areas and carbon sinks,\r\n and
+    thus will no longer be available for agriculture."
+  deutsch: "Stell dir eine Zukunft vor, in der der Platz f\xFCr die traditionelle
+    Nahrungsmittelproduktion immer weiter schwindet. \r\nUrsachen k\xF6nnen einerseits
+    auf die Auswirkungen des Klimawandels - Frischwassermangel und Bodenversalzung
+    - zur\xFCckzuf\xFChren sein, \r\nw\xE4hrend gleichzeitig immer mehr Menschen
+    versorgt werden m\xFCssen und auch eine st\xE4rkere Konkurrenz um die Nutzung
+    vorhandener Fl\xE4che entsteht.\r\nAndererseits ist es denkbar, dass die noch
+    verf\xFCgbaren Naturfl\xE4chen verst\xE4rkt als Schutzgebiete und CO2-Senken
+    genutzt und somit nicht mehr\r\nf\xFCr die Agrarwirtschaft zur Verf\xFCgung stehen."

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative4
   m_EditorClassIdentifier: 
-  english: At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  deutsch: 'Deutsch: At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+  english: "During the research process, you can adjust the light intensity, temperature,
+    water salinity, \r\nand pH value. Use the sliders with the appropriate labels
+    for this.\r\nNow it's your turn. Help your team find the optimal conditions for
+    cultivating algae. Good luck!"
+  deutsch: "Im Forschungsprozess kannst du die Lichtintensit\xE4t, die Temperatur,
+    den Salzgehalt des Wassers und den pH-Wert anpassen.\r\nNutze daf\xFCr die Schieberegler
+    mit der passender Beschriftung.\r\nJetzt bist du dran. Hilf deinem Team die optimalen
+    Bedingungen f\xFCr die Kultivierung der Algen zu finden. Viel Erfolg dabei!"
