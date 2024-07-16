@@ -6,21 +6,27 @@ using System.Linq;
 public class VirtualMonitor : MonoBehaviour
 {
     [SerializeField] private TMP_Text floatingMonitorText;
-    public GameObject statusCube;
+    private GameObject statusCube = null;
     private static readonly string POINTS_FOR_COUNTER = "Points";
     private static readonly Color STATUS_BAD = new(1.0f, 0.0f, 0.0f);
     private static readonly Color STATUS_BETTER = new(1.0f, 0.5f, 0.0f);
     private static readonly Color STATUS_GOOD = new(0.25f, 0.5f, 0.0f);
     private static readonly Color STATUS_PERFECT = new(0.0f, 1.0f, 0.0f);
+
+    void Awake()
+    {
+        statusCube = transform.GetChild(0).GetChild(3).gameObject;
+    }
     void OnEnable()
     {
         VariableManager.onVariableChange += SetScore;
         statusCube.GetComponent<Renderer>().material.color = new Color(0.4f, 0.6f, 0.9f);
+        Debug.Log("enable: " + statusCube.GetComponent<Renderer>().material.color);
     }
 
     void OnDisable()
     {
-
+        VariableManager.onVariableChange -= SetScore;
     }
     // Start is called before the first frame update
     void Start()
@@ -47,6 +53,8 @@ public class VirtualMonitor : MonoBehaviour
     private void SetScore(int score, int maxScore, int[] calcScoreArray)
     {
         floatingMonitorText.text = score.ToString() + " " + POINTS_FOR_COUNTER;
+        Debug.Log("SetScore: " + statusCube.GetComponent<Renderer>().material.color);
+
         var stopCalculation = calcScoreArray.Contains(1);
         // Analyse calcScoreArray
         if (stopCalculation)
@@ -61,6 +69,8 @@ public class VirtualMonitor : MonoBehaviour
 
     private void UpdateStatus(int score, int maxScore)
     {
+
+        Debug.Log("update: " + statusCube.GetComponent<Renderer>().material.color);
         var percent = score / (float)maxScore;
         switch (percent)
         {

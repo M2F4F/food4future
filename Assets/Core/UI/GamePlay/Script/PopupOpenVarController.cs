@@ -13,7 +13,7 @@ public class PopupOpenVarController : MonoBehaviour
         if (canvas != null)
         {
             canvas.SetActive(true);
-            panel.SetActive(true);
+            if(panel) panel.SetActive(true);
         }
         else
         {
