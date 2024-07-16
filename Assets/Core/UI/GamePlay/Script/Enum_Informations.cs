@@ -8,5 +8,6 @@ public enum InformationLabel
     PREPARAT_HOLDER,
     WOOD_LONG,
     BOTTLE,
-    VAR_CONTROLLER
+    VAR_CONTROLLER,
+    POLYBIOM_SHELF
 }
