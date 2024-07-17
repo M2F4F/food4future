@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4faf7c83a3b359b49a6de332d65a5cca, type: 3}
   m_Name: SO_Bottle
   m_EditorClassIdentifier: 
-  objectName: Bottle
-  description: This is a bottle to keep the algae
+  objectName: "Beh\xE4lter:"
+  description: "In kleinen geschlossenen wasserdichten Beh\xE4ltern werden die einzelnen
+    Algen kontrolliert kultiviert und untersucht."

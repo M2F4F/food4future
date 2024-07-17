@@ -38,7 +38,6 @@ public class PopupWindow : MonoBehaviour
     {
         Debug.Log("Debuggin in popupwindowHandler "+label);
         if(m_label.CompareTo(label) != 0) return;
-        m_objectName.text = objectName;
         m_textPanel.SetActive(true);
     }
 }

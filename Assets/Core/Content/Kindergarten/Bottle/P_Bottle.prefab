@@ -252,6 +252,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2430682368643971106, guid: f623968e88b10264f84c0c4b2fc3b938,
+        type: 3}
+      propertyPath: m_text
+      value: "In kleinen geschlossenen wasserdichten Beh\xE4ltern werden die einzelnen
+        Algen kontrolliert kultiviert und untersucht."
+      objectReference: {fileID: 0}
     - target: {fileID: 4340871531318595335, guid: f623968e88b10264f84c0c4b2fc3b938,
         type: 3}
       propertyPath: m_LocalScale.x
