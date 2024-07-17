@@ -13,10 +13,6 @@ public class SelectSceneButton : MonoBehaviour
     private string _gameStateName;
     private string _lang;
 
-    public GameObject pKindergartenPrefab; // Assign the P_Kindergarten Prefab in the Inspector
-    public GameObject pyramid; // Assign the Pyramid GameObject in the Inspector
-    public GameObject panel; // Assign the Panel GameObject in the Inspector
-    private GameObject pKindergartenInstance;
     private Coroutine scaleCoroutine;
 
     public delegate void OnSelectSceneButton();
@@ -25,6 +21,7 @@ public class SelectSceneButton : MonoBehaviour
     void Awake()
     {
         _text = transform.GetChild(0).GetComponent<TMP_Text>();
+        _gameStateName = "KindergartenState";
     }
 
     void OnEnable()
@@ -46,13 +43,6 @@ public class SelectSceneButton : MonoBehaviour
         _gameStateName = "KindergartenState";
 
         gameObject.GetComponent<Button>().onClick.AddListener(OnSelectButtonClicked);
-
-        // Find the instantiated clone of P_Kindergarten
-        pKindergartenInstance = GameObject.Find("P_Kindergarten(Clone)");
-        if (pKindergartenInstance == null)
-        {
-            Debug.LogError("P_Kindergarten clone not found in the scene.");
-        }
     }
 
     private void LanguageChangeHandler(string lang)
