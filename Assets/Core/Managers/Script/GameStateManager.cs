@@ -32,7 +32,7 @@ namespace StateMachine{
             _gameStateManager.state.OnExit();
             _gameStateManager.state = newState;
             _gameStateManager.state.OnEnter();
-            onGameStateChange?.Invoke(_gameStateManager.state.StateName);
+            onGameStateChange?.Invoke(newState.StateName);
         }
     }
 }
