@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative3
   m_EditorClassIdentifier: 
-  english: At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-    et justo duo dolores et ea rebum.
-  deutsch: 'Deutsch: At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum.'
+  english: 'And you are part of this visionary team responsible for the indoor cultivation
+    of algae.
+
+    Your task is to determine the environmental parameters for optimal
+    growth.
+
+    In this way, you can help solve the food problem.'
+  deutsch: "Und du bist Teil dieses vision\xE4ren Teams, das f\xFCr die Indoor-Kultivierung
+    von Algen zust\xE4ndig ist.\r\nDeine Aufgabe ist es,die Umgebungsparameter f\xFCr
+    ein opimales Wachstum zu ermitteln. \r\nSo kannst du zur L\xF6sung des Ern\xE4hrungsproblems
+    beitragen.\r\n"

@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
-  m_Name: SO_Narative4
+  m_Name: SO_Narrative6
   m_EditorClassIdentifier: 
-  english: "During the research process, you can adjust the light intensity, temperature,
-    water salinity, \r\nand pH value. Use the sliders with the appropriate labels
-    for this.\r\nNow it's your turn. Help your team find the optimal conditions for
-    cultivating algae. Good luck!"
+  english: 'During the research process, you can adjust the light intensity, temperature,
+    water salinity, and pH value. Use the sliders with the appropriate labels for
+    this. Now it''s your turn. Help your team find the optimal conditions for cultivating
+    algae. Good luck!
+
+
+'
   deutsch: "Im Forschungsprozess kannst du die Lichtintensit\xE4t, die Temperatur,
-    den Salzgehalt des Wassers und den pH-Wert anpassen.\r\nNutze daf\xFCr die Schieberegler
-    mit der passender Beschriftung.\r\nJetzt bist du dran. Hilf deinem Team die optimalen
+    den Salzgehalt des Wassers und den pH-Wert anpassen. Nutze daf\xFCr die Schieberegler
+    mit der passenden Beschriftung. Jetzt bist du dran. Hilf deinem Team, die optimalen
     Bedingungen f\xFCr die Kultivierung der Algen zu finden. Viel Erfolg dabei!"
