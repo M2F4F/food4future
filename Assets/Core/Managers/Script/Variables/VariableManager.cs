@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System;
+using System.Globalization;
 
 public class VariableManager : MonoBehaviour
 {
@@ -14,11 +16,13 @@ public class VariableManager : MonoBehaviour
     private List<string> salinityLevelRangeList;
     private List<string> phValueRangeList;
 
+    private int[] totalValueArray = Enumerable.Repeat(0, 4).ToArray();
+
     // Values
     public int temperatureLevel;
     public int lightLevel;
     public int salinityLevel;
-    public int phLevel;
+    public float phLevel;
 
     // internal score
     private int score = 0;
@@ -38,7 +42,7 @@ public class VariableManager : MonoBehaviour
     public TMP_Text salinityText;
     public TMP_Text phText;
 
-    public delegate void OnVariableChange(int score, int maxScore);
+    public delegate void OnVariableChange(int score, int maxScore, int[] calcScoreArray);
     public static event OnVariableChange onVariableChange;
 
     private void OnEnable()
@@ -95,10 +99,10 @@ public class VariableManager : MonoBehaviour
         // Use data to calculate Score
 
         // Set maxScore for the dataSet
-        maxScore =  CalcMaxValue(lightLevelRangeList) +
-                    CalcMaxValue(temperaturLevelRangeList) +
-                    CalcMaxValue(salinityLevelRangeList) + 
-                    CalcMaxValue(phValueRangeList);
+        maxScore =  CalcMaxValue(lightLevelRangeList) * 5 +
+                    CalcMaxValue(temperaturLevelRangeList) * 7 +
+                    CalcMaxValue(salinityLevelRangeList) * 3+ 
+                    CalcMaxValue(phValueRangeList) * 2;
 
         UpdateTemperatureText();
         UpdateLightText();
@@ -124,6 +128,15 @@ public class VariableManager : MonoBehaviour
         }
         return helperList.Max();
     }
+    private void CheckForCrossDependecy(float value, int index) {
+        if(value <= 3)
+        {
+            totalValueArray[index] = 1;
+        } else {
+            totalValueArray[index] = 0;
+        }
+        onVariableChange?.Invoke(score, maxScore, totalValueArray);    
+    }
     public void SetLightLevel(float value)
     {
         // Reset score by old value
@@ -131,13 +144,13 @@ public class VariableManager : MonoBehaviour
         // Get new values
         string[] lightTuple = lightLevelRangeList[(int)value].Split(',');
         lightLevel = int.Parse(lightTuple[0]);
-        lightScore = int.Parse(lightTuple[1]);
+        lightScore = int.Parse(lightTuple[1]) * 5;
         // Update text
         UpdateLightText();
         // Adjust score by new value
         score += lightScore;
         // Invoke new score
-        onVariableChange?.Invoke(score, maxScore);
+        CheckForCrossDependecy(value, 0);       
     }
     public void SetTemperature(float value)
     {
@@ -146,13 +159,13 @@ public class VariableManager : MonoBehaviour
         // Get new values
         string[] temperatureTuple = temperaturLevelRangeList[(int)value].Split(',');
         temperatureLevel = int.Parse(temperatureTuple[0]);
-        temperatureScore = int.Parse(temperatureTuple[1]);
+        temperatureScore = int.Parse(temperatureTuple[1]) * 7;
         // Update text
         UpdateTemperatureText();
         // Adjust score by new values
         score += temperatureScore;
         // Invoke new score
-        onVariableChange?.Invoke(score, maxScore);
+        CheckForCrossDependecy(value, 1); 
     }
     public void SetSalinity(float value)
     {
@@ -161,29 +174,29 @@ public class VariableManager : MonoBehaviour
         // Get new values
         string[] salinityTuple = salinityLevelRangeList[(int)value].Split(',');
         salinityLevel = int.Parse(salinityTuple[0]);
-        salinityScore = int.Parse(salinityTuple[1]);
+        salinityScore = int.Parse(salinityTuple[1]) * 3;
         // Update text
         UpdateSalinityText();
         // Adjust score by new values
         score += salinityScore;
         // Invoke new score
-        onVariableChange?.Invoke(score, maxScore);
+        CheckForCrossDependecy(value, 2); 
     }
     public void SetPhValue(float value)
     {
         score -= phScore;
         string[] phTuple = phValueRangeList[(int)value].Split(',');
-        phLevel = int.Parse(phTuple[0]);
-        phScore = int.Parse(phTuple[1]);
+        phLevel = float.Parse(phTuple[0], CultureInfo.InvariantCulture.NumberFormat);
+        phScore = int.Parse(phTuple[1]) * 2;
         UpdatePhValueText();
         score += phScore;
-        onVariableChange?.Invoke(score, maxScore);
+        CheckForCrossDependecy(value, 3); 
     }
     private void UpdateLightText()
     {
         if (lightText != null)
         {
-            lightText.text = lightLevel + "%";
+            lightText.text = lightLevel + "µ mol";
         }
     }
     private void UpdateTemperatureText()
@@ -204,7 +217,7 @@ public class VariableManager : MonoBehaviour
     {
         if (phText != null)
         {
-            phText.text = phLevel + "";
+            phText.text = phLevel.ToString("0.00###");
         }
     }
 }
