@@ -12,19 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative2
   m_EditorClassIdentifier: 
-  english: 'The population is growing, agricultural land is becoming scarcer, so
-    new ways to grow food are needed.
-
-    In this context, urban spaces are becoming
-    increasingly important for food production. Basements, tunnels, and rooftops
-    can be utilized for this purpose.
-
-    Researchers are already working on growing
-    jellyfish, crickets, and algae indoors.
-
-'
-  deutsch: "Die Bev\xF6lkerung w\xE4chst, die landwirtschaftlichen Fl\xE4chen werden
-    knapper, sodass es neue Wege braucht Nahrung anzubauen.\r\nDabei gewinnt der
-    st\xE4dtische Raum an Bedeutung f\xFCr die Lebensmittelproduktion. Hierbei k\xF6nnen
-    Keller, Tunnel oder auch Hausd\xE4cher benutzt werden.\r\nForscher arbeiten bereits
-    daran Quallen, Grillen und Algen indoor anzubauen."
+  english: "\rThe causes can be traced to the impacts of climate change\u2014freshwater
+    scarcity and soil salinization\u2014while at the same time, more and more people
+    need to be fed, and there is also increased competition for the use of available
+    land."
+  deutsch: "Ursachen k\xF6nnen einerseits auf die Auswirkungen des Klimawandels -
+    Frischwassermangel und Bodenversalzung - zur\xFCckzuf\xFChren sein,  \r\nw\xE4hrend
+    gleichzeitig immer mehr Menschen versorgt werden m\xFCssen und auch eine st\xE4rkere
+    Konkurrenz um die Nutzung vorhandener Fl\xE4che entsteht."

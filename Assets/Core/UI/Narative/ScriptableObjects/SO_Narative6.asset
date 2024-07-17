@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
-  m_Name: SO_Narrative5
+  m_Name: SO_Narative6
   m_EditorClassIdentifier: 
   english: And you are part of this visionary team responsible for the indoor cultivation
-    of algae. Your task is to determine the environmental parameters for optimal
-    growth. In this way, you can help solve the food problem.
+    of algae.
   deutsch: "Und du bist Teil dieses vision\xE4ren Teams, das f\xFCr die Indoor-Kultivierung
-    von Algen zust\xE4ndig ist. Deine Aufgabe ist es, die Umgebungsparameter f\xFCr
-    ein optimales Wachstum zu ermitteln. So kannst du zur L\xF6sung des Ern\xE4hrungsproblems
-    beitragen."
+    von Algen zust\xE4ndig ist."

@@ -156,11 +156,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _texts:
-  - Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-    no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-    vero eos et accusam et justo duo dolores et ea rebum.
+  - {fileID: 11400000, guid: 58cb435ec8576e0419b19b4c293275ff, type: 2}
+  - {fileID: 11400000, guid: 4022f405f280bba47a3651dd618e12be, type: 2}
+  - {fileID: 11400000, guid: 1f3e7b1751f98ab4697fe99b359a3506, type: 2}
+  - {fileID: 11400000, guid: 4e6d71500c0a85742bda780a0a90ca5e, type: 2}
+  - {fileID: 11400000, guid: a05c76d155d867e4eaa394ece8b1913b, type: 2}
+  - {fileID: 11400000, guid: b2ac63aec21fdf94488e756b01ee0d0d, type: 2}
+  - {fileID: 11400000, guid: 78b67c6f8f2a45c4ba298c8c7c5b7375, type: 2}
+  - {fileID: 11400000, guid: 6d75eda96d334bc498a563e5028c30db, type: 2}
+  - {fileID: 11400000, guid: c97de9d429087b4448cd5315b2354ffc, type: 2}
+  _counter: {fileID: 0}
+  _panelPopupPosition: {x: 0, y: 100, z: 0}
+  _nextButtonPopupPosition: {x: 0, y: 10, z: 0}

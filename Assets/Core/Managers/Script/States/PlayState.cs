@@ -48,7 +48,7 @@ namespace StateMachine {
         private void onImageTrackedHandler(Transform transform, string anchor)
         {
             #if UNITY_EDITOR
-            GameStateManager.StateChange(new KindergartenState(transform, anchor));
+            GameStateManager.StateChange(new NarativeState(transform, anchor));
             #else
             GameStateManager.StateChange(new NarativeState(transform, anchor));
             #endif
