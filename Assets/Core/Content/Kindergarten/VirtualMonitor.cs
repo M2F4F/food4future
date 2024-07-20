@@ -32,7 +32,7 @@ public class VirtualMonitor : MonoBehaviour
     void Start()
     {
         // this.gameObject.transform.LookAt(GameObject.Find("Main Camera").transform);
-        StartCoroutine(LookAtCamera());
+        //StartCoroutine(LookAtCamera());
         // this.gameObject.transform.rotation = new Quaternion()
     }
 
