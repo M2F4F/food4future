@@ -196,7 +196,7 @@ public class VariableManager : MonoBehaviour
     {
         if (lightText != null)
         {
-            lightText.text = lightLevel + "µ mol";
+            lightText.text = lightLevel + "µ mol/m²/Tag";
         }
     }
     private void UpdateTemperatureText()
