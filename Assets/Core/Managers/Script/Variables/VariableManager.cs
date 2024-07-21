@@ -4,9 +4,15 @@ using UnityEngine.UI;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-using System;
 using System.Globalization;
+using CsvHelper;
+using UnityEditor;
 
+public class ScoreRow
+{
+    public int PhaseNr { get; set; }
+    public int Score { get; set; }
+}
 public class VariableManager : MonoBehaviour
 {
     // Range data from CSV-File
@@ -31,6 +37,7 @@ public class VariableManager : MonoBehaviour
     private int temperatureScore = 0;
     private int salinityScore = 0;
     private int phScore = 0;
+    private int PhaseNrForPersistence = 0;
 
     // UI
     public Slider lightLevelSlider;
@@ -103,11 +110,13 @@ public class VariableManager : MonoBehaviour
         {
             maxScore = 0;
             maxScore += CalcMaxValue(salinityLevelRangeList) * 3 + CalcMaxValue(phValueRangeList) * 2;
+            PhaseNrForPersistence = 1;
         }
         else if (!phValueSlider && !salinitySlider && lightLevelSlider && temperatureSlider)
         {
             maxScore = 0;
             maxScore += CalcMaxValue(lightLevelRangeList) * 5 + CalcMaxValue(temperaturLevelRangeList) * 7;
+            PhaseNrForPersistence = 2;
         }
         else
         {
@@ -116,6 +125,7 @@ public class VariableManager : MonoBehaviour
                     CalcMaxValue(temperaturLevelRangeList) * 7 +
                     CalcMaxValue(salinityLevelRangeList) * 3 +
                     CalcMaxValue(phValueRangeList) * 2;
+            PhaseNrForPersistence = 3;
         }
 
         UpdateTemperatureText();
@@ -126,7 +136,7 @@ public class VariableManager : MonoBehaviour
 
     private void OnDisable()
     {
-
+        
     }
 
     static bool RowHasData(List<string> cells)
@@ -153,7 +163,23 @@ public class VariableManager : MonoBehaviour
         {
             totalValueArray[index] = 0;
         }
+        SaveScoreIntoCsv();
+        
         onVariableChange?.Invoke(score, maxScore, totalValueArray);
+    }
+
+    public void SaveScoreIntoCsv()
+    {
+        var ScoreSet = new List<ScoreRow>()
+        {
+            new() {PhaseNr = 1, Score = salinityScore + phScore},
+            new() {PhaseNr = 2, Score = lightScore + temperatureScore}
+        };
+        using (var writer = new StreamWriter("Assets/Core/Resources/Scores.csv"))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(ScoreSet);
+        }
     }
     public void SetLightLevel(float value)
     {
