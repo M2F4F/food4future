@@ -88,30 +88,45 @@ public class VariableManager : MonoBehaviour
                             cells.RemoveAt(0);
                             phValueRangeList = cells;
                             if (phValueSlider != null)
+                            {
                                 phValueSlider.maxValue = phValueRangeList.Count - 1;
+                                phValueSlider.value = phValueRangeList.Count / 3 * 2;
+                            }
                         }
                         break;
                 }
             }
         }
 
-        // Fill data into suitable data-structure
-        // Use data to calculate Score
-
-        // Set maxScore for the dataSet
-        maxScore =  CalcMaxValue(lightLevelRangeList) * 5 +
+        // Set maxScore for the dataSet - maxScore per stage
+        if (phValueSlider && salinitySlider && !lightLevelSlider && !temperatureSlider)
+        {
+            maxScore = 0;
+            maxScore += CalcMaxValue(salinityLevelRangeList) * 3 + CalcMaxValue(phValueRangeList) * 2;
+        }
+        else if (!phValueSlider && !salinitySlider && lightLevelSlider && temperatureSlider)
+        {
+            maxScore = 0;
+            maxScore += CalcMaxValue(lightLevelRangeList) * 5 + CalcMaxValue(temperaturLevelRangeList) * 7;
+        }
+        else
+        {
+            maxScore = 0;
+            maxScore += CalcMaxValue(lightLevelRangeList) * 5 +
                     CalcMaxValue(temperaturLevelRangeList) * 7 +
-                    CalcMaxValue(salinityLevelRangeList) * 3+ 
+                    CalcMaxValue(salinityLevelRangeList) * 3 +
                     CalcMaxValue(phValueRangeList) * 2;
+        }
 
         UpdateTemperatureText();
         UpdateLightText();
         UpdateSalinityText();
+        UpdatePhValueText();
     }
 
     private void OnDisable()
     {
-        
+
     }
 
     static bool RowHasData(List<string> cells)
@@ -128,69 +143,84 @@ public class VariableManager : MonoBehaviour
         }
         return helperList.Max();
     }
-    private void CheckForCrossDependecy(float value, int index) {
-        if(value <= 3)
+    private void CheckForCrossDependecy(float value, int index)
+    {
+        if (value <= 3)
         {
             totalValueArray[index] = 1;
-        } else {
+        }
+        else
+        {
             totalValueArray[index] = 0;
         }
-        onVariableChange?.Invoke(score, maxScore, totalValueArray);    
+        onVariableChange?.Invoke(score, maxScore, totalValueArray);
     }
     public void SetLightLevel(float value)
     {
-        // Reset score by old value
-        score -= lightScore;
-        // Get new values
-        string[] lightTuple = lightLevelRangeList[(int)value].Split(',');
-        lightLevel = int.Parse(lightTuple[0]);
-        lightScore = int.Parse(lightTuple[1]) * 5;
-        // Update text
-        UpdateLightText();
-        // Adjust score by new value
-        score += lightScore;
-        // Invoke new score
-        CheckForCrossDependecy(value, 0);       
+        if (lightLevelRangeList != null)
+        {
+            // Reset score by old value
+            score -= lightScore;
+            // Get new values
+            string[] lightTuple = lightLevelRangeList[(int)value].Split(',');
+            lightLevel = int.Parse(lightTuple[0]);
+            lightScore = int.Parse(lightTuple[1]) * 5;
+            // Update text
+            UpdateLightText();
+            // Adjust score by new value
+            score += lightScore;
+            // Invoke new score
+            CheckForCrossDependecy(lightScore / 5, 0);
+        }
     }
     public void SetTemperature(float value)
     {
-        // Reset score by old value
-        score -= temperatureScore;
-        // Get new values
-        string[] temperatureTuple = temperaturLevelRangeList[(int)value].Split(',');
-        temperatureLevel = int.Parse(temperatureTuple[0]);
-        temperatureScore = int.Parse(temperatureTuple[1]) * 7;
-        // Update text
-        UpdateTemperatureText();
-        // Adjust score by new values
-        score += temperatureScore;
-        // Invoke new score
-        CheckForCrossDependecy(value, 1); 
+        if (temperaturLevelRangeList != null)
+        {
+            // Reset score by old value
+            score -= temperatureScore;
+            // Get new values
+            string[] temperatureTuple = temperaturLevelRangeList[(int)value].Split(',');
+            temperatureLevel = int.Parse(temperatureTuple[0]);
+            temperatureScore = int.Parse(temperatureTuple[1]) * 7;
+            // Update text
+            UpdateTemperatureText();
+            // Adjust score by new values
+            score += temperatureScore;
+            // Invoke new score
+            CheckForCrossDependecy(temperatureScore / 7, 1);
+        }
     }
     public void SetSalinity(float value)
     {
-        // Reset score by old value
-        score -= salinityScore;
-        // Get new values
-        string[] salinityTuple = salinityLevelRangeList[(int)value].Split(',');
-        salinityLevel = int.Parse(salinityTuple[0]);
-        salinityScore = int.Parse(salinityTuple[1]) * 3;
-        // Update text
-        UpdateSalinityText();
-        // Adjust score by new values
-        score += salinityScore;
-        // Invoke new score
-        CheckForCrossDependecy(value, 2); 
+        if (salinityLevelRangeList != null)
+        {
+            // Reset score by old value
+            score -= salinityScore;
+            // Get new values
+            string[] salinityTuple = salinityLevelRangeList[(int)value].Split(',');
+            salinityLevel = int.Parse(salinityTuple[0]);
+            salinityScore = int.Parse(salinityTuple[1]) * 3;
+            // Update text
+            UpdateSalinityText();
+            // Adjust score by new values
+            score += salinityScore;
+            // Invoke new score
+            CheckForCrossDependecy(salinityScore / 3, 2);
+        }
     }
     public void SetPhValue(float value)
     {
-        score -= phScore;
-        string[] phTuple = phValueRangeList[(int)value].Split(',');
-        phLevel = float.Parse(phTuple[0], CultureInfo.InvariantCulture.NumberFormat);
-        phScore = int.Parse(phTuple[1]) * 2;
-        UpdatePhValueText();
-        score += phScore;
-        CheckForCrossDependecy(value, 3); 
+        if (phValueRangeList != null)
+        {
+            score -= phScore;
+            string[] phTuple = phValueRangeList[(int)value].Split(',');
+            phLevel = float.Parse(phTuple[0], CultureInfo.InvariantCulture.NumberFormat);
+            phScore = int.Parse(phTuple[1]) * 2;
+            UpdatePhValueText();
+            score += phScore;
+            CheckForCrossDependecy(phScore / 2, 3);
+        }
     }
     private void UpdateLightText()
     {

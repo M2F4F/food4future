@@ -21,7 +21,6 @@ public class VirtualMonitor : MonoBehaviour
     {
         VariableManager.onVariableChange += SetScore;
         statusCube.GetComponent<Renderer>().material.color = new Color(0.4f, 0.6f, 0.9f);
-        Debug.Log("enable: " + statusCube.GetComponent<Renderer>().material.color);
     }
 
     void OnDisable()
@@ -53,8 +52,6 @@ public class VirtualMonitor : MonoBehaviour
     private void SetScore(int score, int maxScore, int[] calcScoreArray)
     {
         floatingMonitorText.text = score.ToString() + " " + POINTS_FOR_COUNTER;
-        Debug.Log("SetScore: " + statusCube.GetComponent<Renderer>().material.color);
-
         var stopCalculation = calcScoreArray.Contains(1);
         // Analyse calcScoreArray
         if (stopCalculation)
@@ -70,17 +67,16 @@ public class VirtualMonitor : MonoBehaviour
     private void UpdateStatus(int score, int maxScore)
     {
 
-        Debug.Log("update: " + statusCube.GetComponent<Renderer>().material.color);
         var percent = score / (float)maxScore;
         switch (percent)
         {
-            case float p when p <= 0.33f:
+            case float p when p <= 0.60f:
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BAD;
                 break;
-            case float p when p > 0.33f && p <= 0.66f:
+            case float p when p > 0.60f && p <= 0.80f:
                 statusCube.GetComponent<Renderer>().material.color = STATUS_BETTER;
                 break;
-            case float p when p > 0.66f && p <= 0.98f:
+            case float p when p > 0.80f && p <= 0.98f:
                 statusCube.GetComponent<Renderer>().material.color = STATUS_GOOD;
                 break;
             case float p when p == 1f:
