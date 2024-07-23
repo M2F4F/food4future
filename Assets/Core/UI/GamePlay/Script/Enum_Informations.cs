@@ -9,5 +9,6 @@ public enum InformationLabel
     WOOD_LONG,
     BOTTLE,
     VAR_CONTROLLER,
-    POLYBIOM_SHELF
+    POLYBIOM_SHELF,
+    POLYBIOM_LIGHT
 }
