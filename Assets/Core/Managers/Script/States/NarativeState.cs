@@ -14,7 +14,7 @@ namespace StateMachine {
         private Transform m_transform;
         private GameObject m_uinarative;
         private GameObject m_narative;
-        private string m_anchorName;
+        public string m_anchorName;
         private AsyncOperationHandle<GameObject> m_uiInstantiateHandler;
         private AsyncOperationHandle<GameObject> m_instantiateHandler;
 

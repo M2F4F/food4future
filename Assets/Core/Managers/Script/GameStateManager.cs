@@ -17,10 +17,11 @@ namespace StateMachine{
             state = new InitState();
             state.OnEnter();
         }
+
         // Start is called before the first frame update
         void Start()
         {
-            _gameStateManager = this;
+            _gameStateManager = this.gameObject.GetComponent<GameStateManager>();
             StateChange(new MenuState());
         }
 
