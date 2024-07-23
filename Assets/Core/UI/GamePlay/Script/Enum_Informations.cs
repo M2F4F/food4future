@@ -10,5 +10,7 @@ public enum InformationLabel
     BOTTLE,
     VAR_CONTROLLER,
     POLYBIOM_SHELF,
-    POLYBIOM_LIGHT
+    POLYBIOM_LIGHT,
+    BLUE_BARREL,
+    PHASE_3_INFO
 }
