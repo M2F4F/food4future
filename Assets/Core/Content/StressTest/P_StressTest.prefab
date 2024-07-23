@@ -1399,6 +1399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6239069504047953529, guid: 9319ce7155b870049a4a4205a2e1a162,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239069504047953529, guid: 9319ce7155b870049a4a4205a2e1a162,
+        type: 3}
       propertyPath: phValueSlider
       value: 
       objectReference: {fileID: 0}
@@ -1459,6 +1464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8525619476370726186, guid: 9319ce7155b870049a4a4205a2e1a162,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525619476370726186, guid: 9319ce7155b870049a4a4205a2e1a162,
+        type: 3}
       propertyPath: salinityText
       value: 
       objectReference: {fileID: 0}
@@ -1507,7 +1517,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1956000
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6239069504047953529, guid: 9319ce7155b870049a4a4205a2e1a162, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8211927445107149458, guid: 9319ce7155b870049a4a4205a2e1a162, type: 3}
     - {fileID: 9048759300663903262, guid: 9319ce7155b870049a4a4205a2e1a162, type: 3}

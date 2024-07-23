@@ -7,10 +7,15 @@ using System.Collections.Generic;
 using System.Globalization;
 using CsvHelper;
 using UnityEditor;
+using Unity.VisualScripting;
 
 public class ScoreRow
 {
     public int PhaseNr { get; set; }
+    public int s1 {  get; set; }
+    public int s2 { get; set; }
+    public int s3 { get; set; }
+    public int s4 { get; set; }
     public int Score { get; set; }
 }
 public class VariableManager : MonoBehaviour
@@ -22,7 +27,7 @@ public class VariableManager : MonoBehaviour
     private List<string> salinityLevelRangeList;
     private List<string> phValueRangeList;
 
-    private int[] totalValueArray = Enumerable.Repeat(0, 4).ToArray();
+    private int[] TotalValueArray = Enumerable.Repeat(0, 4).ToArray();
 
     // Values
     public int temperatureLevel;
@@ -50,11 +55,35 @@ public class VariableManager : MonoBehaviour
     public TMP_Text phText;
 
     public delegate void OnVariableChange(int score, int maxScore, int[] calcScoreArray);
-    public static event OnVariableChange onVariableChange;
+    public static event OnVariableChange OnVariableChangeEvent;
 
     private void OnEnable()
     {
         // Read CSV-Data
+        ReadData();
+
+        // Set maxScore for the dataSet - maxScore per stage
+        CalculateMaxValuePerSceen();
+
+        // Set old values from disk
+        if (File.Exists("Assets/Core/Resources/Scores.csv"))
+        {
+            SetExistingValue();
+        }
+        
+        UpdateTemperatureText();
+        UpdateLightText();
+        UpdateSalinityText();
+        UpdatePhValueText();
+    }
+
+    private void OnDisable()
+    {
+        SaveScoreIntoCsv();
+    }
+
+    private void ReadData()
+    {
         TextAsset csv = (TextAsset)Resources.Load("ModelData", typeof(TextAsset));
         string csvText = csv.text;
 
@@ -97,15 +126,16 @@ public class VariableManager : MonoBehaviour
                             if (phValueSlider != null)
                             {
                                 phValueSlider.maxValue = phValueRangeList.Count - 1;
-                                phValueSlider.value = phValueRangeList.Count / 3 * 2;
                             }
                         }
                         break;
                 }
             }
         }
+    }
 
-        // Set maxScore for the dataSet - maxScore per stage
+    private void CalculateMaxValuePerSceen()
+    {
         if (phValueSlider && salinitySlider && !lightLevelSlider && !temperatureSlider)
         {
             maxScore = 0;
@@ -127,16 +157,103 @@ public class VariableManager : MonoBehaviour
                     CalcMaxValue(phValueRangeList) * 2;
             PhaseNrForPersistence = 3;
         }
-
-        UpdateTemperatureText();
-        UpdateLightText();
-        UpdateSalinityText();
-        UpdatePhValueText();
     }
 
-    private void OnDisable()
+    private void SetExistingValue()
     {
-        
+        using (var reader = new StreamReader("Assets/Core/Resources/Scores.csv"))
+        using (var csvReader = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            csvReader.Read();
+            csvReader.ReadHeader();
+            while (csvReader.Read())
+            {
+                var record = csvReader.GetRecord<ScoreRow>();
+
+                switch (record.PhaseNr)
+                {
+                    case 1:
+                        {
+                            salinityScore = record.s1;
+                            phScore = record.s2;
+                            break;
+                        }
+                    case 2:
+                        {
+                            lightScore = record.s3;
+                            temperatureScore = record.s4;
+                            break;
+                        }
+                    case 3:
+                        {
+                            salinityScore = record.s1;
+                            phScore = record.s2;
+                            lightScore = record.s3;
+                            temperatureScore = record.s4;
+                            break;
+                        }
+                }
+                if (record.PhaseNr == PhaseNrForPersistence)
+                {
+                    switch (PhaseNrForPersistence)
+                    {
+                        case 1:
+                            {
+                                int scoreCountS1 = salinityScore / 3;
+                                int indexForValueS1 = salinityLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS1.ToString()));
+                                if (indexForValueS1 != -1) salinitySlider.value = indexForValueS1;
+
+                                int scoreCountS2 = phScore / 2;
+                                int indexForValueS2 = phValueRangeList.FindIndex(0, x => x.Contains("," + scoreCountS2.ToString()));
+                                if (indexForValueS2 != -1) phValueSlider.value = indexForValueS2;
+
+                                score = record.s1 + record.s2;
+                                break;
+                            }
+                        case 2:
+                            {
+                                int scoreCountS3 = lightScore / 5;
+                                int indexForValueS3 = lightLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS3.ToString()));
+                                if (indexForValueS3 != -1) lightLevelSlider.value = indexForValueS3;
+
+                                int scoreCountS4 = temperatureScore / 7;
+                                int indexForValueS4 = temperaturLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS4.ToString()));
+                                if (indexForValueS4 != -1) temperatureSlider.value = indexForValueS4;
+
+                                score = record.s3 + record.s4;
+                                break;
+                            }
+                        case 3:
+                            {
+                                salinityScore = record.s1;
+                                int scoreCountS1 = salinityScore / 3;
+                                int indexForValueS1 = salinityLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS1.ToString()));
+                                if (indexForValueS1 != -1) salinitySlider.value = indexForValueS1;
+
+                                phScore = record.s2;
+                                int scoreCountS2 = phScore / 2;
+                                int indexForValueS2 = phValueRangeList.FindIndex(0, x => x.Contains("," + scoreCountS2.ToString()));
+                                if (indexForValueS2 != -1) phValueSlider.value = indexForValueS2;
+
+                                lightScore = record.s3;
+                                int scoreCountS3 = lightScore / 5;
+                                int indexForValueS3 = lightLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS3.ToString()));
+                                if (indexForValueS3 != -1) lightLevelSlider.value = indexForValueS3;
+
+                                temperatureScore = record.s4;
+                                int scoreCountS4 = temperatureScore / 7;
+                                int indexForValueS4 = temperaturLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS4.ToString()));
+                                if (indexForValueS4 != -1) temperatureSlider.value = indexForValueS4;
+
+                                score = record.s1 + record.s2 + record.s3 + record.s4;
+                                break;
+                            }
+                    }
+                    // Object is null if we change to sceen 2
+                    OnVariableChangeEvent?.Invoke(score, maxScore, TotalValueArray);
+                }
+            }
+        };
     }
 
     static bool RowHasData(List<string> cells)
@@ -157,28 +274,28 @@ public class VariableManager : MonoBehaviour
     {
         if (value <= 3)
         {
-            totalValueArray[index] = 1;
+            TotalValueArray[index] = 1;
         }
         else
         {
-            totalValueArray[index] = 0;
+            TotalValueArray[index] = 0;
         }
-        SaveScoreIntoCsv();
         
-        onVariableChange?.Invoke(score, maxScore, totalValueArray);
+        OnVariableChangeEvent?.Invoke(score, maxScore, TotalValueArray);
     }
 
     public void SaveScoreIntoCsv()
     {
         var ScoreSet = new List<ScoreRow>()
         {
-            new() {PhaseNr = 1, Score = salinityScore + phScore},
-            new() {PhaseNr = 2, Score = lightScore + temperatureScore}
+            new() {PhaseNr = 1, s1 = salinityScore, s2 = phScore},
+            new() {PhaseNr = 2, s3 = lightScore, s4 = temperatureScore},
+            new() {PhaseNr = 3, s1 = salinityScore, s2 = phScore, s3 = lightScore, s4 = temperatureScore}
         };
         using (var writer = new StreamWriter("Assets/Core/Resources/Scores.csv"))
-        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        using (var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
         {
-            csv.WriteRecords(ScoreSet);
+            csvWriter.WriteRecords(ScoreSet);
         }
     }
     public void SetLightLevel(float value)
@@ -239,12 +356,16 @@ public class VariableManager : MonoBehaviour
     {
         if (phValueRangeList != null)
         {
+            // Reset score by old value
             score -= phScore;
+            // Get new values
             string[] phTuple = phValueRangeList[(int)value].Split(',');
             phLevel = float.Parse(phTuple[0], CultureInfo.InvariantCulture.NumberFormat);
             phScore = int.Parse(phTuple[1]) * 2;
+            // Update text
             UpdatePhValueText();
             score += phScore;
+            // Invoke new score
             CheckForCrossDependecy(phScore / 2, 3);
         }
     }
