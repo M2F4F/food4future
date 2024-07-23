@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: SO_poly
   m_EditorClassIdentifier: 
   objectName: Polybiom
-  description: This is a part of a shelf
+  description: "In dieser Phase werden in Klimaschr\xE4nken mit kontrollierbaren
+    Umweltbedingungen verschiedene  Umweltfaktoren getestet, um die optimalen Bedingungen
+    f\xFCr die Algenanzucht zu ermitteln. Wichtige Faktoren  sind Temperatur, Salzgehalt,
+    Licht und die richtige N\xE4hrstoffkombination. Wissenschaftliche Experimente 
+    untersuchen, wie diese Faktoren einzeln oder im Zusammenspiel das Wachstum und
+    den N\xE4hrstoffgehalt der  Algen beeinflussen, wie z.B. den Gehalt an Proteinen
+    oder Carotinoiden."
