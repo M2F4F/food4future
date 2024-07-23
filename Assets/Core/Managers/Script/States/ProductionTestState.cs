@@ -12,7 +12,7 @@ namespace StateMachine {
         public override string StateName { get; }= "ProductionTestState";
         private Transform m_transform;
         private GameObject m_production;
-        private string m_anchorName;
+        public string m_anchorName;
         private AsyncOperationHandle<GameObject> m_instantiateHandler;
         private bool _shouldDestroySelectionUI;
 
@@ -34,8 +34,8 @@ namespace StateMachine {
         {
             Debug.Log("Exiting: " + this.StateName);
             this.Unsubscribe();
-            if(this.m_production != null) GameObject.Destroy(this.m_production);
-            if(this.m_instantiateHandler.IsValid()) Addressables.Release(this.m_instantiateHandler);
+            GameObject.Destroy(this.m_production);
+            Addressables.Release(this.m_instantiateHandler);
             if(_shouldDestroySelectionUI) {
                 GameObject.Destroy(KindergartenState.m_selectionUI);
                 Addressables.Release(KindergartenState.m_selectionUIInstantiateHandler);
@@ -60,16 +60,17 @@ namespace StateMachine {
         {
             // Debug.Log("Virtual Monitor Instantiated");
             this.m_production = handle.Result;
+            this.m_production.GetComponent<FollowAnchor>().SetAnchor(this.m_anchorName);
         }
 
         private void NextState() {
             _shouldDestroySelectionUI = false;
-            GameStateManager.StateChange(new KindergartenState(m_transform, m_anchorName));
+            GameStateManager.StateChange(new KindergartenState(this.m_transform, this.m_anchorName));
         }
 
         private void PrevState() {
             _shouldDestroySelectionUI = false;
-            GameStateManager.StateChange(new StressTestState(m_transform, m_anchorName));
+            GameStateManager.StateChange(new StressTestState(this.m_transform, this.m_anchorName));
         }
     }
 }

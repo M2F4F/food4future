@@ -9,6 +9,7 @@ using UnityEngine;
 public class SO_Information : ScriptableObject
 {
     public string objectName;
+    [TextArea(10, 20)]
     public string description;
 
 }
