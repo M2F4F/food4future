@@ -28,7 +28,8 @@ public class LightController : MonoBehaviour
         {
             foreach (var light in pointLights)
             {
-                light.intensity = value;
+                light.intensity = value * 1 / 400;
+                Debug.Log("Light intensity: " + light.intensity);
             }
         }
     }
