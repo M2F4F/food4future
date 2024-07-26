@@ -191,6 +191,51 @@ PrefabInstance:
       propertyPath: lightSlider
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[10]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[13]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[14]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[15]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[16]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403787235111578456, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: pointLights.Array.data[17]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3526069679949039940, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -289,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 4230147033798670420, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_text
-      value: Dein Ergebniss
+      value: Dein Ergebnis
       objectReference: {fileID: 0}
     - target: {fileID: 4625887596759390584, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
@@ -530,6 +575,7 @@ PrefabInstance:
     - {fileID: 7463961502684871259, guid: 7941f4bef1c75a34e88fe4bf12c7d493, type: 3}
     - {fileID: 5591091897820996633, guid: 7941f4bef1c75a34e88fe4bf12c7d493, type: 3}
     - {fileID: 6384534051020442755, guid: 7941f4bef1c75a34e88fe4bf12c7d493, type: 3}
+    - {fileID: 7335802152361892330, guid: 7941f4bef1c75a34e88fe4bf12c7d493, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7941f4bef1c75a34e88fe4bf12c7d493, type: 3}
