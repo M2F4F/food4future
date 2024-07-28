@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_WoodLong
   m_EditorClassIdentifier: 
   objectName: Wood Long
-  description: "Eine erprobte Wei\xDFlichtquelle liefert die notwendige photosynthetisch
-    aktive  Strahlung (PAR), die f\xFCr die photosynthetischen Prozesse und damit
-    das Wachstum der  Alge notwendig ist. "
+  description: "Eine bew\xE4hrte Wei\xDFlichtquelle liefert die notwendige photosynthetisch
+    aktive Strahlung (PAR), die f\xFCr die photosynthetischen Prozesse und damit
+    das Wachstum der Alge notwendig ist. "
