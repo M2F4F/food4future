@@ -27,7 +27,7 @@ namespace StateMachine {
         {
             Debug.Log("Entering: " + this.StateName);
             this.m_uiInstantiateHandler = Addressables.InstantiateAsync("UI_Narative.prefab", new Vector3(0,0,0), Quaternion.identity);
-            this.m_instantiateHandler = Addressables.InstantiateAsync("Narative1.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
+            this.m_instantiateHandler = Addressables.InstantiateAsync("Narative0.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
             this.Subscribe();
         }
 

@@ -2,14 +2,12 @@
 * Collaborator:
 * - Diro Baloska
 **/
-using System;
-using System.Collections;
-using StateMachine;
 using UnityEngine;
 
 public class FollowAnchor : MonoBehaviour
 {
     private GameObject m_anchor;
+    [SerializeField] private float m_offset;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +20,9 @@ public class FollowAnchor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.m_anchor != null) transform.position = m_anchor.transform.position;
+        if(this.m_anchor == null) return;
+        Vector3 position = m_anchor.transform.position;
+        transform.position = new Vector3(position.x, position.y + m_offset, position.z);
     }
 
     public void SetAnchor(string anchorName) {
