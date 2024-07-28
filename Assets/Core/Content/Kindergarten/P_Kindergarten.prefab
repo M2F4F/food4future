@@ -86,10 +86,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7546689081465749686}
     m_Modifications:
-    - target: {fileID: 455552476216142095, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+    - target: {fileID: 429342256574086351, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1071536333680091239, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
@@ -333,6 +333,16 @@ PrefabInstance:
       objectReference: {fileID: 3635766075177778175}
     - target: {fileID: 3709266453934190887, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
+      propertyPath: textAssetModel
+      value: 
+      objectReference: {fileID: 4900000, guid: 4d0b80d590726f24185d31897e2911f1, type: 3}
+    - target: {fileID: 3709266453934190887, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: textAssetScore
+      value: 
+      objectReference: {fileID: 4900000, guid: 7f464ec88cc2a9e46a897a10031ed6dc, type: 3}
+    - target: {fileID: 3709266453934190887, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
       propertyPath: temperatureText
       value: 
       objectReference: {fileID: 0}
@@ -374,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 4123206078748370633, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4123206078748370633, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
@@ -509,7 +519,7 @@ PrefabInstance:
     - target: {fileID: 5851086853483927894, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5851086853483927894, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
@@ -559,7 +569,7 @@ PrefabInstance:
     - target: {fileID: 6438840122328381336, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6700115938036734718, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
@@ -731,6 +741,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Salzgehalt
       objectReference: {fileID: 0}
+    - target: {fileID: 7966132662339093176, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8127362826086578245, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -749,7 +764,7 @@ PrefabInstance:
     - target: {fileID: 8162620077762319261, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8196242502851866201, guid: 7941f4bef1c75a34e88fe4bf12c7d493,
         type: 3}
