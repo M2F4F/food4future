@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class SelectSceneButton : MonoBehaviour
 {
-    [SerializeField] private LocalText[] _phase;
+    [SerializeField] private SO_LocalText[] _phase;
     private TMP_Text _text;
     private string _gameStateName;
     private string _lang;
@@ -38,8 +38,8 @@ public class SelectSceneButton : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetString("lang") == "de") _text.text = _phase[0].deutsch;
-        if (PlayerPrefs.GetString("lang") == "en") _text.text = _phase[0].english;
+        if (PlayerPrefs.GetString("lang", "de") == "de") _text.text = _phase[0].deutsch;
+        if (PlayerPrefs.GetString("lang", "de") == "en") _text.text = _phase[0].english;
         _gameStateName = "KindergartenState";
 
         gameObject.GetComponent<Button>().onClick.AddListener(OnSelectButtonClicked);

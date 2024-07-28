@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class NarativeSlideshow : MonoBehaviour
 {
-    [SerializeField] private LocalText[] _texts;
+    [SerializeField] private SO_LocalText[] _texts;
     [SerializeField] private TMP_Text _counter;
     [SerializeField] private Vector3 _panelPopupPosition;
     [SerializeField] private Vector3 _nextButtonPopupPosition;
@@ -46,7 +46,7 @@ public class NarativeSlideshow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang"))));
+        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang", "de"))));
     }
 
 
@@ -56,7 +56,7 @@ public class NarativeSlideshow : MonoBehaviour
         if(_coroutine != null) {
             StopCoroutine(_coroutine);
             _coroutine = null;
-            _textHolder.text = GetText(PlayerPrefs.GetString("lang"));
+            _textHolder.text = GetText(PlayerPrefs.GetString("lang", "de"));
             StartCoroutine(WaitToMovePanel());
             StartCoroutine(TriggerEventWithDelay());
             return;
@@ -72,7 +72,7 @@ public class NarativeSlideshow : MonoBehaviour
         }
 
         _counter.text = _index + 1 + " / " + _texts.Length;
-        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang"))));
+        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang", "de"))));
     }
 
     private void LanguageChangeHandler(string lang) {
