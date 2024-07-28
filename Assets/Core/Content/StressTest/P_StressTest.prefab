@@ -2257,6 +2257,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8525619476370726186, guid: 9319ce7155b870049a4a4205a2e1a162,
         type: 3}
+      propertyPath: textAssetModel
+      value: 
+      objectReference: {fileID: 4900000, guid: 4d0b80d590726f24185d31897e2911f1, type: 3}
+    - target: {fileID: 8525619476370726186, guid: 9319ce7155b870049a4a4205a2e1a162,
+        type: 3}
+      propertyPath: textAssetScore
+      value: 
+      objectReference: {fileID: 4900000, guid: 7f464ec88cc2a9e46a897a10031ed6dc, type: 3}
+    - target: {fileID: 8525619476370726186, guid: 9319ce7155b870049a4a4205a2e1a162,
+        type: 3}
       propertyPath: lightLevelSlider
       value: 
       objectReference: {fileID: 3441041404481531993}
