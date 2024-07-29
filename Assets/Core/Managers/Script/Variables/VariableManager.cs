@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
-using UnityEditor;
 
 public class VariableManager : MonoBehaviour
 {
