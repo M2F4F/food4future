@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baef492964e39134aa2d2e3ac43a260b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anchor: {fileID: 0}
   m_offset: -0.1
 --- !u!114 &-8247114432874965447
 MonoBehaviour:
@@ -59,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a9df096a93f1742884252b92241471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hologramSize: {x: 0.1, y: 0.1, z: 0.1}
+  _hologramSize: {x: 0.2, y: 0.2, z: 0.2}
   _duration: 0.25
-  _rotationSpeed: 50
+  _rotationSpeed: 20
 --- !u!1001 &5455428466640183615
 PrefabInstance:
   m_ObjectHideFlags: 0
