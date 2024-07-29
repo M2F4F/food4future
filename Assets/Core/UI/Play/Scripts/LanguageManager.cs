@@ -13,8 +13,6 @@ public class LanguageManager : MonoBehaviour
 
     void Awake() {
         _language = PlayerPrefs.GetString("lang", "de");
-        
-        Debug.Log(_language);
 
         _text = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
         _text.text = _language.ToUpper();
