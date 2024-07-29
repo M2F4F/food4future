@@ -20,5 +20,18 @@ public class PopupOpenVarController : MonoBehaviour
             Debug.LogError("Canvas is not assigned in the inspector.");
         }
     }
+
+    public void HideCanvas()
+    {
+        if (canvas != null)
+        {
+            canvas.SetActive(false);
+            if (panel) panel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Canvas is not assigned in the inspector.");
+        }
+    }
 }
 
