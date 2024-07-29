@@ -46,7 +46,7 @@ public class PopupWindow : MonoBehaviour
         if(m_label.CompareTo(label) != 0) return;
         m_description = description;
 
-        this.FillText(PlayerPrefs.GetString("lang"));
+        this.FillText(PlayerPrefs.GetString("lang", "de"));
 
         m_textPanel.SetActive(true);
     }
@@ -62,5 +62,6 @@ public class PopupWindow : MonoBehaviour
         m_title.text = m_description.title.english;
         m_subtitle.text = m_description.subtitle.english;
         m_informationBody.text = m_description.subtitle.english;
+        return;
     }
 }
