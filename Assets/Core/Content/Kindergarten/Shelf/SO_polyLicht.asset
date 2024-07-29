@@ -19,3 +19,8 @@ MonoBehaviour:
     allem auf den Unterschied bzw. die  Balance zwischen photosynthetisch aktiver
     Strahlung (PAR) sowie anregender  kurzwelliger (UV) und langwelliger (infrarot)
     Strahlung geachtet. "
+  EnglishDescription: Using a "light organ", consisting of various defined LEDs,
+    the influence of different light spectra and light intensities on algae growth
+    and composition is studied. Particular attention is paid to the difference and
+    balance between photosynthetically active radiation (PAR) and stimulating short-wavelength
+    (UV) and long-wavelength (infrared) radiation.

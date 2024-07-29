@@ -11,5 +11,7 @@ public class SO_Information : ScriptableObject
     public string objectName;
     [TextArea(10, 20)]
     public string description;
+    [TextArea(10, 20)]
+    public string EnglishDescription;
 
 }

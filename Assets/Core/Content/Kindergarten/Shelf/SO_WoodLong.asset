@@ -16,3 +16,6 @@ MonoBehaviour:
   description: "Eine bew\xE4hrte Wei\xDFlichtquelle liefert die notwendige photosynthetisch
     aktive Strahlung (PAR), die f\xFCr die photosynthetischen Prozesse und damit
     das Wachstum der Alge notwendig ist. "
+  EnglishDescription: A proven white light source provides the necessary photosynthetically
+    active radiation (PAR), which is essential for the photosynthetic processes and,
+    consequently, the growth of the algae.
