@@ -14,12 +14,14 @@ public class HologramAnimator : MonoBehaviour
     private bool _shouldStopRotating;
     private GameObject _level;
     private Vector3 _levelHologramPosition;
+    private FollowAnchor _followAnchor;
         
     void Awake() {
         pyramid = gameObject.transform.GetChild(0).gameObject;
         _humanSize = gameObject.transform.localScale;
         _originalRotation = gameObject.transform.eulerAngles;
         _shouldStopRotating = false;
+        _followAnchor = gameObject.GetComponent<FollowAnchor>();
         try {
             _level = transform.GetChild(1).gameObject;
             _levelHologramPosition = _level.transform.localPosition;
@@ -83,7 +85,7 @@ public class HologramAnimator : MonoBehaviour
         {
             currentTime += Time.deltaTime;
             gameObject.transform.localScale = Vector3.Lerp(currentScale, _humanSize, currentTime / _duration);
-            transform.eulerAngles = Vector3.Lerp(currentRotation, _originalRotation, currentTime / _duration);
+            transform.eulerAngles = Vector3.Lerp(currentRotation, _followAnchor.anchor.transform.eulerAngles, currentTime / _duration);
             yield return null;
         }
     }
@@ -93,12 +95,13 @@ public class HologramAnimator : MonoBehaviour
         gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, _hologramSize.y, gameObject.transform.localScale.z);
         Vector3 currentScale = gameObject.transform.localScale;
         float currentTime = 0f;
+        Vector3 startingRotation = transform.eulerAngles;
 
         while (currentTime < _duration)
         {
             currentTime += Time.deltaTime;
             gameObject.transform.localScale = Vector3.Lerp(currentScale, _hologramSize, currentTime / _duration);
-            transform.eulerAngles = Vector3.Lerp(_originalRotation, _lastRotation, currentTime / _duration);
+            transform.eulerAngles = Vector3.Lerp(startingRotation, _lastRotation, currentTime / _duration);
             yield return null;
         }
         pyramid.SetActive(true);
@@ -110,7 +113,7 @@ public class HologramAnimator : MonoBehaviour
         float currentTime = 0f;
 
         while(currentTime < 0.2f) {
-            gameObject.transform.localScale = Vector3.Lerp(Vector3.zero, new Vector3(0.15f, 0.15f, 0.15f), currentTime / 0.2f);
+            gameObject.transform.localScale = Vector3.Lerp(Vector3.zero, new Vector3(_hologramSize.x + 0.05f, _hologramSize.y + 0.05f, _hologramSize.z + 0.05f), currentTime / 0.2f);
             currentTime += Time.deltaTime;
             yield return null;
         }
@@ -123,7 +126,7 @@ public class HologramAnimator : MonoBehaviour
         float currentTime = 0f;
 
         while(currentTime < 0.1f) {
-            gameObject.transform.localScale = Vector3.Lerp(fromScale, new Vector3(0.1f, 0.1f, 0.1f), currentTime / 0.1f);
+            gameObject.transform.localScale = Vector3.Lerp(fromScale, _hologramSize, currentTime / 0.1f);
             currentTime += Time.deltaTime;
             yield return null;
         }
