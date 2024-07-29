@@ -5,23 +5,13 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
-using CsvHelper;
 using UnityEditor;
-using Unity.VisualScripting;
 
-public class ScoreRow
-{
-    public int PhaseNr { get; set; }
-    public int s1 {  get; set; }
-    public int s2 { get; set; }
-    public int s3 { get; set; }
-    public int s4 { get; set; }
-    public int Score { get; set; }
-}
 public class VariableManager : MonoBehaviour
 {
     // Range data from CSV-File
-    public TextAsset textAsset;
+    public TextAsset textAssetModel;
+    public TextAsset textAssetScore;
     private List<string> lightLevelRangeList;
     private List<string> temperaturLevelRangeList;
     private List<string> salinityLevelRangeList;
@@ -66,10 +56,7 @@ public class VariableManager : MonoBehaviour
         CalculateMaxValuePerSceen();
 
         // Set old values from disk
-        if (File.Exists("Assets/Core/Resources/Scores.csv"))
-        {
-            SetExistingValue();
-        }
+        SetExistingValue();
         
         UpdateTemperatureText();
         UpdateLightText();
@@ -134,6 +121,52 @@ public class VariableManager : MonoBehaviour
         }
     }
 
+    private void SetExistingValue()
+    {
+        // Important for packing into build
+        TextAsset csv = (TextAsset)Resources.Load("Scores", typeof(TextAsset));
+        string csvText = File.ReadAllText(Path.Combine(Application.persistentDataPath, "Scores"));
+
+        List<string> csvList = csvText.Split(";").ToList();
+        foreach (string row in csvList)
+        {
+            
+            var cells = row.Split(',').ToList();
+            if (RowHasData(cells) && cells != null)
+            {
+                salinityScore = int.Parse(cells[0]);
+                phScore = int.Parse(cells[1]);
+                lightScore = int.Parse(cells[2]);
+                temperatureScore = int.Parse(cells[3]);
+            
+                int scoreCountS1 = salinityScore / 3;
+                int indexForValueS1 = salinityLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS1.ToString()));
+                if (indexForValueS1 != -1 && salinitySlider != null) salinitySlider.value = indexForValueS1;
+
+                int scoreCountS2 = phScore / 2;
+                int indexForValueS2 = phValueRangeList.FindIndex(0, x => x.Contains("," + scoreCountS2.ToString()));
+                if (indexForValueS2 != -1 && phValueSlider != null) phValueSlider.value = indexForValueS2;
+
+                int scoreCountS3 = lightScore / 5;
+                int indexForValueS3 = lightLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS3.ToString()));
+                if (indexForValueS3 != -1 && lightLevelSlider != null) lightLevelSlider.value = indexForValueS3;
+
+                int scoreCountS4 = temperatureScore / 7;
+                int indexForValueS4 = temperaturLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS4.ToString()));
+                if (indexForValueS4 != -1 && temperatureSlider != null) temperatureSlider.value = indexForValueS4;
+
+                switch (PhaseNrForPersistence)
+                {
+                    case 1: score = int.Parse(cells[0]) + int.Parse(cells[1]); break;
+                    case 2: score = int.Parse(cells[2]) + int.Parse(cells[3]); break;
+                    case 3: score = int.Parse(cells[0]) + int.Parse(cells[1]) + int.Parse(cells[2]) + int.Parse(cells[3]); break;
+                }     
+                // Object is null if we change to sceen 2
+                OnVariableChangeEvent?.Invoke(score, maxScore, TotalValueArray);
+            }
+        }
+    }
+
     private void CalculateMaxValuePerSceen()
     {
         if (phValueSlider && salinitySlider && !lightLevelSlider && !temperatureSlider)
@@ -157,103 +190,6 @@ public class VariableManager : MonoBehaviour
                     CalcMaxValue(phValueRangeList) * 2;
             PhaseNrForPersistence = 3;
         }
-    }
-
-    private void SetExistingValue()
-    {
-        using (var reader = new StreamReader("Assets/Core/Resources/Scores.csv"))
-        using (var csvReader = new CsvReader(reader, CultureInfo.InvariantCulture))
-        {
-            csvReader.Read();
-            csvReader.ReadHeader();
-            while (csvReader.Read())
-            {
-                var record = csvReader.GetRecord<ScoreRow>();
-
-                switch (record.PhaseNr)
-                {
-                    case 1:
-                        {
-                            salinityScore = record.s1;
-                            phScore = record.s2;
-                            break;
-                        }
-                    case 2:
-                        {
-                            lightScore = record.s3;
-                            temperatureScore = record.s4;
-                            break;
-                        }
-                    case 3:
-                        {
-                            salinityScore = record.s1;
-                            phScore = record.s2;
-                            lightScore = record.s3;
-                            temperatureScore = record.s4;
-                            break;
-                        }
-                }
-                if (record.PhaseNr == PhaseNrForPersistence)
-                {
-                    switch (PhaseNrForPersistence)
-                    {
-                        case 1:
-                            {
-                                int scoreCountS1 = salinityScore / 3;
-                                int indexForValueS1 = salinityLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS1.ToString()));
-                                if (indexForValueS1 != -1) salinitySlider.value = indexForValueS1;
-
-                                int scoreCountS2 = phScore / 2;
-                                int indexForValueS2 = phValueRangeList.FindIndex(0, x => x.Contains("," + scoreCountS2.ToString()));
-                                if (indexForValueS2 != -1) phValueSlider.value = indexForValueS2;
-
-                                score = record.s1 + record.s2;
-                                break;
-                            }
-                        case 2:
-                            {
-                                int scoreCountS3 = lightScore / 5;
-                                int indexForValueS3 = lightLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS3.ToString()));
-                                if (indexForValueS3 != -1) lightLevelSlider.value = indexForValueS3;
-
-                                int scoreCountS4 = temperatureScore / 7;
-                                int indexForValueS4 = temperaturLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS4.ToString()));
-                                if (indexForValueS4 != -1) temperatureSlider.value = indexForValueS4;
-
-                                score = record.s3 + record.s4;
-                                break;
-                            }
-                        case 3:
-                            {
-                                salinityScore = record.s1;
-                                int scoreCountS1 = salinityScore / 3;
-                                int indexForValueS1 = salinityLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS1.ToString()));
-                                if (indexForValueS1 != -1) salinitySlider.value = indexForValueS1;
-
-                                phScore = record.s2;
-                                int scoreCountS2 = phScore / 2;
-                                int indexForValueS2 = phValueRangeList.FindIndex(0, x => x.Contains("," + scoreCountS2.ToString()));
-                                if (indexForValueS2 != -1) phValueSlider.value = indexForValueS2;
-
-                                lightScore = record.s3;
-                                int scoreCountS3 = lightScore / 5;
-                                int indexForValueS3 = lightLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS3.ToString()));
-                                if (indexForValueS3 != -1) lightLevelSlider.value = indexForValueS3;
-
-                                temperatureScore = record.s4;
-                                int scoreCountS4 = temperatureScore / 7;
-                                int indexForValueS4 = temperaturLevelRangeList.FindIndex(0, x => x.Contains("," + scoreCountS4.ToString()));
-                                if (indexForValueS4 != -1) temperatureSlider.value = indexForValueS4;
-
-                                score = record.s1 + record.s2 + record.s3 + record.s4;
-                                break;
-                            }
-                    }
-                    // Object is null if we change to sceen 2
-                    OnVariableChangeEvent?.Invoke(score, maxScore, TotalValueArray);
-                }
-            }
-        };
     }
 
     static bool RowHasData(List<string> cells)
@@ -286,16 +222,12 @@ public class VariableManager : MonoBehaviour
 
     public void SaveScoreIntoCsv()
     {
-        var ScoreSet = new List<ScoreRow>()
+        if(PhaseNrForPersistence == 3)
         {
-            new() {PhaseNr = 1, s1 = salinityScore, s2 = phScore},
-            new() {PhaseNr = 2, s3 = lightScore, s4 = temperatureScore},
-            new() {PhaseNr = 3, s1 = salinityScore, s2 = phScore, s3 = lightScore, s4 = temperatureScore}
-        };
-        using (var writer = new StreamWriter("Assets/Core/Resources/Scores.csv"))
-        using (var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            File.WriteAllText(Path.Combine(Application.persistentDataPath, "Scores"), "0,0,0,0");
+        } else
         {
-            csvWriter.WriteRecords(ScoreSet);
+            File.WriteAllText(Path.Combine(Application.persistentDataPath, "Scores"), salinityScore + "," + phScore + "," + lightScore + "," + temperatureScore);
         }
     }
     public void SetLightLevel(float value)
