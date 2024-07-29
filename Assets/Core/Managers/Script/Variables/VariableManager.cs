@@ -1,3 +1,7 @@
+/*
+ * Author: Gerrit Behrens
+*/
+
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -5,7 +9,8 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
-using UnityEditor;
+using UnityEngine.SocialPlatforms.Impl;
+using Unity.VisualScripting;
 
 public class VariableManager : MonoBehaviour
 {
@@ -17,7 +22,7 @@ public class VariableManager : MonoBehaviour
     private List<string> salinityLevelRangeList;
     private List<string> phValueRangeList;
 
-    private int[] TotalValueArray = Enumerable.Repeat(0, 4).ToArray();
+    private int[] totalValueArray = Enumerable.Repeat(0, 4).ToArray();
 
     // Values
     public int temperatureLevel;
@@ -161,8 +166,8 @@ public class VariableManager : MonoBehaviour
                     case 2: score = int.Parse(cells[2]) + int.Parse(cells[3]); break;
                     case 3: score = int.Parse(cells[0]) + int.Parse(cells[1]) + int.Parse(cells[2]) + int.Parse(cells[3]); break;
                 }     
-                // Object is null if we change to sceen 2
-                OnVariableChangeEvent?.Invoke(score, maxScore, TotalValueArray);
+                
+                OnVariableChangeEvent?.Invoke(score, maxScore, totalValueArray);
             }
         }
     }
@@ -174,12 +179,14 @@ public class VariableManager : MonoBehaviour
             maxScore = 0;
             maxScore += CalcMaxValue(salinityLevelRangeList) * 3 + CalcMaxValue(phValueRangeList) * 2;
             PhaseNrForPersistence = 1;
+            Debug.Log(maxScore);
         }
         else if (!phValueSlider && !salinitySlider && lightLevelSlider && temperatureSlider)
         {
             maxScore = 0;
             maxScore += CalcMaxValue(lightLevelRangeList) * 5 + CalcMaxValue(temperaturLevelRangeList) * 7;
             PhaseNrForPersistence = 2;
+            Debug.Log(maxScore);
         }
         else
         {
@@ -189,6 +196,7 @@ public class VariableManager : MonoBehaviour
                     CalcMaxValue(salinityLevelRangeList) * 3 +
                     CalcMaxValue(phValueRangeList) * 2;
             PhaseNrForPersistence = 3;
+            Debug.Log(maxScore);
         }
     }
 
@@ -210,26 +218,21 @@ public class VariableManager : MonoBehaviour
     {
         if (value <= 3)
         {
-            TotalValueArray[index] = 1;
+            totalValueArray[index] = 1;
         }
         else
         {
-            TotalValueArray[index] = 0;
+            totalValueArray[index] = 0;
         }
         
-        OnVariableChangeEvent?.Invoke(score, maxScore, TotalValueArray);
+        OnVariableChangeEvent?.Invoke(score, maxScore, totalValueArray);
     }
 
     public void SaveScoreIntoCsv()
     {
-        if(PhaseNrForPersistence == 3)
-        {
-            File.WriteAllText(Path.Combine(Application.persistentDataPath, "Scores"), "0,0,0,0");
-        } else
-        {
-            File.WriteAllText(Path.Combine(Application.persistentDataPath, "Scores"), salinityScore + "," + phScore + "," + lightScore + "," + temperatureScore);
-        }
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "Scores"), salinityScore + "," + phScore + "," + lightScore + "," + temperatureScore);
     }
+
     public void SetLightLevel(float value)
     {
         if (lightLevelRangeList != null)
@@ -244,6 +247,8 @@ public class VariableManager : MonoBehaviour
             UpdateLightText();
             // Adjust score by new value
             score += lightScore;
+            // Save new values
+            SaveScoreIntoCsv();
             // Invoke new score
             CheckForCrossDependecy(lightScore / 5, 0);
         }
@@ -262,6 +267,8 @@ public class VariableManager : MonoBehaviour
             UpdateTemperatureText();
             // Adjust score by new values
             score += temperatureScore;
+            // Save new values
+            SaveScoreIntoCsv();
             // Invoke new score
             CheckForCrossDependecy(temperatureScore / 7, 1);
         }
@@ -280,6 +287,8 @@ public class VariableManager : MonoBehaviour
             UpdateSalinityText();
             // Adjust score by new values
             score += salinityScore;
+            // Save new values
+            SaveScoreIntoCsv();
             // Invoke new score
             CheckForCrossDependecy(salinityScore / 3, 2);
         }
@@ -297,6 +306,8 @@ public class VariableManager : MonoBehaviour
             // Update text
             UpdatePhValueText();
             score += phScore;
+            // Save new values
+            SaveScoreIntoCsv();
             // Invoke new score
             CheckForCrossDependecy(phScore / 2, 3);
         }
