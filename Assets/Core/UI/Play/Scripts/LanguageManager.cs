@@ -12,9 +12,8 @@ public class LanguageManager : MonoBehaviour
     public static event OnLanguageChange onLanguageChange;
 
     void Awake() {
-        _language = "de";
-        string currLanguage = PlayerPrefs.GetString("lang");
-        if(currLanguage != null) _language = currLanguage;
+        _language = PlayerPrefs.GetString("lang", "de");
+
         _text = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
         _text.text = _language.ToUpper();
     }

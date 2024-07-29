@@ -583,7 +583,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 396256043165833028}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8160959259427201595, guid: dda999a36e8b39940987efe8f4541f59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4244622224507492391}
   m_SourcePrefab: {fileID: 100100000, guid: dda999a36e8b39940987efe8f4541f59, type: 3}
 --- !u!4 &7464327180367364711 stripped
 Transform:
@@ -591,6 +595,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 634388908564384371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8758446211636815944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8160959259427201595, guid: dda999a36e8b39940987efe8f4541f59,
+    type: 3}
+  m_PrefabInstance: {fileID: 634388908564384371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4244622224507492391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758446211636815944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf28f1da238942e479a4affed7ba333e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pageCoverage: 2
+  _nextHologram: P_Narative1.prefab
 --- !u!1001 &677187867232496055
 PrefabInstance:
   m_ObjectHideFlags: 0

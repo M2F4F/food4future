@@ -7,16 +7,18 @@ using UnityEngine.UIElements;
 
 public class NarativeSlideshow : MonoBehaviour
 {
-    [SerializeField] private LocalText[] _texts;
+    [SerializeField] private SO_LocalText[] _texts;
     [SerializeField] private TMP_Text _counter;
     [SerializeField] private Vector3 _panelPopupPosition;
     [SerializeField] private Vector3 _nextButtonPopupPosition;
     private TMP_Text _textHolder;
-    private int _index;
+    public int _pageIndex { get; private set; }
     private Coroutine _coroutine;
     private Coroutine _moveCoroutine;
     public delegate void OnRenderDone();
     public static event OnRenderDone onRenderDone;
+    public delegate void OnPageChange(int pageNumber);
+    public static event OnPageChange onPageChange;
     
     private GameObject _parent;
     private Vector3 _parentInitPos;
@@ -34,9 +36,9 @@ public class NarativeSlideshow : MonoBehaviour
     }
 
     void Awake() {
-        _index = 0;
+        _pageIndex = 0;
         _textHolder = GetComponent<TMP_Text>();
-        _counter.text = _index + 1 + " / " + _texts.Length;
+        _counter.text = _pageIndex + 1 + " / " + _texts.Length;
         _parent = transform.parent.gameObject;
         _parentInitPos = _parent.transform.localPosition;
         _nextButton = _parent.transform.parent.GetChild(2).gameObject;
@@ -46,7 +48,7 @@ public class NarativeSlideshow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang"))));
+        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang", "de"))));
     }
 
 
@@ -56,23 +58,24 @@ public class NarativeSlideshow : MonoBehaviour
         if(_coroutine != null) {
             StopCoroutine(_coroutine);
             _coroutine = null;
-            _textHolder.text = GetText(PlayerPrefs.GetString("lang"));
+            _textHolder.text = GetText(PlayerPrefs.GetString("lang", "de"));
             StartCoroutine(WaitToMovePanel());
             StartCoroutine(TriggerEventWithDelay());
             return;
         }
 
         if(_moveCoroutine != null) StopCoroutine(_moveCoroutine);
-        _index++;
+        _pageIndex++;
+        onPageChange?.Invoke(_pageIndex + 1);
 
         // If reached the last page
-        if(_index == _texts.Length) {
-            _index = 0;
+        if(_pageIndex == _texts.Length) {
+            _pageIndex = 0;
             _moveCoroutine = StartCoroutine(MoveBackPanel());
         }
 
-        _counter.text = _index + 1 + " / " + _texts.Length;
-        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang"))));
+        _counter.text = _pageIndex + 1 + " / " + _texts.Length;
+        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang", "de"))));
     }
 
     private void LanguageChangeHandler(string lang) {
@@ -82,8 +85,8 @@ public class NarativeSlideshow : MonoBehaviour
 
 
     private string GetText(string lang) {
-        if(lang == "en") return _texts[_index].english;
-        return _texts[_index].deutsch;
+        if(lang == "en") return _texts[_pageIndex].english;
+        return _texts[_pageIndex].deutsch;
     }
 
     IEnumerator TriggerEventWithDelay() {
@@ -123,7 +126,7 @@ public class NarativeSlideshow : MonoBehaviour
     }
 
     private IEnumerator WaitToMovePanel() {
-        if(_index == _texts.Length - 1) {
+        if(_pageIndex == _texts.Length - 1) {
             yield return new WaitForSeconds(0.1f);
             _moveCoroutine = StartCoroutine(MovePanel());
         }

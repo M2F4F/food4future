@@ -73,12 +73,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df904f4ff046b4044aabff6ea6722737
-    m_Address: Narative1.prefab
+    m_Address: P_Narative1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2393c3a331056cd4da0079bb2299fa9d
-    m_Address: Narative0.prefab
+    m_Address: P_Narative0.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
