@@ -60,6 +60,7 @@ namespace StateMachine {
             
             #if UNITY_EDITOR
             GameObject gameobject = new GameObject("Anchor");
+            gameobject.AddComponent<ARAnchor>();
             gameobject.transform.position = new Vector3(1f,2.3f,-1.35f);
             gameobject.transform.rotation = Quaternion.identity;
             onImageTrackedHandler(gameobject.transform, "Anchor");
