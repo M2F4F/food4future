@@ -11,5 +11,4 @@ public class SO_Information : ScriptableObject
     public SO_LocalText title;
     public SO_LocalText subtitle;
     public SO_LocalText content;
-
 }

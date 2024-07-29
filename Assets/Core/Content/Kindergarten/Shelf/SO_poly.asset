@@ -24,3 +24,16 @@ MonoBehaviour:
     Algenwachstum und N\xE4hrstoffprofil zu  untersuchen. Hier k\xF6nnen verschiedene
     Intensit\xE4ten, Lichtspektren und Tageszyklen  programmgesteuert einzeln oder
     kombiniert eingestellt werden."
+  EnglishDescription: 'In this phase, various environmental factors are tested in
+    climate cabinets with controllable conditions to determine the optimal conditions
+    for algae cultivation. Important factors include temperature, salinity, light,
+    and the right nutrient combination. Scientific experiments investigate how these
+    factors, individually or in combination, affect the growth and nutrient content
+    of the algae, such as the protein or carotenoid content.
+
+
+    In these controllable
+    growth chambers, various environmental factors, such as temperature and light,
+    are tested to study their impact on algae growth and nutrient profile. Here,
+    different intensities, light spectra, and daily cycles can be programmatically
+    adjusted individually or in combination.'
