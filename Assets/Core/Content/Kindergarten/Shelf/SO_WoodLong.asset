@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4faf7c83a3b359b49a6de332d65a5cca, type: 3}
   m_Name: SO_WoodLong
   m_EditorClassIdentifier: 
-  objectName: Wood Long
-  description: "Eine bew\xE4hrte Wei\xDFlichtquelle liefert die notwendige photosynthetisch
-    aktive Strahlung (PAR), die f\xFCr die photosynthetischen Prozesse und damit
-    das Wachstum der Alge notwendig ist. "
-  EnglishDescription: A proven white light source provides the necessary photosynthetically
-    active radiation (PAR), which is essential for the photosynthetic processes and,
-    consequently, the growth of the algae.
+  title: {fileID: 11400000, guid: 61bb8419c9b851648a33616a35584b76, type: 2}
+  subtitle: {fileID: 11400000, guid: 7bd7697b0e93eb046b713cbc2d90e8dc, type: 2}
+  content: {fileID: 11400000, guid: 64bfb1a502f083e4c9ac6bf060b26bcd, type: 2}

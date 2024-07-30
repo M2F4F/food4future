@@ -12,23 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4faf7c83a3b359b49a6de332d65a5cca, type: 3}
   m_Name: SO_Phase3Info
   m_EditorClassIdentifier: 
-  objectName: Phase3Info
-  description: "\u2022 Warum sind die Tonnen isoliert? \n\nF\xFCr eine ideale Kultivierung
-    ist die Kontrolle von Licht und Temperatur entscheidend. Daher erfolgt die Biomasseproduktion
-    in isolierten, dunklen Tonnen, die mit einer Temperaturregelung und einer einstellbaren
-    internen Lichtquelle ausgestattet sind.\n\n\u2022 Was ist in den Tonnen?\n  -
-    Halterungen mit Kultivierungssubstraten: Auf denen die benthischen (bodenbewohnenen)
-    Algen angewachsen sind.\n  - Kultivare (Algen).\n  - Kultivierungsmedium.\n 
-    - Luftzufuhr \u2013 eine regelm\xE4\xDFige Bel\xFCftung vermeidet Stagnation
-    der Wassers\xE4ule und bringt notwendige Gase ins System.\n\n\u2022 Welche Funktion
-    haben die Schl\xE4uche?\nDie Schl\xE4uche dienen der Temperaturregulierung durch
-    ein angeschlossenes K\xFChlungssystem und der Bel\xFCftung."
-  EnglishDescription: "\u2022 Why are the barrels isolated?\n\nFor ideal cultivation,
-    the control of light and temperature is crucial. Therefore, biomass production
-    takes place in isolated, dark barrels equipped with temperature regulation and
-    an adjustable internal light source.\n\n\u2022 What is inside the barrels?\n\n-
-    Holders with cultivation substrates: On which the benthic (bottom-dwelling) algae
-    have grown.\n- Cultivars (algae).\n- Cultivation medium.\n- Air supply: Regular
-    aeration avoids stagnation of the water column and brings necessary gases into
-    the system.\n\n\u2022 What is the function of the tubes?\nThe tubes serve for
-    temperature regulation through a connected cooling system and for aeration."
+  title: {fileID: 11400000, guid: de1f63b8eee4c624e88c0c5a3a947534, type: 2}
+  subtitle: {fileID: 11400000, guid: 3364a09087e38734b948a210c3bbad7c, type: 2}
+  content: {fileID: 11400000, guid: 86c96d495b78c1c4c9821c60b0e1a0ae, type: 2}

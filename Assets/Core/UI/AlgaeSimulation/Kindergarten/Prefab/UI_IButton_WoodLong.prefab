@@ -156,5 +156,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81749a7b2a4d5f8449493b6651f8dbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_information: {fileID: 11400000, guid: efe65801625ba47448021601374da340, type: 2}
+  description: {fileID: 11400000, guid: efe65801625ba47448021601374da340, type: 2}
   m_label: 1

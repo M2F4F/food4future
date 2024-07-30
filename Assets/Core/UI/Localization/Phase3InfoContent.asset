@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
+  m_Name: Phase3InfoContent
+  m_EditorClassIdentifier: 
+  english: "\u2022 Why are the barrels isolated?\r\n\r\nFor ideal cultivation, the
+    control of light and temperature is crucial. Therefore, biomass production takes
+    place in isolated, dark barrels equipped with temperature regulation and an adjustable
+    internal light source.\r\n\r\n\u2022 What is inside the barrels?\r\n\r\n- Holders
+    with cultivation substrates: On which the benthic (bottom-dwelling) algae have
+    grown.\r\n- Cultivars (algae).\r\n- Cultivation medium.\r\n- Air supply: Regular
+    aeration avoids stagnation of the water column and brings necessary gases into
+    the system.\r\n\r\n\u2022 What is the function of the tubes?\r\nThe tubes serve
+    for temperature regulation through a connected cooling system and for aeration.\r\n"
+  deutsch: "\u2022 Warum sind die Tonnen isoliert? \r\n\r\nF\xFCr eine ideale Kultivierung
+    ist die Kontrolle von Licht und Temperatur entscheidend. Daher erfolgt die Biomasseproduktion
+    in isolierten, dunklen Tonnen, die mit einer Temperaturregelung und einer einstellbaren
+    internen Lichtquelle ausgestattet sind.\r\n\r\n\u2022 Was ist in den Tonnen?\r\n 
+    - Halterungen mit Kultivierungssubstraten: Auf denen die benthischen (bodenbewohnenen)
+    Algen angewachsen sind.\r\n  - Kultivare (Algen).\r\n  - Kultivierungsmedium.\r\n 
+    - Luftzufuhr \u2013 eine regelm\xE4\xDFige Bel\xFCftung vermeidet Stagnation
+    der Wassers\xE4ule und bringt notwendige Gase ins System.\r\n\r\n\u2022 Welche
+    Funktion haben die Schl\xE4uche?\r\nDie Schl\xE4uche dienen der Temperaturregulierung
+    durch ein angeschlossenes K\xFChlungssystem und der Bel\xFCftung.\r\n"
