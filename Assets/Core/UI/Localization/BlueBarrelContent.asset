@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
+  m_Name: BlueBarrelContent
+  m_EditorClassIdentifier: 
+  english: After the suitable algae material has been propagated and the important
+    cultivation factors have been determined, the first production tests in larger
+    cultivation units (>100L) begin. The goal is not only to produce algae biomass
+    but also to ensure the desired nutrient profile. Since algae follow their natural
+    rhythms, appropriate harvesting cycles must be developed depending on the type
+    of algae to ensure constant and high-quality production.
+  deutsch: "Nachdem das geeignete Algenmaterial vermehrt und die wichtigen Kultivierungsfaktoren
+    ermittelt wurden, starten die ersten Produktionstests in gr\xF6\xDFeren Kultivierungseinheiten
+    (>100L)\r\nZiel ist es nicht nur Algenbiomasse zu erzeugen, sondern auch das
+    gew\xFCnschte N\xE4hrstoffprofil sicherzustellen. Da Algen ihren nat\xFCrlichen
+    Rhythmen folgen, m\xFCssen je nach Algenart passende Erntezyklen entwickelt werden,
+    um eine konstante und qualitativ hohe Produktion zu gew\xE4hrleisten."

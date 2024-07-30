@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4faf7c83a3b359b49a6de332d65a5cca, type: 3}
   m_Name: SO_PreparatHolder
   m_EditorClassIdentifier: 
-  objectName: PreparatHolder
-  description: " In kleinen geschlossenen wasserdichten Beh\xE4ltern werden die einzelnen
-    Algen  kontrolliert kultiviert und untersucht "
-  EnglishDescription: In small, sealed, waterproof containers, the individual algae
-    are cultivated and studied under controlled conditions.
+  title: {fileID: 11400000, guid: a3a4217ab3b6fe347ab7ae8f5e44b88a, type: 2}
+  subtitle: {fileID: 11400000, guid: 8a6892617dd7e354387a990bcfd30290, type: 2}
+  content: {fileID: 11400000, guid: c49cd0d6330811140b8a7fd0d1b5de03, type: 2}
