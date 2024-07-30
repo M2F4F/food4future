@@ -167,11 +167,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Food4Future\nMit Unterst\xFCtzung von:\nIGZ - Institut f\xFCr Getreideverarbeitung\nHochschule
-    f\xFCr Technik und Wirtschaft Berlin (HTW Berlin)\n\nTeam:\n- Diro Baloska\n-
-    Gerrit Behrens\n- Hasan Alkurdi\n- Yosua Sentosa\n\nVerwendete Assets:\n- Typografie:
-    Arial, Roboto\n- Bilder und Logos: IGZ-Logo, HTW Berlin-Logo, Algenbilder\n-
-    Unity Assets: AR Foundation Package, Blender-Modelle"
+  m_text: "Credits f\xFCr Food4Future\r\nTeammitglieder\r\nDiro Baloska -\r\nGerrit
+    Behrens \r\nYosua Sentosa\r\nHasan Alkurdi \r\nBetreuende Professoren/Dozenten\r\nProfessors:Carsten
+    Busch\r\nPartnerorganisationen und Institutionen\r\nIGZ (Institut f\xFCr Gem\xFCse-
+    und Zierpflanzenbau) - Fachliche Beratung und die Daten.\r\nTechnologie und Tools\r\nUnity
+    (Version 2022.3.24f1) \r\nAR Foundation - Framework f\xFCr AR-Entwicklung\r\nBlender
+    - 4.1\r\nUnterst\xFCtzende Ressourcen und Plattformen\r\nhttps://www.food4future.de/de/home\r\nhttps://www.fontsquirrel.com/fonts/baloo\r\nhttps://sketchfab.com/3d-models/low-poly-tree-4598c065d5534c40b6050c16b69d1b77\r\nhttps://assetstore.unity.com/packages/3d/environments/simplepoly-city-low-poly-assets-58899\r\nhttps://free3d.com/3d-model/locust-v1--32618.html\r\nhttps://sketchfab.com/3d-models/cow-farm-animal-3december2022-19e0659dea1240eea1f16c3c3176c7d0\r\nhttps://fonts.google.com/icons?selected=Material+Symbols+Outlined:restart_alt:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=restart&icon.size=24&icon.color=%23e8eaed\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
