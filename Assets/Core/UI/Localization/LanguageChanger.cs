@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LanguageChanger : MonoBehaviour
 {
-    [SerializeField] private LocalText _localText;
+    [SerializeField] private SO_LocalText _localText;
     private TMP_Text _text;
     void OnEnable(){
         LanguageManager.onLanguageChange += LanguageChangeHandler;
@@ -16,7 +16,7 @@ public class LanguageChanger : MonoBehaviour
 
     void Awake() {
         _text = GetComponent<TMP_Text>();
-        string lang = PlayerPrefs.GetString("lang");
+        string lang = PlayerPrefs.GetString("lang", "de");
         if(lang == "de") {
             _text.text = _localText.deutsch;
             return;

@@ -13,4 +13,20 @@ MonoBehaviour:
   m_Name: SO_Bottle
   m_EditorClassIdentifier: 
   objectName: Bottle
-  description: This is a bottle to keep the algae
+  description: "In dieser Phase werden Algensporen isoliert und ausgebracht, Keimlinge
+    angezogen und ausgew\xE4hlt, um die  Grundlage f\xFCr eine sp\xE4tere effektive
+    Produktion von Makroalgenbiomasse zu schaffen. Besonders  vielversprechende Arten
+    werden ausgesucht und gezielt vermehrt, z.B. durch Fragmentierung oder  Sporenbildung. 
+    \n\nDa sauberes und st\xF6rungsfreies Arbeiten hier besonders wichtig ist, findet
+    diese Phase in kontrollierbaren,  landbasierten Einheiten statt. Auch f\xFCr
+    den Anbau an der K\xFCste gibt es meist eine solche Anzuchtphase, die vor  allem
+    zum effektiven Ausbringen der Sporen (\u201Eseeding\u201C) auf den Kultivierungseinheiten
+    (z.B. Seile oder Netze)  dient. "
+  EnglishDescription: "In this phase, algae spores are isolated and spread, seedlings
+    are grown and selected in order to create the basis for the subsequent effective
+    production of macroalgae biomass. Particularly promising species are selected
+    and selectively propagated, e.g. by fragmentation or sporulation.  \n\nAs clean
+    and undisturbed work is particularly important here, this phase takes place in
+    controllable, land-based units. For cultivation on the coast, there is usually
+    also such a cultivation phase, which is primarily used to effectively spread
+    the spores (\u2018seeding\u2019) on the cultivation units (e.g. ropes or nets). "

@@ -13,10 +13,10 @@ namespace StateMachine {
         public override string StateName { get; } = "NarativeState";
         private Transform m_transform;
         private GameObject m_uinarative;
-        private GameObject m_narative;
-        private string m_anchorName;
+        public GameObject m_narative { get; set; }
+        public string m_anchorName;
         private AsyncOperationHandle<GameObject> m_uiInstantiateHandler;
-        private AsyncOperationHandle<GameObject> m_instantiateHandler;
+        public AsyncOperationHandle<GameObject> m_instantiateHandler;
 
         public NarativeState(Transform transform, string anchor) {
             this.m_transform = transform;
@@ -27,7 +27,7 @@ namespace StateMachine {
         {
             Debug.Log("Entering: " + this.StateName);
             this.m_uiInstantiateHandler = Addressables.InstantiateAsync("UI_Narative.prefab", new Vector3(0,0,0), Quaternion.identity);
-            this.m_instantiateHandler = Addressables.InstantiateAsync("Narative.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
+            this.m_instantiateHandler = Addressables.InstantiateAsync("P_Narative0.prefab", new Vector3(this.m_transform.position.x, this.m_transform.position.y - 0.5f, this.m_transform.position.z + 1), Quaternion.identity);
             this.Subscribe();
         }
 
@@ -56,7 +56,7 @@ namespace StateMachine {
             NextButton.onNextButton -= StateChangeHandler;
         }
 
-        private void AddressableSpawnCompleteHandler(AsyncOperationHandle<GameObject> handle)
+        public void AddressableSpawnCompleteHandler(AsyncOperationHandle<GameObject> handle)
         {
             this.m_narative = handle.Result;
             this.m_narative.GetComponent<FollowAnchor>().SetAnchor(this.m_anchorName);

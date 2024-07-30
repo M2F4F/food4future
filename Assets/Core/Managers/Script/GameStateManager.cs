@@ -17,10 +17,11 @@ namespace StateMachine{
             state = new InitState();
             state.OnEnter();
         }
+
         // Start is called before the first frame update
         void Start()
         {
-            _gameStateManager = this;
+            _gameStateManager = this.gameObject.GetComponent<GameStateManager>();
             StateChange(new MenuState());
         }
 
@@ -32,7 +33,7 @@ namespace StateMachine{
             _gameStateManager.state.OnExit();
             _gameStateManager.state = newState;
             _gameStateManager.state.OnEnter();
-            onGameStateChange?.Invoke(_gameStateManager.state.StateName);
+            onGameStateChange?.Invoke(newState.StateName);
         }
     }
 }

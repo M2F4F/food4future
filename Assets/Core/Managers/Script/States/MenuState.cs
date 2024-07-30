@@ -40,7 +40,6 @@ namespace StateMachine{
 
 
         private void StartButtonHandler() {
-            Debug.Log("Fired");
             GameStateManager.StateChange(new PlayState());
         }
 

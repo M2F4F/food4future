@@ -47,7 +47,11 @@ namespace StateMachine {
 
         private void onImageTrackedHandler(Transform transform, string anchor)
         {
+            #if UNITY_EDITOR
             GameStateManager.StateChange(new NarativeState(transform, anchor));
+            #else
+            GameStateManager.StateChange(new NarativeState(transform, anchor));
+            #endif
         }
 
         private void SuccessfulInstantiateHandler(AsyncOperationHandle<GameObject> handle)
@@ -56,7 +60,8 @@ namespace StateMachine {
             
             #if UNITY_EDITOR
             GameObject gameobject = new GameObject("Anchor");
-            gameobject.transform.position = new Vector3(0,2.5f,0);
+            gameobject.AddComponent<ARAnchor>();
+            gameobject.transform.position = new Vector3(1f,2.3f,-1.35f);
             gameobject.transform.rotation = Quaternion.identity;
             onImageTrackedHandler(gameobject.transform, "Anchor");
             #endif

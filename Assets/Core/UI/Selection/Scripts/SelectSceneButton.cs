@@ -8,15 +8,11 @@ using UnityEngine.UI;
 
 public class SelectSceneButton : MonoBehaviour
 {
-    [SerializeField] private LocalText[] _phase;
+    [SerializeField] private SO_LocalText[] _phase;
     private TMP_Text _text;
     private string _gameStateName;
     private string _lang;
 
-    public GameObject pKindergartenPrefab; // Assign the P_Kindergarten Prefab in the Inspector
-    public GameObject pyramid; // Assign the Pyramid GameObject in the Inspector
-    public GameObject panel; // Assign the Panel GameObject in the Inspector
-    private GameObject pKindergartenInstance;
     private Coroutine scaleCoroutine;
 
     public delegate void OnSelectSceneButton();
@@ -25,6 +21,7 @@ public class SelectSceneButton : MonoBehaviour
     void Awake()
     {
         _text = transform.GetChild(0).GetComponent<TMP_Text>();
+        _gameStateName = "KindergartenState";
     }
 
     void OnEnable()
@@ -41,18 +38,11 @@ public class SelectSceneButton : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetString("lang") == "de") _text.text = _phase[0].deutsch;
-        if (PlayerPrefs.GetString("lang") == "en") _text.text = _phase[0].english;
+        if (PlayerPrefs.GetString("lang", "de") == "de") _text.text = _phase[0].deutsch;
+        if (PlayerPrefs.GetString("lang", "de") == "en") _text.text = _phase[0].english;
         _gameStateName = "KindergartenState";
 
         gameObject.GetComponent<Button>().onClick.AddListener(OnSelectButtonClicked);
-
-        // Find the instantiated clone of P_Kindergarten
-        pKindergartenInstance = GameObject.Find("P_Kindergarten(Clone)");
-        if (pKindergartenInstance == null)
-        {
-            Debug.LogError("P_Kindergarten clone not found in the scene.");
-        }
     }
 
     private void LanguageChangeHandler(string lang)

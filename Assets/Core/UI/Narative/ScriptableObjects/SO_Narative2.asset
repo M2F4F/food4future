@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative2
   m_EditorClassIdentifier: 
-  english: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '
-  deutsch: 'Deutsch: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-    diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-    diam voluptua. '
+  english: "\rThe causes can be traced to the impacts of climate change\u2014freshwater
+    scarcity and soil salinization\u2014while at the same time, more and more people
+    need to be fed, and there is also increased competition for the use of available
+    land."
+  deutsch: "Ursachen k\xF6nnen einerseits auf die Auswirkungen des Klimawandels -
+    Frischwassermangel und Bodenversalzung - zur\xFCckzuf\xFChren sein,  \r\nw\xE4hrend
+    gleichzeitig immer mehr Menschen versorgt werden m\xFCssen und auch eine st\xE4rkere
+    Konkurrenz um die Nutzung vorhandener Fl\xE4che entsteht."
