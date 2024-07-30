@@ -18,12 +18,10 @@ public class DialogButtonAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("DialogButtonAnim");
         this.gameObject.SetActive(false);
     }
 
     void OnDestroy() {
-        Debug.Log("Destroy DialogButtonAnim");
         StopCoroutine(MoveUp());
         StopCoroutine(MoveDown());
     }
