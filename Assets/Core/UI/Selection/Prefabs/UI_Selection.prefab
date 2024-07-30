@@ -502,6 +502,26 @@ PrefabInstance:
       propertyPath: m_Transition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9049482519134572952, guid: 36199e8ec1b4dc147936529444a05820,
+        type: 3}
+      propertyPath: m_AnimationTriggers.m_PressedTrigger
+      value: Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049482519134572952, guid: 36199e8ec1b4dc147936529444a05820,
+        type: 3}
+      propertyPath: m_AnimationTriggers.m_DisabledTrigger
+      value: Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049482519134572952, guid: 36199e8ec1b4dc147936529444a05820,
+        type: 3}
+      propertyPath: m_AnimationTriggers.m_SelectedTrigger
+      value: Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049482519134572952, guid: 36199e8ec1b4dc147936529444a05820,
+        type: 3}
+      propertyPath: m_AnimationTriggers.m_HighlightedTrigger
+      value: Normal
+      objectReference: {fileID: 0}
     - target: {fileID: 9088829996753141782, guid: 36199e8ec1b4dc147936529444a05820,
         type: 3}
       propertyPath: m_Name
@@ -1253,6 +1273,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_ColorMultiplier
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 246434376463975080, guid: 47d177428e4a12247ac36de08868fc07,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.95686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 246434376463975080, guid: 47d177428e4a12247ac36de08868fc07,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.95686275
       objectReference: {fileID: 0}
     - target: {fileID: 246434376463975080, guid: 47d177428e4a12247ac36de08868fc07,
         type: 3}
