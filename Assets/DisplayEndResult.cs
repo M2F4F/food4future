@@ -61,16 +61,16 @@ public class DisplayEndResult : MonoBehaviour
         switch (percent)
         {
             case float p when p <= 0.60f:
-                summaryText.text = "Durch die veränderung der Umgebungsparameter sind deine Algen leider gestorben.";
+                summaryText.text = "Durch die verÃ¤nderung der Umgebungsparameter sind deine Algen leider gestorben.";
                 break;
             case float p when p > 0.60f && p <= 0.80f:
-                summaryText.text = "Durch die veränderung der Umgebungsparameter hat sich die Masse der Algen leider nicht genug erhöht.";
+                summaryText.text = "Durch die verÃ¤nderung der Umgebungsparameter hat sich die Masse der Algen leider nicht genug erhÃ¶ht.";
                 break;
             case float p when p > 0.80f && p <= 0.98f:
-                summaryText.text = "Durch die veränderung der Umgebungsparameter sind genug Algen für die Weiterverarbeitung gewachsen.";
+                summaryText.text = "Durch die verÃ¤nderung der Umgebungsparameter sind genug Algen fÃ¼r die Weiterverarbeitung gewachsen.";
                 break;
             case float p when p == 1f:
-                summaryText.text = "Durch die veränderung der Umgebungsparameter hast du die perfekte Menge an Algen produziert.";
+                summaryText.text = "Durch die verÃ¤nderung der Umgebungsparameter hast du die perfekte Menge an Algen produziert.";
                 break;
         }
     }
