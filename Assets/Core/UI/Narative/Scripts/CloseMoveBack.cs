@@ -5,6 +5,7 @@ using UnityEngine;
 public class CloseMoveBack : MonoBehaviour
 {
     [SerializeField, Tooltip("Duration of closing animation")] private float _animationDuration;
+    public GameObject _closeMoveBackButton { get; set;}
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class CloseMoveBack : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         gameObject.SetActive(false);
-        this.transform.parent.GetChild(4).gameObject.SetActive(false);
+        _closeMoveBackButton.gameObject.SetActive(false);
         yield return null;
     }
 }

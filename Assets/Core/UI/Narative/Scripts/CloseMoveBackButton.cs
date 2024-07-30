@@ -17,6 +17,7 @@ public class CloseMoveBackButton : MonoBehaviour
     {
         this.GetComponent<Button>().onClick.AddListener(this.OnCloseMoveBack);
         _autoClose = StartCoroutine(AutoClose());
+        _moveBackPanel.GetComponent<CloseMoveBack>()._closeMoveBackButton = this.gameObject;
     }
 
     // Update is called once per frame

@@ -28,11 +28,13 @@ public class NarativeSlideshow : MonoBehaviour
     void OnEnable() {
         DialogueButton.onDialogueButton += DialogueButtonHandler;
         LanguageManager.onLanguageChange += LanguageChangeHandler;
+        Reset_Button.onGameReset += ResetButtonHandler;
     }
 
     void OnDisable() {
         DialogueButton.onDialogueButton -= DialogueButtonHandler;
         LanguageManager.onLanguageChange -= LanguageChangeHandler;
+        Reset_Button.onGameReset -= ResetButtonHandler;
     }
 
     void Awake() {
@@ -64,15 +66,12 @@ public class NarativeSlideshow : MonoBehaviour
             return;
         }
 
+        // If reached the last page
+        if(_pageIndex == _texts.Length - 1) return;
+        
         if(_moveCoroutine != null) StopCoroutine(_moveCoroutine);
         _pageIndex++;
         onPageChange?.Invoke(_pageIndex + 1);
-
-        // If reached the last page
-        if(_pageIndex == _texts.Length) {
-            _pageIndex = 0;
-            _moveCoroutine = StartCoroutine(MoveBackPanel());
-        }
 
         _counter.text = _pageIndex + 1 + " / " + _texts.Length;
         _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang", "de"))));
@@ -83,6 +82,18 @@ public class NarativeSlideshow : MonoBehaviour
         _coroutine = StartCoroutine(RenderText(GetText(lang)));
     }
 
+    private void ResetButtonHandler() {
+        // Check if coroutine is not null or not the last page, then do nothing.
+        if(_coroutine != null || _pageIndex <= 0) return;
+
+        onPageChange?.Invoke(_texts.Length + 1);
+
+        _pageIndex = 0;
+        _moveCoroutine = StartCoroutine(MoveBackPanel());
+        
+        _counter.text = _pageIndex + 1 + " / " + _texts.Length;
+        _coroutine = StartCoroutine(RenderText(GetText(PlayerPrefs.GetString("lang", "de"))));
+    }
 
     private string GetText(string lang) {
         if(lang == "en") return _texts[_pageIndex].english;
@@ -106,7 +117,6 @@ public class NarativeSlideshow : MonoBehaviour
         onRenderDone?.Invoke();
         StartCoroutine(WaitToMovePanel());
     }
-
 
     private IEnumerator MovePanel() {
         float elapsedTime = 0.0f;
