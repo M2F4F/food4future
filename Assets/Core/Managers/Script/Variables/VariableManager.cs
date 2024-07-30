@@ -9,8 +9,6 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
-using UnityEngine.SocialPlatforms.Impl;
-using Unity.VisualScripting;
 
 public class VariableManager : MonoBehaviour
 {
@@ -54,6 +52,7 @@ public class VariableManager : MonoBehaviour
 
     private void OnEnable()
     {
+        Reset_Button.onGameReset += ResetGameState;
         // Read CSV-Data
         ReadData();
 
@@ -126,6 +125,20 @@ public class VariableManager : MonoBehaviour
         }
     }
 
+    private void ResetGameState()
+    {
+        salinityScore = 0;
+        phScore = 0;
+        lightScore = 0;
+        temperatureScore = 0;
+        score = 0;
+
+        if(salinitySlider) salinitySlider.value = 0;
+        if(phValueSlider) phValueSlider.value = 0;
+        if(lightLevelSlider) lightLevelSlider.value = 0;
+        if(temperatureSlider) temperatureSlider.value = 0;
+    }
+
     private void SetExistingValue()
     {
         // Important for packing into build
@@ -179,14 +192,12 @@ public class VariableManager : MonoBehaviour
             maxScore = 0;
             maxScore += CalcMaxValue(salinityLevelRangeList) * 3 + CalcMaxValue(phValueRangeList) * 2;
             PhaseNrForPersistence = 1;
-            Debug.Log(maxScore);
         }
         else if (!phValueSlider && !salinitySlider && lightLevelSlider && temperatureSlider)
         {
             maxScore = 0;
             maxScore += CalcMaxValue(lightLevelRangeList) * 5 + CalcMaxValue(temperaturLevelRangeList) * 7;
             PhaseNrForPersistence = 2;
-            Debug.Log(maxScore);
         }
         else
         {
@@ -196,7 +207,6 @@ public class VariableManager : MonoBehaviour
                     CalcMaxValue(salinityLevelRangeList) * 3 +
                     CalcMaxValue(phValueRangeList) * 2;
             PhaseNrForPersistence = 3;
-            Debug.Log(maxScore);
         }
     }
 
