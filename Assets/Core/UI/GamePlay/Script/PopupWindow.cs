@@ -52,6 +52,7 @@ public class PopupWindow : MonoBehaviour
     }
 
     private void FillText(string lang) {
+        if(m_title == null || m_subtitle == null || m_informationBody == null) return;
         if (lang == "de") {
             m_title.text = m_description.title.deutsch;
             m_subtitle.text = m_description.subtitle.deutsch;

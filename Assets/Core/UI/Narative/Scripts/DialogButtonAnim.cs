@@ -11,25 +11,27 @@ public class DialogButtonAnim : MonoBehaviour
     void OnEnable() {
         DialogueButton.onDialogueButton += Disable;
         NarativeSlideshow.onRenderDone += Enable;
-        LanguageManager.onLanguageChange += (string lang) => this.gameObject.SetActive(false);
+        LanguageManager.onLanguageChange += ToggleActive;
         StartCoroutine(MoveUp());
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("DialogButtonAnim");
         this.gameObject.SetActive(false);
     }
 
     void OnDestroy() {
-        NarativeSlideshow.onRenderDone -= Enable;
-        DialogueButton.onDialogueButton -= Disable;
-        LanguageManager.onLanguageChange -= (string lang) => this.gameObject.SetActive(false);
+        Debug.Log("Destroy DialogButtonAnim");
         StopCoroutine(MoveUp());
         StopCoroutine(MoveDown());
     }
 
     private void Disable() {
+        NarativeSlideshow.onRenderDone -= Enable;
+        DialogueButton.onDialogueButton -= Disable;
+        LanguageManager.onLanguageChange -= ToggleActive;
         this.gameObject.SetActive(false);
     }
 
@@ -58,5 +60,9 @@ public class DialogButtonAnim : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         StartCoroutine(MoveUp());
+    }
+
+    private void ToggleActive(string lang) {
+        this.gameObject.SetActive(!this.gameObject.activeSelf);
     }
 }
