@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CloseMoveBackButton : MonoBehaviour
 {
     private GameObject _moveBackPanel;
+    private Coroutine _autoClose;
 
     void Awake() {
         _moveBackPanel = transform.parent.GetChild(3).gameObject;
@@ -15,6 +16,7 @@ public class CloseMoveBackButton : MonoBehaviour
     void Start()
     {
         this.GetComponent<Button>().onClick.AddListener(this.OnCloseMoveBack);
+        _autoClose = StartCoroutine(AutoClose());
     }
 
     // Update is called once per frame
@@ -23,8 +25,16 @@ public class CloseMoveBackButton : MonoBehaviour
         
     }
 
+    private void OnDisable() {
+        StopCoroutine(_autoClose);
+    }
+
     private void OnCloseMoveBack() {
-        Debug.Log("Clicked");
         StartCoroutine(_moveBackPanel.GetComponent<CloseMoveBack>().CloseMoveBackCoroutine());
+    }
+
+    IEnumerator AutoClose() {
+        yield return new WaitForSeconds(10);
+        OnCloseMoveBack();
     }
 }
