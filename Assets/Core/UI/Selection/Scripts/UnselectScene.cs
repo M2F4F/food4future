@@ -19,6 +19,10 @@ public class UnselectScene : MonoBehaviour
         // Set UI Panel back to true
         gameObject.transform.parent.GetChild(0).gameObject.SetActive(true);
 
+        // Activate language change button 
+        gameObject.transform.parent.GetChild(3).gameObject.SetActive(true);
+
+
         gameObject.SetActive(false);
 
     }
