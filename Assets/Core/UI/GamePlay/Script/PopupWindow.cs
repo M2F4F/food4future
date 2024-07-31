@@ -21,7 +21,6 @@ public class PopupWindow : MonoBehaviour
     void Awake()
     {
         m_textPanel = transform.GetChild(0).gameObject;
-        m_textPanel.SetActive(false);
         m_title = m_textPanel.transform.GetChild(0).GetComponent<TMP_Text>();
         m_subtitle = m_textPanel.transform.GetChild(1).GetComponent<TMP_Text>();
         m_informationBody = m_textPanel.transform.GetChild(2).GetComponent<TMP_Text>();
@@ -34,13 +33,14 @@ public class PopupWindow : MonoBehaviour
         LanguageManager.onLanguageChange += FillText;
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
         ButtonInteraction.onARButtonInteraction -= PopupWindowHandler;
         LanguageManager.onLanguageChange -= FillText;
     }
 
     void Start() {
+        m_textPanel.transform.parent.gameObject.SetActive(false);
     }
 
     /**
@@ -55,7 +55,7 @@ public class PopupWindow : MonoBehaviour
 
         this.FillText(PlayerPrefs.GetString("lang", "de"));
 
-        m_textPanel.SetActive(true);
+        m_textPanel.transform.parent.gameObject.SetActive(true);
     }
 
     private void FillText(string lang) {

@@ -82,6 +82,7 @@ public class SelectSceneButton : MonoBehaviour
 
     private void StateChangeHandler(string stateName)
     {
+        _gameStateName = stateName;
         if (stateName == "KindergartenState")
         {
             if (_lang == "de")
