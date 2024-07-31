@@ -26,8 +26,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1380749, y: 2.8670006, z: 0.00000023841858}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3414025042203124265}
   - {fileID: 543886813493248501}
@@ -63,9 +63,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6212450225512508485}
+  - {fileID: 763566261539527236}
   - {fileID: 4689676869842413707}
   - {fileID: 5995901064436119821}
-  - {fileID: 763566261539527236}
   m_Father: {fileID: 2070237704191891080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &864032560838461162
@@ -178,6 +178,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 94006737181418812, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 94006737181418812, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 94006737181418812, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
@@ -189,7 +199,17 @@ PrefabInstance:
     - target: {fileID: 94006737181418812, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920046258187081632, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920046258187081632, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3920046258187081632, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
@@ -204,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 3920046258187081632, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -13.3
       objectReference: {fileID: 0}
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
@@ -224,22 +244,22 @@ PrefabInstance:
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.405
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.342139
+      value: 0.468
       objectReference: {fileID: 0}
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.18
+      value: 1.188
       objectReference: {fileID: 0}
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
@@ -264,11 +284,16 @@ PrefabInstance:
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397772293515996769, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8484700774115052192, guid: 0d6b00b7a4c536b4790d1c3370a9824a,
@@ -351,11 +376,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6902573867230041995, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0f128a5d765b354481186e2550ee836, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b531ad6a216a7ed40941f85ef0cbbde7, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b531ad6a216a7ed40941f85ef0cbbde7, type: 2}
+    - target: {fileID: -2964225117148605397, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 282084ba903673b45a3c7076b7cd8833, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0411cb5eaf5a4cb40b574a190b1e16f3, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0411cb5eaf5a4cb40b574a190b1e16f3, type: 2}
+    - target: {fileID: -678588488315902003, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9b236ba02c789846bcff72eb22f4dbb, type: 2}
     - target: {fileID: 919132149155446097, guid: 11b28bb85a5d96445b23dc19b993b398,
         type: 3}
       propertyPath: m_Name
       value: BlueBarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 1129496810705857465, guid: 11b28bb85a5d96445b23dc19b993b398,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0411cb5eaf5a4cb40b574a190b1e16f3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -379,6 +444,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_PopupWindowPhase3Info
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938294774947947514, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 480
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938294774947947514, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 347.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938294774947947514, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938294774947947514, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938294774947947514, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -304
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944054421433145903, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_text
+      value: "After the suitable algae material has been propagated and the optimal
+        cultivation conditions determined, the first production tests in larger cultivation
+        units (<100L) begin. The goal is not only to produce algae biomass but also
+        to ensure the desired nutrient profile. Since algae follow their natural
+        rhythms, appropriate harvesting cycles must be developed depending on the
+        type of algae to ensure constant and high-quality production.\r\n\n\n\u2022
+        Why are the barrels isolated?\r\n\r\nFor ideal cultivation, the control of
+        light and temperature is crucial. Therefore, biomass production takes place
+        in isolated, dark barrels equipped with temperature regulation and an adjustable
+        internal light source.\r\n\r\n\u2022 What is inside the barrels?\r\n\r\n-
+        Holders with cultivation substrates: On which the benthic (bottom-dwelling)
+        algae have grown.\r\n- Cultivars (algae).\r\n- Cultivation medium.\r\n- Air
+        supply: Regular aeration avoids stagnation of the water column and brings
+        necessary gases into the system.\r\n\r\n\u2022 What is the function of the
+        tubes?\r\nThe tubes serve for temperature regulation through a connected
+        cooling system and for aeration.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6350689967815057345, guid: bb14f6f559304f441a3ec1de31faaaa7,
         type: 3}
@@ -408,12 +518,12 @@ PrefabInstance:
     - target: {fileID: 7699877351264950654, guid: bb14f6f559304f441a3ec1de31faaaa7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 7699877351264950654, guid: bb14f6f559304f441a3ec1de31faaaa7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.01
+      value: 3.142
       objectReference: {fileID: 0}
     - target: {fileID: 7699877351264950654, guid: bb14f6f559304f441a3ec1de31faaaa7,
         type: 3}
@@ -450,10 +560,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7699877351264950654, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954866897988729840, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 7954866897988729840, guid: bb14f6f559304f441a3ec1de31faaaa7,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 482.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648778175279440360, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648778175279440360, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 482.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648778175279440360, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648778175279440360, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648778175279440360, guid: bb14f6f559304f441a3ec1de31faaaa7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -478,6 +623,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_PopupWindowBlueBarell
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938294774947947514, guid: e4a81a01c0bb22848a393c08d1cd20c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 115.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944054421433145903, guid: e4a81a01c0bb22848a393c08d1cd20c0,
+        type: 3}
+      propertyPath: m_text
+      value: "Nachdem das geeignete Algenmaterial vermehrt und die wichtigen Kultivierungsfaktoren
+        ermittelt wurden, starten die ersten Produktionstests in gr\xF6\xDFeren Kultivierungseinheiten
+        (>100L)\r\nZiel ist es nicht nur Algenbiomasse zu erzeugen, sondern auch
+        das gew\xFCnschte N\xE4hrstoffprofil sicherzustellen. Da Algen ihren nat\xFCrlichen
+        Rhythmen folgen, m\xFCssen je nach Algenart passende Erntezyklen entwickelt
+        werden, um eine konstante und qualitativ hohe Produktion zu gew\xE4hrleisten."
       objectReference: {fileID: 0}
     - target: {fileID: 6350689967815057345, guid: e4a81a01c0bb22848a393c08d1cd20c0,
         type: 3}
@@ -507,7 +667,7 @@ PrefabInstance:
     - target: {fileID: 7699877351264950654, guid: e4a81a01c0bb22848a393c08d1cd20c0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19813895
+      value: 0.882
       objectReference: {fileID: 0}
     - target: {fileID: 7699877351264950654, guid: e4a81a01c0bb22848a393c08d1cd20c0,
         type: 3}
@@ -548,6 +708,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954866897988729840, guid: e4a81a01c0bb22848a393c08d1cd20c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648778175279440360, guid: e4a81a01c0bb22848a393c08d1cd20c0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 279.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
