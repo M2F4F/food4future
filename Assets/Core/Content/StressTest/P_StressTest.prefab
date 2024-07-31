@@ -70,7 +70,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8024098816522881044, guid: dda999a36e8b39940987efe8f4541f59,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7157862455440717246}
+      addedObject: {fileID: 772841208855465292}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dda999a36e8b39940987efe8f4541f59, type: 3}
 --- !u!4 &6332353207999013220 stripped
@@ -79,7 +79,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4087679587665619312}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4115078032952865060
+--- !u!1001 &5834354689596983766
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -87,90 +87,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6332353207999013220}
     m_Modifications:
-    - target: {fileID: 244289014763704207, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 468748566696501851, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: lightSlider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: pointLights.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: pointLights.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: pointLights.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: pointLights.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: pointLights.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: pointLights.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1997039084853383172, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3436938213555463486, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4417796256000681013, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 350
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975288722356433897, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552327326940757035, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692187046640260879, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6163618336560895151, guid: f1ad1595039068e48988307660957112,
         type: 3}
       propertyPath: m_Name
       value: P_Level
-      objectReference: {fileID: 0}
-    - target: {fileID: 6210927603722496512, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6507248813714769050, guid: f1ad1595039068e48988307660957112,
         type: 3}
@@ -180,12 +100,12 @@ PrefabInstance:
     - target: {fileID: 6507248813714769050, guid: f1ad1595039068e48988307660957112,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 3.088
       objectReference: {fileID: 0}
     - target: {fileID: 6507248813714769050, guid: f1ad1595039068e48988307660957112,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6507248813714769050, guid: f1ad1595039068e48988307660957112,
         type: 3}
@@ -222,39 +142,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7080243069537044080, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 7413660256423015178, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7613985448722582949, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7965454032715259332, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8489266379000957934, guid: f1ad1595039068e48988307660957112,
-        type: 3}
-      propertyPath: lightSlider
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1ad1595039068e48988307660957112, type: 3}
---- !u!4 &7157862455440717246 stripped
+--- !u!4 &772841208855465292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6507248813714769050, guid: f1ad1595039068e48988307660957112,
     type: 3}
-  m_PrefabInstance: {fileID: 4115078032952865060}
+  m_PrefabInstance: {fileID: 5834354689596983766}
   m_PrefabAsset: {fileID: 0}

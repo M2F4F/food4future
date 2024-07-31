@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2258431398535232597, guid: 79abe56ffddb534409f54cb7a2dcddfa,
+        type: 3}
+      propertyPath: m_label
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3291801625269517034, guid: 79abe56ffddb534409f54cb7a2dcddfa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 5924669658458911982, guid: 79abe56ffddb534409f54cb7a2dcddfa,
         type: 3}
       propertyPath: m_Name
-      value: UI_PopupWindow
+      value: UI_PopupWindowPolyLicht
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
