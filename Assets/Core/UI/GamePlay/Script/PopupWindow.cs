@@ -62,13 +62,13 @@ public class PopupWindow : MonoBehaviour
         if (lang == "de") {
             m_title.text = m_description.title.deutsch;
             m_subtitle.text = m_description.subtitle.deutsch;
-            m_informationBody.text = m_description.subtitle.deutsch;
+            m_informationBody.text = m_description.content.deutsch;
             return;
         }
 
         m_title.text = m_description.title.english;
         m_subtitle.text = m_description.subtitle.english;
-        m_informationBody.text = m_description.subtitle.english;
+        m_informationBody.text = m_description.content.english;
         return;
     }
 }
