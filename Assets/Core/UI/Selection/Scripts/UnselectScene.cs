@@ -7,9 +7,12 @@ public class UnselectScene : MonoBehaviour
     public static event OnUnselectBackButton onUnselectBackButton;
     // Start is called before the first frame update
 
+    void Awake() {
+        gameObject.SetActive(false);
+    }
+    
     void Start() {
         gameObject.GetComponent<Button>().onClick.AddListener(OnBackButtonClicked);
-        gameObject.SetActive(false);
     }
 
     public void OnBackButtonClicked()
