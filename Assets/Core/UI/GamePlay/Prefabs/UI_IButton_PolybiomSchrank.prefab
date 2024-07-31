@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 6774056688219081830, guid: d065854d948799d4c82583750732da0c,
         type: 3}
       propertyPath: m_Name
-      value: UI_IButton
+      value: UI_IButton_PolybiomSchrank
       objectReference: {fileID: 0}
     - target: {fileID: 7660642454828265140, guid: d065854d948799d4c82583750732da0c,
         type: 3}
@@ -66,5 +66,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8516456669974017492, guid: d065854d948799d4c82583750732da0c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3457636661304110991}
   m_SourcePrefab: {fileID: 100100000, guid: d065854d948799d4c82583750732da0c, type: 3}
+--- !u!1 &8829535713995654914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8516456669974017492, guid: d065854d948799d4c82583750732da0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 916561463162221270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3457636661304110991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829535713995654914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81749a7b2a4d5f8449493b6651f8dbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: {fileID: 11400000, guid: 030d759d52420cb47ab048c688900b3c, type: 2}
+  m_label: 4

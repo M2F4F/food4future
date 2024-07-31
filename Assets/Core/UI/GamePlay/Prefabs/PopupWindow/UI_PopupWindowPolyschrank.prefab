@@ -8,6 +8,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1515504723205814715, guid: 79abe56ffddb534409f54cb7a2dcddfa,
+        type: 3}
+      propertyPath: m_text
+      value: 'In this phase, various environmental factors are tested in climate
+        cabinets with controllable conditions to determine the optimal conditions
+        for algae cultivation. Important factors include temperature, salinity, light,
+        and the right nutrient combination. Scientific experiments investigate how
+        these factors, individually or in combination, affect the growth and nutrient
+        content of the algae, such as the protein or carotenoid content.
+
+
+
+        In
+        these controllable growth chambers, various environmental factors, such as
+        temperature and light, are tested to study their impact on algae growth and
+        nutrient profile. Here, different intensities, light spectra, and daily cycles
+        can be programmatically adjusted individually or in combination.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2258431398535232597, guid: 79abe56ffddb534409f54cb7a2dcddfa,
+        type: 3}
+      propertyPath: m_label
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959142895319685220, guid: 79abe56ffddb534409f54cb7a2dcddfa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 335.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3291801625269517034, guid: 79abe56ffddb534409f54cb7a2dcddfa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,10 +86,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4571998500629873276, guid: 79abe56ffddb534409f54cb7a2dcddfa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 335.38
+      objectReference: {fileID: 0}
     - target: {fileID: 5924669658458911982, guid: 79abe56ffddb534409f54cb7a2dcddfa,
         type: 3}
       propertyPath: m_Name
-      value: UI_PopupWindow
+      value: UI_PopupWindowPolyschrank
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048858336913752174, guid: 79abe56ffddb534409f54cb7a2dcddfa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 194
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048858336913752174, guid: 79abe56ffddb534409f54cb7a2dcddfa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -226.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

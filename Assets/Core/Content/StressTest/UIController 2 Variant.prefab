@@ -158,6 +158,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: TemperatureLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: phText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: lightText
+      value: 
+      objectReference: {fileID: 4497287395654245623}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: salinityText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: phValueSlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: salinitySlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: temperatureText
+      value: 
+      objectReference: {fileID: 4281615776490935903}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: lightLevelSlider
+      value: 
+      objectReference: {fileID: 2772279123980278257}
+    - target: {fileID: 6095280522802968213, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: temperatureSlider
+      value: 
+      objectReference: {fileID: 7084041043336673969}
     - target: {fileID: 6834121646165795195, guid: df8a7233d049d0943aae9245555053f6,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -196,6 +236,42 @@ PrefabInstance:
 --- !u!114 &2772279123980278257 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1368567694998828654, guid: df8a7233d049d0943aae9245555053f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3785060247143034783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4281615776490935903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1147405119514147264, guid: df8a7233d049d0943aae9245555053f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3785060247143034783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4497287395654245623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 787759616715502440, guid: df8a7233d049d0943aae9245555053f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3785060247143034783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7084041043336673969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6253439356123944238, guid: df8a7233d049d0943aae9245555053f6,
     type: 3}
   m_PrefabInstance: {fileID: 3785060247143034783}
   m_PrefabAsset: {fileID: 0}

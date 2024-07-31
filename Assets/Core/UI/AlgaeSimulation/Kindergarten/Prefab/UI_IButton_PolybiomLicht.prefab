@@ -57,7 +57,7 @@ PrefabInstance:
     - target: {fileID: 6774056688219081830, guid: d065854d948799d4c82583750732da0c,
         type: 3}
       propertyPath: m_Name
-      value: UI_IButton_Polybiom
+      value: UI_IButton_PolybiomLicht
       objectReference: {fileID: 0}
     - target: {fileID: 7660642454828265140, guid: d065854d948799d4c82583750732da0c,
         type: 3}
@@ -156,5 +156,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81749a7b2a4d5f8449493b6651f8dbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_information: {fileID: 11400000, guid: 030d759d52420cb47ab048c688900b3c, type: 2}
-  m_label: 4
+  description: {fileID: 11400000, guid: 4191a5230dfba404aab9ff19c9097cea, type: 2}
+  m_label: 5
