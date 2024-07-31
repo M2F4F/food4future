@@ -92,6 +92,46 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 468748566696501851, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: lightSlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: pointLights.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: pointLights.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: pointLights.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: pointLights.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: pointLights.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190472264269279178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: pointLights.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1997039084853383172, guid: f1ad1595039068e48988307660957112,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -113,6 +153,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5552327326940757035, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692187046640260879, guid: f1ad1595039068e48988307660957112,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -176,6 +221,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080243069537044080, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413660256423015178, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613985448722582949, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965454032715259332, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489266379000957934, guid: f1ad1595039068e48988307660957112,
+        type: 3}
+      propertyPath: lightSlider
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
