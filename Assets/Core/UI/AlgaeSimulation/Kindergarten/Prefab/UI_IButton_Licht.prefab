@@ -57,7 +57,7 @@ PrefabInstance:
     - target: {fileID: 6774056688219081830, guid: d065854d948799d4c82583750732da0c,
         type: 3}
       propertyPath: m_Name
-      value: UI_IButton_WoodLong
+      value: UI_IButton_Licht
       objectReference: {fileID: 0}
     - target: {fileID: 7660642454828265140, guid: d065854d948799d4c82583750732da0c,
         type: 3}
