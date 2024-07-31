@@ -33,6 +33,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6019769723026624026, guid: dda999a36e8b39940987efe8f4541f59,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019769723026624026, guid: dda999a36e8b39940987efe8f4541f59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019769723026624026, guid: dda999a36e8b39940987efe8f4541f59,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7442127971737351181, guid: dda999a36e8b39940987efe8f4541f59,
         type: 3}
       propertyPath: m_AnchorMax.y
