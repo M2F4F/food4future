@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PopupWindow : MonoBehaviour
 {
@@ -33,10 +34,13 @@ public class PopupWindow : MonoBehaviour
         LanguageManager.onLanguageChange += FillText;
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
-        ButtonInteraction.onARButtonInteraction -= PopupWindowHandler;
         LanguageManager.onLanguageChange -= FillText;
+    }
+
+    void OnDestroy() {
+        ButtonInteraction.onARButtonInteraction -= PopupWindowHandler;
     }
 
     void Start() {
@@ -59,16 +63,21 @@ public class PopupWindow : MonoBehaviour
     }
 
     private void FillText(string lang) {
-        if (lang == "de") {
-            m_title.text = m_description.title.deutsch;
-            m_subtitle.text = m_description.subtitle.deutsch;
-            m_informationBody.text = m_description.content.deutsch;
-            return;
-        }
+        try {
+            if (lang == "de") {
+                m_title.text = m_description.title.deutsch;
+                m_subtitle.text = m_description.subtitle.deutsch;
+                m_informationBody.text = m_description.content.deutsch;
+                return;
+            }
 
-        m_title.text = m_description.title.english;
-        m_subtitle.text = m_description.subtitle.english;
-        m_informationBody.text = m_description.content.english;
-        return;
+            m_title.text = m_description.title.english;
+            m_subtitle.text = m_description.subtitle.english;
+            m_informationBody.text = m_description.content.english;
+            return;
+        } catch (NullReferenceException e) {
+            Debug.Log(e.ToString());
+            Debug.Log(transform.parent.gameObject.name);
+        }
     }
 }
