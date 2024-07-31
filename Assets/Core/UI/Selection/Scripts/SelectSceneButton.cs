@@ -119,12 +119,13 @@ public class SelectSceneButton : MonoBehaviour
     {
         onSelectSceneButton?.Invoke();
         // Deactivate panel
-        gameObject.transform.parent.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
 
         // Deactivate language change button
-        gameObject.transform.parent.parent.GetChild(3).gameObject.SetActive(false);
+        transform.parent.parent.GetChild(3).gameObject.SetActive(false);
         
         // Activate back button
-        gameObject.transform.parent.parent.GetChild(1).gameObject.SetActive(true);
+        transform.parent.parent.GetChild(1).gameObject.SetActive(true);
+        Debug.Log(transform.parent.parent.GetChild(1).gameObject.name);
     }
 }
