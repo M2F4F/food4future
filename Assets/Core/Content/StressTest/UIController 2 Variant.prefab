@@ -1,0 +1,207 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3785060247143034783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 787759616715502440, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_text
+      value: "Lichtintensit\xE4t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 903801231479677088, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 903801231479677088, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125816482738020039, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125816482738020039, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147405119514147264, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_text
+      value: Temperatur
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200485528596999873, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_Name
+      value: LightSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462832026208203188, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632639312828601391, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122467812166217456, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196727224932839366, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196727224932839366, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2086876.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196727224932839366, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27868
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743570612968442551, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953037900448014052, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.852
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.204
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185228015942452560, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518347937409429546, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651686687411655570, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_Name
+      value: LightLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139015575137770355, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_Name
+      value: TemperatureLevelText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247697473083256042, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: lightSlider
+      value: 
+      objectReference: {fileID: 2772279123980278257}
+    - target: {fileID: 5994709373544898861, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_Name
+      value: TemperatureLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834121646165795195, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869249804475051937, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_Name
+      value: TemperatureSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 7475420046945245268, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_Name
+      value: LightLevelText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580090228328572885, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580090228328572885, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020436561559206118, guid: df8a7233d049d0943aae9245555053f6,
+        type: 3}
+      propertyPath: m_Name
+      value: UIController 2 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df8a7233d049d0943aae9245555053f6, type: 3}
+--- !u!114 &2772279123980278257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1368567694998828654, guid: df8a7233d049d0943aae9245555053f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3785060247143034783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
