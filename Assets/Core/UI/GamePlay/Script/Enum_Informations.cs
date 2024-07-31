@@ -6,7 +6,7 @@
 public enum InformationLabel 
 {
     PREPARAT_HOLDER,
-    WOOD_LONG,
+    LICHT,
     BOTTLE,
     VAR_CONTROLLER,
     POLYBIOM_SHELF,
