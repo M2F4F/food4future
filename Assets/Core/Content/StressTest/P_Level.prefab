@@ -2621,12 +2621,12 @@ PrefabInstance:
     - target: {fileID: 169798934191255931, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 735029841476313013, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1050419023451974351, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
@@ -2686,22 +2686,32 @@ PrefabInstance:
     - target: {fileID: 2463311712641956784, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772279123980278257, guid: e9765a743597fd042961eddf727e2198,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLightLevel
       objectReference: {fileID: 0}
     - target: {fileID: 4460076792034650773, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6613937042200139641, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_Name
       value: UIController 2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7084041043336673969, guid: e9765a743597fd042961eddf727e2198,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTemperature
+      objectReference: {fileID: 0}
     - target: {fileID: 7660782739811765988, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8958975988062880629, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
