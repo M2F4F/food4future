@@ -2,12 +2,13 @@ using UnityEngine;
 using TMPro;
 using System.Linq;
 using UnityEngine.UI;
+using System;
 
 public class VirtualMonitor : MonoBehaviour
 {
     [SerializeField] private TMP_Text floatingMonitorText;
     public Slider progressBar;
-    private Renderer fillArea;
+    private Image fillArea;
     public float fillSpeed = 0.5f;
     private float targetProgress = 0;
     //private GameObject statusCube = null;
@@ -22,7 +23,7 @@ public class VirtualMonitor : MonoBehaviour
         VariableManager.OnVariableChangeEvent += SetScore;
         if(progressBar != null)
         {
-            fillArea = GameObject.Find("ColorfullFill").GetComponent<Renderer>();
+            fillArea = progressBar.gameObject.transform.Find("Fill Area").Find("ColorfullFill").GetComponent<Image>();
         }
     }
 
@@ -33,14 +34,19 @@ public class VirtualMonitor : MonoBehaviour
 
     void Update()
     {
-        if ( progressBar.value < targetProgress)
+        float barvalue = (float) Math.Round(progressBar.value, 2);
+        if(barvalue != targetProgress)
         {
-            progressBar.value += fillSpeed * Time.deltaTime;
+            if (barvalue < targetProgress)
+            {
+                progressBar.value += fillSpeed * Time.deltaTime;
+            }
+            else if (barvalue > targetProgress)
+            {
+                progressBar.value -= fillSpeed * Time.deltaTime;
+            }    
         }
-        else if (progressBar.value > targetProgress)
-        {
-            progressBar.value -= fillSpeed * Time.deltaTime;
-        }    
+        
     }
 
     private void SetScore(int score, int maxScore, int[] calcScoreArray)
@@ -55,7 +61,7 @@ public class VirtualMonitor : MonoBehaviour
         // Analyse calcScoreArray
         if (stopCalculation)
         {
-            fillArea.material.color = STATUS_BAD;
+            fillArea.color = STATUS_BAD;
         }
         else
         {
@@ -68,22 +74,22 @@ public class VirtualMonitor : MonoBehaviour
         switch (percent)
         {
             case float p when p <= 0.60f:
-                fillArea.material.color = STATUS_BAD;
+                fillArea.color = STATUS_BAD;
                 break;
             case float p when p > 0.60f && p <= 0.80f:
-                fillArea.material.color = STATUS_BETTER;
+                fillArea.color = STATUS_BETTER;
                 break;
             case float p when p > 0.80f && p <= 0.98f:
-                fillArea.material.color = STATUS_GOOD;
+                fillArea.color = STATUS_GOOD;
                 break;
             case float p when p == 1f:
-                fillArea.material.color = STATUS_PERFECT;
+                fillArea.color = STATUS_PERFECT;
                 break;
         }
     }
 
     private void SetProgress(float newProgress)
     {
-        targetProgress = newProgress;
+        targetProgress = (float) Math.Round(newProgress, 2);
     }
 }
