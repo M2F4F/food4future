@@ -2693,6 +2693,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetLightLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 4258303109363183960, guid: e9765a743597fd042961eddf727e2198,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4460076792034650773, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_IsActive
@@ -2703,6 +2708,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIController 2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6922583942095608074, guid: e9765a743597fd042961eddf727e2198,
+        type: 3}
+      propertyPath: lightText
+      value: 
+      objectReference: {fileID: 8544107705343617}
+    - target: {fileID: 6922583942095608074, guid: e9765a743597fd042961eddf727e2198,
+        type: 3}
+      propertyPath: temperatureText
+      value: 
+      objectReference: {fileID: 778696495163387131}
     - target: {fileID: 7084041043336673969, guid: e9765a743597fd042961eddf727e2198,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2753,6 +2768,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9765a743597fd042961eddf727e2198, type: 3}
+--- !u!114 &8544107705343617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3629747232631095807, guid: e9765a743597fd042961eddf727e2198,
+    type: 3}
+  m_PrefabInstance: {fileID: 3621220871749508990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &778696495163387131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4075570077117854597, guid: e9765a743597fd042961eddf727e2198,
+    type: 3}
+  m_PrefabInstance: {fileID: 3621220871749508990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1456971785907947151 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2772279123980278257, guid: e9765a743597fd042961eddf727e2198,
