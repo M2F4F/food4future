@@ -12,7 +12,7 @@ public class VirtualMonitor : MonoBehaviour
     public float fillSpeed = 0.5f;
     private float targetProgress = 0;
     //private GameObject statusCube = null;
-    private static readonly string POINTS_FOR_COUNTER = "Punkte";
+    private static string pointCounter;
     private static readonly Color STATUS_BAD = new(0.85f, 0.25f, 0.25f);
     private static readonly Color STATUS_BETTER = new(1.0f, 0.5f, 0.0f);
     private static readonly Color STATUS_GOOD = new(0.25f, 0.5f, 0.0f);
@@ -21,6 +21,8 @@ public class VirtualMonitor : MonoBehaviour
     void OnEnable()
     {
         VariableManager.OnVariableChangeEvent += SetScore;
+        LanguageManager.onLanguageChange += HandleLanguageChange;
+        pointCounter = PlayerPrefs.GetString("lang", "de") == "de" ? "Punkte" : "Points";
         if(progressBar != null)
         {
             fillArea = progressBar.gameObject.transform.Find("Fill Area").Find("ColorfullFill").GetComponent<Image>();
@@ -30,6 +32,7 @@ public class VirtualMonitor : MonoBehaviour
     void OnDisable()
     {
         VariableManager.OnVariableChangeEvent -= SetScore;
+        LanguageManager.onLanguageChange -= HandleLanguageChange;
     }
 
     void Update()
@@ -49,9 +52,22 @@ public class VirtualMonitor : MonoBehaviour
         
     }
 
+    
+
+    private void HandleLanguageChange(string lang)
+    {
+        if(lang == "de") {
+            VirtualMonitor.pointCounter = "Punkte";
+            floatingMonitorText.text = floatingMonitorText.text.Replace("Points", "Punkte");
+            return;
+        }
+        VirtualMonitor.pointCounter = "Points";
+        floatingMonitorText.text = floatingMonitorText.text.Replace("Punkte", "Points");
+    }
+
     private void SetScore(int score, int maxScore, int[] calcScoreArray)
     {
-        floatingMonitorText.text = score.ToString() + " " + POINTS_FOR_COUNTER;
+        floatingMonitorText.text = score.ToString() + " " + VirtualMonitor.pointCounter;
         var stopCalculation = calcScoreArray.Contains(1);
         var percent = score / (float)maxScore;
         if (percent != progressBar.value)

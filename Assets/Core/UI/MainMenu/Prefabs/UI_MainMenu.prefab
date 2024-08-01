@@ -2233,7 +2233,7 @@ MonoBehaviour:
   _type: 4
   _activateTarget: {fileID: 0}
   _loop: 0
-  _delay: 2.65
+  _delay: 6.25
   _duration: 1
   _endPosition: {x: 0, y: 0, z: 0}
   _endScale: {x: 0, y: 0, z: 0}
