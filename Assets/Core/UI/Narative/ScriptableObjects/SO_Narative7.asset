@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative7
   m_EditorClassIdentifier: 
-  english: Tinker with the environmental parameter such as salinity and pH of water,
-    light intensity and the temperature, divided into multiple phase of the research.
-    Use the i-button in the scene to help you get started!
+  english: Tinkering with the environmental parameter such as salinity and pH of
+    water, light intensity and the temperature, divided into multiple phase of the
+    research. Use the i-button in the scene to help you get started!
   deutsch: "Deine Aufgabe ist es, die Umgebungsparameter f\xFCr ein optimales Wachstum
     zu ermitteln. So kannst du zur L\xF6sung des Ern\xE4hrungsproblems beitragen."
