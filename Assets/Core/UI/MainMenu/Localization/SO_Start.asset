@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
-  m_Name: SO_Body
+  m_Name: SO_Start
   m_EditorClassIdentifier: 
-  english: Explore our virtual environment to learn about future food sources and
-    the science behind it.
-  deutsch: "Entdecken Sie unsere virtuelle Umgebung und lernen Sie mehr \xFCber zuk\xFCnftige
-    Nahrungsquellen sowie die zugrunde liegende Wissenschaft."
+  english: Let's get started
+  deutsch: Los geht's
