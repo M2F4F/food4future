@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative5
   m_EditorClassIdentifier: 
-  english: Researchers are already working on growing jellyfish, crickets, and algae
-    indoors.
+  english: Urbanized food cultivation using algae, cricket and jellyfish is thought
+    to be one of the solutions for this problem.
   deutsch: "\rForscher arbeiten bereits daran Quallen, Grillen und Algen indoor anzubauen."

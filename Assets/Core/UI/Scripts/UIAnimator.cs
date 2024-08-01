@@ -109,6 +109,8 @@ public class UIAnimator : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        if(imageComponent != null) imageComponent.color = _endColor;
+        if(tmpComponent != null) tmpComponent.color = _endColor;
 
         yield return null;
     }

@@ -86,8 +86,6 @@ public class NarativeSlideshow : MonoBehaviour
         // Check if coroutine is not null or not the last page, then do nothing.
         if(_coroutine != null || _pageIndex <= 0) return;
 
-        onPageChange?.Invoke(_texts.Length + 1);
-
         _pageIndex = 0;
         _moveCoroutine = StartCoroutine(MoveBackPanel());
         

@@ -23,24 +23,20 @@ public class NarativeHologramChanger : MonoBehaviour
 
     void OnEnable() {
         NarativeSlideshow.onPageChange += NextPageHandler;
+        Reset_Button.onGameReset += ResetNarativeHandler;
     }
 
 
     void OnDisable() {
         NarativeSlideshow.onPageChange -= NextPageHandler;
+        Reset_Button.onGameReset -= ResetNarativeHandler;
         // asyncOperationHandle.Completed -= NextHologramSpawnHandler;
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    
+    private void ResetNarativeHandler() {
+        asyncOperationHandle = Addressables.InstantiateAsync("P_Narative0.prefab", this.gameObject.transform.position, Quaternion.identity);
+        asyncOperationHandle.Completed += NextHologramSpawnHandler;
     }
 
     IEnumerator AccessNarative() {
@@ -59,7 +55,7 @@ public class NarativeHologramChanger : MonoBehaviour
     {
         if(pageNumber == _pageCoverage + 1) {
             asyncOperationHandle = Addressables.InstantiateAsync(_nextHologram, this.gameObject.transform.position, Quaternion.identity);
-            asyncOperationHandle.Completed += NextHologramSpawnHandler; 
+            asyncOperationHandle.Completed += NextHologramSpawnHandler;
         }
     }
 

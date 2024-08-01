@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf28f1da238942e479a4affed7ba333e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pageCoverage: 9
-  _nextHologram: P_Narative0.prefab
+  _pageCoverage: 4
+  _nextHologram: P_Narative2.prefab
 --- !u!1001 &4994766628401085744
 PrefabInstance:
   m_ObjectHideFlags: 0

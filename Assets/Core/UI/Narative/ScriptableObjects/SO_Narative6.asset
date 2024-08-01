@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative6
   m_EditorClassIdentifier: 
-  english: And you are part of this visionary team responsible for the indoor cultivation
-    of algae.
+  english: Imagine living in the scenario where you are a scientist responsible to
+    help us determine the most optimal environment for indoor algae cultivation to
+    produce the most mass of algae.
   deutsch: "Und du bist Teil dieses vision\xE4ren Teams, das f\xFCr die Indoor-Kultivierung
     von Algen zust\xE4ndig ist."
