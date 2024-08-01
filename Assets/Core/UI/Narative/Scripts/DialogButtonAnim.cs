@@ -8,9 +8,11 @@ public class DialogButtonAnim : MonoBehaviour
     [SerializeField] private Vector3 _position2;
     [SerializeField] private float _duration;
 
-    void OnEnable() {
+    void Awake() {
         DialogueButton.onDialogueButton += Disable;
         NarativeSlideshow.onRenderDone += Enable;
+    }
+    void OnEnable() {
         LanguageManager.onLanguageChange += ToggleActive;
         StartCoroutine(MoveUp());
     }
@@ -22,14 +24,17 @@ public class DialogButtonAnim : MonoBehaviour
     }
 
     void OnDestroy() {
+        DialogueButton.onDialogueButton -= Disable;
+        NarativeSlideshow.onRenderDone -= Enable;
         StopCoroutine(MoveUp());
         StopCoroutine(MoveDown());
     }
 
-    private void Disable() {
-        NarativeSlideshow.onRenderDone -= Enable;
-        DialogueButton.onDialogueButton -= Disable;
+    void OnDisable() {
         LanguageManager.onLanguageChange -= ToggleActive;
+    }
+
+    private void Disable() {
         this.gameObject.SetActive(false);
     }
 
