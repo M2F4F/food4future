@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_VarController
   m_EditorClassIdentifier: 
-  english: "Adjust Parameter\t"
-  deutsch: Parameter Anpassen
+  english: "Adjust parameter\t"
+  deutsch: Parameter anpassen
