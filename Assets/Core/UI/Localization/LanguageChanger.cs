@@ -7,15 +7,13 @@ public class LanguageChanger : MonoBehaviour
 {
     [SerializeField] private SO_LocalText _localText;
     private TMP_Text _text;
-    void OnEnable(){
-        LanguageManager.onLanguageChange += LanguageChangeHandler;
-    }
-    void OnDisable() {
-        LanguageManager.onLanguageChange -= LanguageChangeHandler;
-    }
 
     void Awake() {
-        _text = GetComponent<TMP_Text>();
+        _text = GetComponent<TMP_Text>();    
+    }
+
+    void OnEnable(){
+        LanguageManager.onLanguageChange += LanguageChangeHandler;
         string lang = PlayerPrefs.GetString("lang", "de");
         if(lang == "de") {
             _text.text = _localText.deutsch;
@@ -23,6 +21,10 @@ public class LanguageChanger : MonoBehaviour
         }
         _text.text = _localText.english; 
         return;
+    }
+    
+    void OnDisable() {
+        LanguageManager.onLanguageChange -= LanguageChangeHandler;
     }
 
     // Start is called before the first frame update
