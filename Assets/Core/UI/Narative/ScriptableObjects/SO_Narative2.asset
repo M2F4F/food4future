@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english: "They used to live inside an environment with easy access to food sources
     - either from an artificial environment like farms, fields, etc or from the\_nature\_itself."
-  deutsch: "Ursachen k\xF6nnen einerseits auf die Auswirkungen des Klimawandels -
-    Frischwassermangel und Bodenversalzung - zur\xFCckzuf\xFChren sein,  \r\nw\xE4hrend
-    gleichzeitig immer mehr Menschen versorgt werden m\xFCssen und auch eine st\xE4rkere
-    Konkurrenz um die Nutzung vorhandener Fl\xE4che entsteht."
+  deutsch: "Sie lebten fr\xFCher in einer Umgebung mit einfachem Zugang zu Nahrungsquellen
+    - entweder aus k\xFCnstlichen Umwelt wie Bauernh\xF6fen, Feldern usw. oder direkt
+    aus der Natur ."
