@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7b601d0637de4aa8b11e24da6ca14, type: 3}
   m_Name: SO_Narative1
   m_EditorClassIdentifier: 
-  english: Imagine a future where space for traditional food production is steadily
-    shrinking.
+  english: The world used to be a green place, where various species of flora and
+    fauna as an ecosystem thrive, including human as the apex predator staying at
+    the top of the food chain.
   deutsch: "Stell dir eine Zukunft vor, in der der Platz f\xFCr die traditionelle
     Nahrungsmittelproduktion immer weiter schwindet."
