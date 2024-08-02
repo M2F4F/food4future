@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english: "They used to live inside an environment with easy access to food sources
     - either from an artificial environment like farms, fields, etc or from the\_nature\_itself."
-  deutsch: "Sie lebten fr\xFCher in einer Umgebung mit einfachem Zugang zu Nahrungsquellen
-    - entweder aus k\xFCnstlichen Umwelt wie Bauernh\xF6fen, Feldern usw. oder direkt
-    aus der Natur ."
+  deutsch: "Sie lebten fr\xFCher von Nahrung, die sie lokal anbauten oder in der
+    Natur vorfanden. Durch die etblierung der Landwirtschaft, wurde das zunehmend
+    einfacher."

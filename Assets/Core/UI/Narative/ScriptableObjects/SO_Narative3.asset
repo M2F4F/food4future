@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english: Following the industrial revolution and technological advances, the human
     population saw a substantial boom, resulting in more infrastructural needs e.g.
-    housing, transports, etc.
-  deutsch: "Nach der industriellen Revolution und technologischen Fortschritten erlebte
-    die menschliche Bev\xF6lkerung einen erheblichen Anstieg, was zu einem h\xF6heren
-    Bedarf an Infrastruktur wie z.B. Wohnungen, Transportmitteln usw. f\xFChrte."
+    housing, transports, and surely food.
+  deutsch: "W\xE4hrend und nach der industriellen Revolution erlebte die Menschheit,
+    unter anderem durch den technologischen Fortschritt, ein starkes Bev\xF6lkerungswachstum.
+    Das f\xFChrte zu einem h\xF6heren Bedarf an Infrastruktur wie z.B. Wohnungen
+    und Transportmitteln, aber vor allem auch Lebensmtteln."
