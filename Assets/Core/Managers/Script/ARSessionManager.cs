@@ -44,8 +44,9 @@ public class ARSessionManager : MonoBehaviour
 
         switch (ARSession.state)
         {
-            case ARSessionState.Ready : m_arSession.enabled = true; break;
-            case ARSessionState.Unsupported : onARUnsupported?.Invoke(); break;
+            case ARSessionState.Ready : Debug.Log("AR Session ready to use"); m_arSession.enabled = true; break;
+            case ARSessionState.Unsupported : Debug.Log("Unsupported"); break;
+            case ARSessionState.NeedsInstall : Debug.Log("Needs install"); StartCoroutine(ARSession.Install()); break;
             default: break;
         }
         
