@@ -1299,7 +1299,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3187606119156012102}
         m_TargetAssemblyTypeName: PopupCloseButton, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: CloseWithTarget
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d2518de2a38534e9bdfbe2f92d25fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
+  _target: {fileID: 676204099063629066}
 --- !u!1 &5658848922398155823
 GameObject:
   m_ObjectHideFlags: 0
