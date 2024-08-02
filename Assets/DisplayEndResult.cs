@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Utilities;
 
 public class DisplayEndResult : MonoBehaviour
 {
@@ -50,9 +51,16 @@ public class DisplayEndResult : MonoBehaviour
 
     private void SetResultTexts()
     {
+        string currentLang = PlayerPrefs.GetString("lang", "de");
+        if (currentLang.Equals("de")) {
+            result1Text.text = "Kindergarten: " + result1 + "/" + maxScore1;
+            result2Text.text = "Stresstest: " + result2 + "/" + maxScore2;
+            result3Text.text = "Produktion: " + result3 + "/" + maxScore3;
+            return;
+        }
         result1Text.text = "Kindergarten: " + result1 + "/" + maxScore1;
-        result2Text.text = "Stresstest: " + result2 + "/" + maxScore2;
-        result3Text.text = "Produktionstest: " + result3 + "/" + maxScore3;
+        result2Text.text = "Stress test: " + result2 + "/" + maxScore2;
+        result3Text.text = "Poduction: " + result3 + "/" + maxScore3;
     }
 
     private void SetSummaryText()
